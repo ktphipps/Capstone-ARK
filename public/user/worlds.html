@@ -1,0 +1,101 @@
+<!-- worlds.html
+A page that displays the worlds available to the patient to play.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-165901337-1');
+    </script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/user/param.css">
+    <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+      a.brand-logo {
+	    padding-left: 10px
+    }
+    </style>
+    <title>RAC | Worlds</title>
+  </head>
+    <body class="grey darken-4">
+    <nav>
+      <div id="navbar" class="nav-wrapper blue darken-2">
+        <a href="/index.html" class="brand-logo">RAC</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/researcher/rPortal.html">Research Portal</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="/researcher/rPortal.html">Research Portal</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+      <br><br>
+        <div class="container">
+              <h1 class="white-text">Worlds</h1>
+              <!-- Information about this project -->
+              <p class="white-text flow-text">Choose a world. Complete each world to unlock the next one.</p>
+              <p class="white-text flow-text">Stars: *placeholder*</p>
+              
+
+              <!-- We will implement at max, 3 worlds. -->
+              <div class="row">
+                <div class="col offset-4">
+                  <!-- Button to redirect to World 1 -->
+                  <button id="btnPlay" class="btn btn-large pink darken-3 waves-effect" onclick="location.href='/user/world1levels.html';" type="button">World 1</button>
+                </div>
+
+                <div class="col offset-4">
+                  <!-- Button to redirect to World 2 -->
+                  <button id="btnPlay" class="btn btn-large pink darken-3 waves-effect" onclick="location.href='/user/world1levels.html';" type="button">World 2</button>
+                </div>
+
+                <div class="col offset-4">
+                  <!-- Button to redirect to World 3 -->
+                  <button id="btnPlay" class="btn btn-large pink darken-3 waves-effect" onclick="location.href='/user/world1levels.html';" type="button">World 3</button>
+                </div>
+
+              </div>
+
+        <!-- End of Container -->
+        </div>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          <script>
+          $(document).ready(function(){
+              $('.sidenav').sidenav();
+            });
+          </script>
+
+  </body>
+</html>
