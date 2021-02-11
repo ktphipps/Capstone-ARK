@@ -15,6 +15,7 @@ function setParams() {
 
 function setPresetParams(bpm, timeWSound, cycles, timeWOSound, feedback) {
   sessionStorage.clear();
+  console.log(bpm, timeWSound, cycles, timeWOSound, feedback)
   // change from Custom Session?
   sessionStorage.setItem("aid", "Custom Session");
   sessionStorage.setItem("bpm",bpm);
