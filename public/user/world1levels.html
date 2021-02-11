@@ -67,7 +67,10 @@ A page that displays the levels of world 1 available to the patient to play.
 
                 <div class="col offset-4">
                   <!-- Button to redirect to Level 1 -->
-                  <button id="btnPlay" class="btn pink darken-3 waves-effect" onclick="location.href='/world1levels.html';" type="button">Level 1</button>
+                  <!-- <button id="btnPlay" class="btn pink darken-3 waves-effect" onclick="location.href='/world1levels.html';" type="button">Level 1</button> -->
+                  
+                  <!--100 BPM, 20 seconds Time With Sound, 1 Cycle, 10 seconds Time Without Sound, On Feedback -->
+                  <button onclick="setPresetParams(100, 20, 1, 10, 'On')" class="btn btn-small  pink darken-3 waves-effect">Level 1</button>
                 </div>
 
                 
@@ -87,6 +90,6 @@ A page that displays the levels of world 1 available to the patient to play.
               $('.sidenav').sidenav();
             });
           </script>
-
+    <script src="/user/param.js"></script>
   </body>
 </html>

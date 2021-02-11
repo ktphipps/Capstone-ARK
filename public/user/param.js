@@ -13,6 +13,22 @@ function setParams() {
   sessionStorage.setItem("feedback",feedback);
 }
 
+function setPresetParams(beatsPerMinute, timeWithSound, numberOfCycles, timeWithoutSound, feedbackData) {
+  var bpm = this.beatsPerMinute;
+  var timeWSound = this.timeWithSound;
+  var cycles = this.numberOfCycles;
+  var timeWOSound = this.timeWithoutSound;
+  var feedback = this.feedbackData;
+  sessionStorage.clear();
+  // change from Custom Session?
+  sessionStorage.setItem("aid", "Custom Session");
+  sessionStorage.setItem("bpm",bpm);
+  sessionStorage.setItem("timeWSound",timeWSound);
+  sessionStorage.setItem("cycles",cycles);
+  sessionStorage.setItem("timeWOSound",timeWOSound);
+  sessionStorage.setItem("feedback",feedback);
+}
+
 firebase.auth().onAuthStateChanged(user => {
     if(user)
     {
