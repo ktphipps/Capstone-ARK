@@ -17,6 +17,8 @@ Researchers can also view and download raw session data from individual users in
 
 From the research subject perspective, a user will be able to login to their profile with the credentials given to them by the researcher overseeing them. Along with being able to play the game with their own custom parameters, subjects will also be able to see the training assignments that have been assigned to them by their researcher. When the user completes the assignment, the tap data is stored in the database and a score is displayed to the user.
 
+In the second version of the ractrainer, the user can now play through levels, 11 per world, with three worlds currently set up. These worlds have preset parameters, and will allow for a sense of progression with the rating system.
+
 
 [Click here to visit the web application](https://ractrainer.firebaseapp.com/)
 
@@ -34,6 +36,16 @@ From the research subject perspective, a user will be able to login to their pro
 10. To deploy the application to the application, from the root project of your local project directory, run `firebase deploy --only hosting:ractrainer`
 11. Visit `https://ractrainer.firebaseapp.com/`
 
+## Steps to Currently Run the Project (As of Milestone 1, Spring Semester 2021)
+1. Clone the master branch from https://github.com/dchristiansen/Team1-SCOTS-Capstone-CS4970
+2. Request access to the Scots-Capstone Firebase project from the owner
+3. Download `firstTimeSetup.bat` and `setupLocalServer.bat` and put them in your local project folder.
+4. Run both of these files, from there you can delete them.
+5. Follow the instructions above to make sure you can run firebase commands.
+6. In the root directory of the project, run `firebase serve`
+7. Visit the local server it opens, likely at this link: `http://localhost:5000`
+
 ## Other Notes
 Our database security rules are not included in the codebase. You can view and edit them in the Google Firebase Project Console.
+
 
