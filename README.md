@@ -39,7 +39,7 @@ In the second version of the ractrainer, the user can now play through levels, 1
 ## Steps to Currently Run the Project (As of Milestone 1, Spring Semester 2021)
 1. Clone the master branch from https://github.com/dchristiansen/Team1-SCOTS-Capstone-CS4970
 2. Request access to the Scots-Capstone Firebase project from the owner
-3. Download `firstTimeSetup.bat` and `setupLocalServer.bat` and put them in your local project folder.
+3. Download `firstTimeSetup.bat` and `setupLocalServer.bat`, located in the Extras folder of the ARK Google Drive, and put them in your local project folder.
 4. Run both of these files, from there you can delete them.
 5. Follow the instructions above to make sure you can run firebase commands.
 6. In the root directory of the project, run `firebase serve`
