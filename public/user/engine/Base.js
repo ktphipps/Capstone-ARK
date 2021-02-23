@@ -6,12 +6,14 @@ import Scene from "./base/Scene.js"
 import Time from "./base/Time.js"
 import Input from "./base/Input.js"
 import NameableParent from "./base/NamableParent.js"
+import Point from "./base/Point.js"
 
 export default {
   Behavior,
   Camera,
   Component,
   GameObject,
+  Point,
   Scene,
   Time,
   Input,
