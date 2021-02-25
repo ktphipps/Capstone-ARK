@@ -11,10 +11,10 @@ export default class PlayScene extends Engine.Base.Scene {
         super("PlayScene");
 
         //Create the feedbackCircle GameObject
-        let feedbackCircle = new Engine.Base.GameObject(320, 370);
+        let feedbackCircle = new Engine.Base.GameObject(320, 240);
 
         //Create a renderable CircleComponent component and add it to the feedbackCircle GameObject
-        let circle = new Engine.Components.CircleComponent(60, "white", "black");
+        let circle = new Engine.Components.CircleComponent(100, "white", "black");
         feedbackCircle.addComponent(circle);
 
         //Create a ScoreCalculator behavior and add it to the feedbackCircle GameObject
@@ -22,7 +22,7 @@ export default class PlayScene extends Engine.Base.Scene {
         feedbackCircle.addComponent(ScoreCalculator);
 
         //Create a Timer behavior and add it to the feedbackCircle GameObject
-        let Timer = new GameBehaviours.Timer(bpm, timeWSound, timeWOSound, cycles, this);
+        let Timer = new GameBehaviours.Timer(bpm, timeWSound, timeWOSound, cycles);
         feedbackCircle.addComponent(Timer);
 
         //Create a TapHandler behavior and add it to the feedbackCircle GameObject

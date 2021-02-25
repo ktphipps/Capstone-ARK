@@ -8,6 +8,8 @@ import Base from "../../engine/Base.js"
 import ScoreCalculator from "./ScoreCalculator.js"
 import TapHandler from "./TapHandler.js"
 import { createSession } from "../../..//Data.js"
+import Components from "../../engine/Components.js";
+import GameBehaviors from "../GameBehaviors.js";
 
 
 export default class Timer extends Base.Behavior {
@@ -31,13 +33,14 @@ export default class Timer extends Base.Behavior {
     currentCycle = 1;
     soundMax = true;
 
-    constructor(bpm, soundPhaseTime, noSoundPhaseTime, cycles) {
+    constructor(bpm, soundPhaseTime, noSoundPhaseTime, cycles, scene) {
         super();
         this.bpm = bpm;
         this.beatTime = Math.round(60000 / bpm);
         this.soundPhaseTime = soundPhaseTime * 1000;
         this.noSoundPhaseTime = noSoundPhaseTime * 1000;
         this.cycles = cycles;
+        this.scene = scene;
     }
 
     /*
@@ -64,6 +67,11 @@ export default class Timer extends Base.Behavior {
         Handles any necessary volume changes and plays the beat sound.
     */
     playBeat() {
+        console.log(this.scene)
+        let target = new Base.GameObject(15, 200);
+        target.addComponent(new Components.CircleComponent(30, "white", "white"))
+        target.addComponent(new GameBehaviors.GoRight(this.bpm))
+        this.scene.children.push(target)
         //Check if we're in the sound on phase
         if (this.soundOn) {
 
