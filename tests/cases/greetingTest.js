@@ -15,7 +15,7 @@ greetingTest(driver_fx);
 greetingTest(driver_chr);
 
 function greetingTest(driver) {
-  driver.get('http://localhost:5000/');
+  driver.get('https://ractrainer.web.app/');
 
   driver.sleep(9000).then(function() {
     driver.findElement(By.id("loginBtn")).click();
