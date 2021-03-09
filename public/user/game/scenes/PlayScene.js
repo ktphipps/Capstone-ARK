@@ -14,7 +14,7 @@ export default class PlayScene extends Engine.Base.Scene {
         let spaceLaser = new Engine.Base.GameObject(320, 300);
 
         //Create a renderable component and add it to the spaceLaser GameObject
-        let laser = new Engine.Components.RectangleComponent(60, 60, "white", "black");
+        let laser = new Engine.Components.RectangleComponent(1, 1, "white", "black");
         spaceLaser.addComponent(laser);
 
         //Create a ScoreCalculator behavior and add it to the spaceLaser GameObject

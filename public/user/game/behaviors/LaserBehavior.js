@@ -47,8 +47,9 @@ export default class LaserBehavior extends Base.Behavior {
     pulse() {
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
-            //Constsrict the circle
-            //this.circle.radius = 70;
+            //Make the laser appear
+            this.rectangle.height = 600;
+            this.rectangle.width = 60;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
@@ -59,15 +60,15 @@ export default class LaserBehavior extends Base.Behavior {
                 if (this.tapHandler.timer.soundOn) {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
-                        //this.circle.fill = "green";
+                        this.rectangle.fill = "green";
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
-                        //this.circle.fill = "yellow"
+                        this.rectangle.fill = "yellow"
                     }
                     //Otherwise color the circle red
                     else {
-                        //this.circle.fill = "red";
+                        this.rectangle.fill = "red";
                     }
                 }
             }
@@ -75,9 +76,10 @@ export default class LaserBehavior extends Base.Behavior {
 
         //If a tap is not in progress
         if (!Input.keys[' '] && !Input.touch){
-            //Expand the circle and color it white
-            //this.circle.radius = 60;
-            //this.circle.fill = "white";
+            //Make the laser not visible
+            this.rectangle.height = 1;
+            this.rectangle.width = 1;
+            this.rectangle.fill = "white";
             
             //Call the taphandler to handle the release
             this.tapHandler.tapUp();
