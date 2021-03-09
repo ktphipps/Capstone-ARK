@@ -48,7 +48,7 @@ export default class CircleBehaviour extends Base.Behavior {
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
             //Constsrict the circle
-            this.circle.radius = 90;
+            this.circle.radius = 70;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
@@ -76,7 +76,7 @@ export default class CircleBehaviour extends Base.Behavior {
         //If a tap is not in progress
         if (!Input.keys[' '] && !Input.touch){
             //Expand the circle and color it white
-            this.circle.radius = 100;
+            this.circle.radius = 60;
             this.circle.fill = "white";
             
             //Call the taphandler to handle the release

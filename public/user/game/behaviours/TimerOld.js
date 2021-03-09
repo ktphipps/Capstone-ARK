@@ -1,6 +1,6 @@
-//File: /user/game/behaviours/Timer.js
+//File: /user/game/behaviours/TimerOld.js
 
-//Description: An EdGE behavior which controls the flow of the game over time.
+//Description: An EdGE behavior which controls the flow of the game over time, the original timer behavior without new features like the moving circles.
 
 //Controls the start and end of the game and plays the beat sound during the game.
 
@@ -68,10 +68,6 @@ export default class Timer extends Base.Behavior {
     */
     playBeat() {
         console.log(this.scene)
-        let target = new Base.GameObject(15, 100);
-        target.addComponent(new Components.CircleComponent(30, "white", "white"))
-        target.addComponent(new GameBehaviors.GoRight(this.bpm))
-        this.scene.children.push(target)
         //Check if we're in the sound on phase
         if (this.soundOn) {
 

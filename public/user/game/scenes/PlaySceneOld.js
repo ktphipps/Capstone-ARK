@@ -22,7 +22,7 @@ export default class PlayScene extends Engine.Base.Scene {
         feedbackCircle.addComponent(ScoreCalculator);
 
         //Create a Timer behavior and add it to the feedbackCircle GameObject
-        let Timer = new GameBehaviours.Timer(bpm, timeWSound, timeWOSound, cycles);
+        let Timer = new GameBehaviours.TimerOld(bpm, timeWSound, timeWOSound, cycles);
         feedbackCircle.addComponent(Timer);
 
         //Create a TapHandler behavior and add it to the feedbackCircle GameObject

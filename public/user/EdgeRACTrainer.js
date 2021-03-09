@@ -120,7 +120,7 @@ function playGame() {
     //Create a PlayScene
     playScene = new Scenes.PlayScene(bpm, timeWSound, timeWOSound, cycles, feedback);
 
-    //Add the PlayScene to the SceneManager and switch to it
+    //Add the PlayScene to the SceneManager and switch to it    
     SceneManager.addScene(playScene);
     SceneManager.currentScene = "PlayScene";
 
