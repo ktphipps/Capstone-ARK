@@ -50,6 +50,19 @@ export default class PlayScene extends Engine.Base.Scene {
         //Add the spaceLaser GameObject to the scene
         this.children.push(spaceLaser);
 
+        // add laser body
+        let laserbody = new Engine.Base.GameObject(320, 400);
+        let laserbodyComponent = new Engine.Components.RectangleComponent(120, 120, "gray", "gray");
+        laserbody.addComponent(laserbodyComponent);
+        this.children.push(laserbody);
 
+        //add crosshairs
+        let crosshairLeft = new Engine.Base.GameObject(290, 100);
+        let crosshairRight = new Engine.Base.GameObject(350, 100);
+        let crosshairLine = new Engine.Components.RectangleComponent(2, 60, "green", "white");
+        crosshairLeft.addComponent(crosshairLine);
+        crosshairRight.addComponent(crosshairLine);
+        this.children.push(crosshairLeft);
+        this.children.push(crosshairRight);
     }
 }
