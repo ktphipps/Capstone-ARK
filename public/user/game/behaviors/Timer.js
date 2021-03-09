@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/Timer.js
+//File: /user/game/Behaviors/Timer.js
 
 //Description: An EdGE behavior which controls the flow of the game over time.
 
@@ -7,7 +7,7 @@
 import Base from "../../engine/Base.js"
 import ScoreCalculator from "./ScoreCalculator.js"
 import TapHandler from "./TapHandler.js"
-import { createSession } from "../../..//Data.js"
+import { createSession } from "../../../Data.js"
 import Components from "../../engine/Components.js";
 import GameBehaviors from "../GameBehaviors.js";
 

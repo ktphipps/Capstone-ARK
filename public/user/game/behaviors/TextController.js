@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/TextController.js
+//File: /user/game/Behaviors/TextController.js
 
 //Description: Controls the in game text instructions which tell the player what to do
 

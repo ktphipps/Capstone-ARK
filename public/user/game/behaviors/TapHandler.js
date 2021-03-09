@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/TapHandler.js
+//File: /user/game/Behaviors/TapHandler.js
 
 //Description: Creates TapInfo objects based off of the player's button presses
 

@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/CircleBehaviour.js
+//File: /user/game/Behaviors/CircleBehavior.js
 
 //Description: An EdGE behavior which controls the appearance of the feedback circle
 

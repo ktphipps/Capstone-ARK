@@ -1,14 +1,14 @@
-//File: /user/game/scenes/PlayScene.js
+//File: /user/game/scenes/PlaySceneOld.js
 
 //Description: Creates the EdGE scene where the RACTrainer main gameplay happens
 
 import Engine from "../../engine/Engine.js"
-import GameBehaviours from "../GameBehaviors.js"
+import GameBehaviors from "../GameBehaviors.js"
 
 export default class PlayScene extends Engine.Base.Scene {
     constructor(bpm, timeWSound, timeWOSound, cycles, feedback) {
         //Construct a Scene with name "PlayScene"
-        super("PlayScene");
+        super("PlaySceneOld");
 
         //Create the feedbackCircle GameObject
         let feedbackCircle = new Engine.Base.GameObject(320, 240);
@@ -18,20 +18,20 @@ export default class PlayScene extends Engine.Base.Scene {
         feedbackCircle.addComponent(circle);
 
         //Create a ScoreCalculator behavior and add it to the feedbackCircle GameObject
-        let ScoreCalculator = new GameBehaviours.ScoreCalculator();
+        let ScoreCalculator = new GameBehaviors.ScoreCalculator();
         feedbackCircle.addComponent(ScoreCalculator);
 
         //Create a Timer behavior and add it to the feedbackCircle GameObject
-        let Timer = new GameBehaviours.TimerOld(bpm, timeWSound, timeWOSound, cycles);
+        let Timer = new GameBehaviors.TimerOld(bpm, timeWSound, timeWOSound, cycles);
         feedbackCircle.addComponent(Timer);
 
         //Create a TapHandler behavior and add it to the feedbackCircle GameObject
-        let TapHandler = new GameBehaviours.TapHandler(bpm);
+        let TapHandler = new GameBehaviors.TapHandler(bpm);
         feedbackCircle.addComponent(TapHandler);
 
         //Create a CircleBehavior behavior and add it to the feedbackCircle GameObject
-        let CircleBehaviour = new GameBehaviours.CircleBehaviour(feedback);
-        feedbackCircle.addComponent(CircleBehaviour);
+        let CircleBehavior = new GameBehaviors.CircleBehavior(feedback);
+        feedbackCircle.addComponent(CircleBehavior);
 
         //Create the intruction guideText GameObject
         let guideText = new Engine.Base.GameObject(0, -150);
@@ -41,7 +41,7 @@ export default class PlayScene extends Engine.Base.Scene {
         guideText.addComponent(text);
 
         //Create a TextController behavior and add it to the guideText GameObject
-        let textController = new GameBehaviours.TextController(Timer, text);
+        let textController = new GameBehaviors.TextController(Timer, text);
         guideText.addComponent(textController);
 
         //Add the guideText GameObject as a child of the feedbackCircle GameObject
