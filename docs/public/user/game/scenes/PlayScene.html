@@ -46,7 +46,7 @@
             
             <div class="content"><div class='highlight'><pre>
 <span class="hljs-keyword">import</span> Engine <span class="hljs-keyword">from</span> <span class="hljs-string">"../../engine/Engine.js"</span>
-<span class="hljs-keyword">import</span> GameBehaviours <span class="hljs-keyword">from</span> <span class="hljs-string">"../GameBehaviors.js"</span>
+<span class="hljs-keyword">import</span> GameBehaviors <span class="hljs-keyword">from</span> <span class="hljs-string">"../GameBehaviors.js"</span>
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayScene</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Engine</span>.<span class="hljs-title">Base</span>.<span class="hljs-title">Scene</span> </span>{
     <span class="hljs-keyword">constructor</span>(bpm, timeWSound, timeWOSound, cycles, feedback) {</pre></div></div>
@@ -110,7 +110,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> ScoreCalculator = <span class="hljs-keyword">new</span> GameBehaviours.ScoreCalculator();
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> ScoreCalculator = <span class="hljs-keyword">new</span> GameBehaviors.ScoreCalculator();
         feedbackCircle.addComponent(ScoreCalculator);</pre></div></div>
             
         </li>
@@ -126,7 +126,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> Timer = <span class="hljs-keyword">new</span> GameBehaviours.Timer(bpm, timeWSound, timeWOSound, cycles);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> Timer = <span class="hljs-keyword">new</span> GameBehaviors.Timer(bpm, timeWSound, timeWOSound, cycles);
         feedbackCircle.addComponent(Timer);</pre></div></div>
             
         </li>
@@ -142,7 +142,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> TapHandler = <span class="hljs-keyword">new</span> GameBehaviours.TapHandler(bpm);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> TapHandler = <span class="hljs-keyword">new</span> GameBehaviors.TapHandler(bpm);
         feedbackCircle.addComponent(TapHandler);</pre></div></div>
             
         </li>
@@ -158,8 +158,8 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> CircleBehaviour = <span class="hljs-keyword">new</span> GameBehaviours.CircleBehaviour(feedback);
-        feedbackCircle.addComponent(CircleBehaviour);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> CircleBehavior = <span class="hljs-keyword">new</span> GameBehaviors.CircleBehavior(feedback);
+        feedbackCircle.addComponent(CircleBehavior);</pre></div></div>
             
         </li>
         
@@ -174,7 +174,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> RectangleCollider = <span class="hljs-keyword">new</span> GameBehaviours.RectangleCollider(10,10);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> RectangleCollider = <span class="hljs-keyword">new</span> GameBehaviors.RectangleCollider(10,10);
         feedbackCircle.addComponent(RectangleCollider);</pre></div></div>
             
         </li>
@@ -221,7 +221,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> textController = <span class="hljs-keyword">new</span> GameBehaviours.TextController(Timer, text);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> textController = <span class="hljs-keyword">new</span> GameBehaviors.TextController(Timer, text);
         guideText.addComponent(textController);</pre></div></div>
             
         </li>

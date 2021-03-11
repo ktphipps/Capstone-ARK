@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/ScoreCalculator.js
+//File: /user/game/Behaviors/ScoreCalculator.js
 
 //Description: Calculates the player's score at the end of the game
 

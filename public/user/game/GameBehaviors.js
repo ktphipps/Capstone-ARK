@@ -1,13 +1,15 @@
-import CircleBehaviour from "./behaviours/CircleBehaviour.js"
-import TapHandler from "./behaviours/TapHandler.js"
-import Timer from "./behaviours/Timer.js"
-import TimerOld from "./behaviours/TimerOld.js"
-import ScoreCalculator from "./behaviours/ScoreCalculator.js"
-import TextController from "./behaviours/TextController.js"
-import GoRight from "./behaviours/GoRight.js"
+import CircleBehavior from "./Behaviors/CircleBehavior.js"
+import LaserBehavior from "./Behaviors/LaserBehavior.js"
+import TapHandler from "./Behaviors/TapHandler.js"
+import Timer from "./Behaviors/Timer.js"
+import TimerOld from "./Behaviors/TimerOld.js"
+import ScoreCalculator from "./Behaviors/ScoreCalculator.js"
+import TextController from "./Behaviors/TextController.js"
+import GoRight from "./Behaviors/GoRight.js"
 
 export default{
-  CircleBehaviour,
+  CircleBehavior,
+  LaserBehavior,
   TapHandler,
   Timer,
   TimerOld,

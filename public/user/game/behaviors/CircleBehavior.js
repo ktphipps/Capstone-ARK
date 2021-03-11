@@ -1,4 +1,4 @@
-//File: /user/game/behaviours/CircleBehaviour.js
+//File: /user/game/Behaviors/CircleBehavior.js
 
 //Description: An EdGE behavior which controls the appearance of the feedback circle
 
@@ -7,7 +7,7 @@ import Input from "../../engine/base/Input.js"
 import CircleComponent from "../../engine/components/CircleComponent.js"
 import TapHandler from "./TapHandler.js";
 
-export default class CircleBehaviour extends Base.Behavior {
+export default class CircleBehavior extends Base.Behavior {
     circle;
     tapHandler;
     feedback;
