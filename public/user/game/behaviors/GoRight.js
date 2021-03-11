@@ -8,6 +8,7 @@ export default class GoRight extends Base.Behavior {
     FramesPerMinute = 2000;
     DistPerBeat = 320;
     bpm;
+    tag = "GoRight";
 
     constructor(bpm) {
         super();

@@ -67,8 +67,7 @@ export default class Timer extends Base.Behavior {
         Handles any necessary volume changes and plays the beat sound.
     */
     playBeat() {
-        console.log(this.scene)
-        let target = new Base.GameObject(15, 100);
+        let target = new Base.GameObject(100, 100);
         target.addComponent(new Components.CircleComponent(30, "white", "white"))
         target.addComponent(new GameBehaviors.GoRight(this.bpm))
         this.scene.children.push(target)
