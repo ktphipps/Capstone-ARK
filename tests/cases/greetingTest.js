@@ -22,11 +22,11 @@ function greetingTest(driver) {
   });
 
   driver.sleep(11000).then(function() {
-    driver.findElement(By.id('Uname')).sendKeys('AutomatedTestingDemo@test.com');
+    driver.findElement(By.id('Uname')).sendKeys('011@test.com');
   });
 
   driver.sleep(12000).then(function() {
-    driver.findElement(By.id('password')).sendKeys('demoPassword');
+    driver.findElement(By.id('password')).sendKeys('MEGAFISH');
   });
 
   driver.sleep(14000).then(function() {
@@ -35,7 +35,7 @@ function greetingTest(driver) {
 
   driver.sleep(19000).then(function() {
     driver.findElement(By.id('greeting')).getText().then(function(text) {
-      if(text === 'Welcome, automatedtestingdemo!') {
+      if(text === 'Welcome, 011!') {
         console.log('User Greeting Test passed');
       } else {
         console.log('User Greeting Test failed');

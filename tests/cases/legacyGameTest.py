@@ -40,7 +40,7 @@ class legacyGameTest(unittest.TestCase):
 		# send data 
 		elem.click() 
 
-		time.sleep(0.3)
+		time.sleep(0.38)
 
 		timeLimit = time.time() + 25
 		while time.time() < timeLimit:
@@ -53,7 +53,7 @@ class legacyGameTest(unittest.TestCase):
 		elem = driver.find_element_by_id("score").text
 		assert "Score: 100%" in elem 
 
-		time.sleep(15)
+		time.sleep(1)
 
 	# cleanup method called after every test performed 
 	def tearDown(self): 

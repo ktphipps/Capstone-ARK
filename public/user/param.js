@@ -6,6 +6,8 @@ function setParams() {
   var feedback = document.getElementById("feedback").checked;
   sessionStorage.clear();
   sessionStorage.setItem("aid", "Custom Session");
+  sessionStorage.setItem("world", "N/A");
+  sessionStorage.setItem("level", "N/A");
   sessionStorage.setItem("bpm",bpm);
   sessionStorage.setItem("timeWSound",timeWSound);
   sessionStorage.setItem("cycles",cycles);
@@ -13,11 +15,12 @@ function setParams() {
   sessionStorage.setItem("feedback",feedback);
 }
 
-function setPresetParams(bpm, timeWSound, cycles, timeWOSound, feedback) {
+function setPresetParams(world, level, bpm, timeWSound, cycles, timeWOSound, feedback) {
   sessionStorage.clear();
-  console.log(bpm, timeWSound, cycles, timeWOSound, feedback)
-  // change from Custom Session?
-  sessionStorage.setItem("aid", "Custom Session");
+  console.log(world, level, bpm, timeWSound, cycles, timeWOSound, feedback)
+  sessionStorage.setItem("aid", "Main Game");
+  sessionStorage.setItem("world", world);
+  sessionStorage.setItem("level", level);
   sessionStorage.setItem("bpm",bpm);
   sessionStorage.setItem("timeWSound",timeWSound);
   sessionStorage.setItem("cycles",cycles);

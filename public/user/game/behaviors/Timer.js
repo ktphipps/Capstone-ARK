@@ -146,6 +146,8 @@ export default class Timer extends Base.Behavior {
                         this.gameOver = true;
                         let feedback = sessionStorage.getItem('feedback');
                         let assignmentId = sessionStorage.getItem('aid');
+                        let world = sessionStorage.getItem('world');
+                        let level = sessionStorage.getItem('level');
                         let stringJson = JSON.parse(JSON.stringify(this.tapHandler.tapDataTotal));
                         let tapArrayString = [];
 
@@ -167,8 +169,9 @@ export default class Timer extends Base.Behavior {
                                 sessionStorage.setItem('score', score);
                                 sessionStorage.setItem('data', JSON.stringify(ref.tapHandler.tapDataSoundOff));
 
+                                console.log(world, level);
                                 //Save the session to the database using the array of csv strings
-                                let sesh = await createSession(assignmentId, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
+                                let sesh = await createSession(assignmentId, world, level, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
 
                                 document.location.href = "/user/results.html";
 
