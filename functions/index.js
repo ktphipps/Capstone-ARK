@@ -255,10 +255,24 @@ exports.createUser = functions.https.onCall(async (data, context) => {
             userID: userID,
             changePassword: false
         };
-        
+
         // Create a new document in the users collection with the document
         // ID as the user uid
         await admin.firestore().collection("users").doc(userUID).set(dbRecord);
+
+        // Create a new subcollection with documents containing the user's highest score for each level
+        const numWorlds = 3;
+        const numLevels = 11;
+        for (var w = 1; w <= numWorlds; w++) {    
+            for (var l = 1; l <= numLevels; l++) {
+                let docData = {
+                    highScore: 0
+                };
+                var docName = "World" + w + "Level" + l;
+                var res = await admin.firestore().collection("users").doc(userUID).collection("highscores").doc(docName).set(docData);
+            }
+        }
+
         // Return success message
         return {message: 'Success! The user has been created.'}
     } catch (error) {

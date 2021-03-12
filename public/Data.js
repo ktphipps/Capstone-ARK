@@ -359,4 +359,31 @@ async function getAllAssignments(){
 }
 
 
-export {createAssignment, createSession, getAllSessionsForUser, getAssignmentsForUser, getUsers, getSession, getUser, getAllAssignments}
+async function updateHighScoreForUser(userID, score, world, level) {
+
+    // Create a batch
+    var batch = firestore.batch();
+
+    // Build the new high score document
+    let docName = 'World' + world + 'Level' + level;
+    let field = "highScore";
+    let highscoresRef = firestore.collection('users').doc(userID).collection('highscores').doc(docName);
+    let docSnapshot = await highscoresRef.get();
+    if (docSnapshot.get("highScore") >= score) {
+        console.log('Not a high score');
+        return;
+    }
+
+    batch.update(highscoresRef, {"highScore": score})
+
+    //Commit the batch
+   return batch.commit().then(function(){
+        console.log('Updated high score for World ' + world + ' Level ' + level);
+    }).catch(function(error){  
+        console.log("Error when updating high score!");
+    });
+}
+
+
+
+export {createAssignment, createSession, getAllSessionsForUser, getAssignmentsForUser, getUsers, getSession, getUser, getAllAssignments, updateHighScoreForUser}
