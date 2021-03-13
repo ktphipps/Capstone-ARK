@@ -358,23 +358,26 @@ async function getAllAssignments(){
 
 }
 
-
 async function updateHighScoreForUser(userID, score, world, level) {
 
     // Create a batch
     var batch = firestore.batch();
 
-    // Build the new high score document
+    // Build the new score document
     let docName = 'World' + world + 'Level' + level;
-    let field = "highScore";
     let highscoresRef = firestore.collection('users').doc(userID).collection('highscores').doc(docName);
     let docSnapshot = await highscoresRef.get();
+
+    // If the recent score isn't a high score, don't save it
     if (docSnapshot.get("highScore") >= score) {
         console.log('Not a high score');
         return;
     }
 
-    batch.update(highscoresRef, {"highScore": score})
+    var rating = calculateRating(score);
+
+    // Otherwise get ready to ship it to the database!
+    batch.update(highscoresRef, {"highScore": score, "rating": rating})
 
     //Commit the batch
    return batch.commit().then(function(){
@@ -384,6 +387,22 @@ async function updateHighScoreForUser(userID, score, world, level) {
     });
 }
 
+function calculateRating(score) {
+    const THREE_STAR_SCORE = 85;
+    const TWO_STAR_SCORE = 70;
+    const ONE_STAR_SCORE = 55;
+
+    var stars = 0;
+
+    if (score >= THREE_STAR_SCORE)
+        stars = 3;
+    else if (score >= TWO_STAR_SCORE)
+        stars = 2;
+    else if (score >= ONE_STAR_SCORE)
+        stars = 1;
+
+    return stars;
+}
 
 
 export {createAssignment, createSession, getAllSessionsForUser, getAssignmentsForUser, getUsers, getSession, getUser, getAllAssignments, updateHighScoreForUser}
