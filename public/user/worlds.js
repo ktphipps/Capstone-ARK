@@ -1,5 +1,3 @@
-import { getUsers } from "/Data.js";
-
 /*
   onAuthStateChanged(user)
   Observer for Authentication State:
@@ -26,6 +24,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
       if (docSnapshot.exists)
         total = docSnapshot.get("cumulativeTotal");
       
-      $("#stars").append(total);
+      $("#stars").text(function () {
+        return $(this).text().replace("...", total); 
+      });
     }
 });

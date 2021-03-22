@@ -7,7 +7,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
     else // User is signed in 
     {
-      console.log("world1levels script activated");
       let ratingRef = firebase.firestore().collection('users').doc(user.uid).collection("ratings").doc("RatingTotals");
       let docSnapshot = await ratingRef.get();
       
@@ -16,6 +15,8 @@ firebase.auth().onAuthStateChanged(async function (user) {
       if (docSnapshot.exists)
         worldTotal = docSnapshot.get("world1Total");
       
-      $("#stars").append(worldTotal);
+      $("#stars").text(function () {
+        return $(this).text().replace("...", worldTotal); 
+      });
     }
 });
