@@ -7,7 +7,7 @@
 import Base from "../../engine/Base.js"
 import ScoreCalculator from "./ScoreCalculator.js"
 import TapHandler from "./TapHandler.js"
-import { createSession, updateHighScoreForUser } from "../../../Data.js"
+import { createSession, updateHighScoreForUser, updateRatingsForUser } from "../../../Data.js"
 import Components from "../../engine/Components.js";
 import GameBehaviors from "../GameBehaviors.js";
 
@@ -172,6 +172,7 @@ export default class Timer extends Base.Behavior {
                                 //Save the session to the database using the array of csv strings
                                 let sesh = await createSession(assignmentId, world, level, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
                                 let highscore = await updateHighScoreForUser(firebaseUser.uid, score, world, level);
+                                let rating = await updateRatingsForUser(firebaseUser.uid);
 
                                 document.location.href = "/user/results.html";
 

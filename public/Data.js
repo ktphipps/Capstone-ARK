@@ -377,7 +377,7 @@ async function updateHighScoreForUser(userID, score, world, level) {
     var rating = calculateRating(score);
 
     // Otherwise get ready to ship it to the database!
-    batch.update(highscoresRef, {"highScore": score, "rating": rating})
+    batch.set(highscoresRef, {"highScore": score, "rating": rating})
 
     //Commit the batch
    return batch.commit().then(function(){
@@ -404,5 +404,33 @@ function calculateRating(score) {
     return stars;
 }
 
+async function updateRatingsForUser(userID) {
+    var world1Total = 0;
+    var world2Total = 0;
+    var world3Total = 0;
+      for (var w = 1; w <= 3; w++) {
+          for (var l = 1; l <= 11; l++) {
+              let docName = 'World' + w + 'Level' + l;
+              let highscoresRef = firebase.firestore().collection('users').doc(userID).collection('highscores').doc(docName);
+              let docSnapshot = await highscoresRef.get();
+              
+              var rating = docSnapshot.get("rating");
+              if (rating == undefined)
+                continue;
+              if (w == 1)
+                world1Total += rating;
+              else if (w == 2)
+                world2Total += rating;
+              else
+                world3Total += rating;
+          }
+      }
 
-export {createAssignment, createSession, getAllSessionsForUser, getAssignmentsForUser, getUsers, getSession, getUser, getAllAssignments, updateHighScoreForUser}
+    var total = world1Total + world2Total + world3Total;
+
+    firestore.collection('users').doc(userID).collection("ratings").doc("RatingTotals").set({"cumulativeTotal": total, "world1Total": world1Total, "world2Total": world2Total, "world3Total": world3Total});
+}
+
+
+export {createAssignment, createSession, getAllSessionsForUser, getAssignmentsForUser, getUsers, getSession, getUser,
+        getAllAssignments, updateHighScoreForUser, updateRatingsForUser}

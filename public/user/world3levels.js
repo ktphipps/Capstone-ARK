@@ -1,13 +1,3 @@
-import { getUsers } from "/Data.js";
-
-/*
-  onAuthStateChanged(user)
-  Observer for Authentication State:
-  If the user is logged in and an admin, then the table of all users
-  in the system will be populated. Otherwise, go back to the user dashboard
-  or back to the login screen if not authenticated
-*/
-
 firebase.auth().onAuthStateChanged(async function (user) {
     // If user is not signed in
     if(!user)
@@ -21,11 +11,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
       let ratingRef = firebase.firestore().collection('users').doc(user.uid).collection("ratings").doc("RatingTotals");
       let docSnapshot = await ratingRef.get();
       
-      var total = 0;
+      var worldTotal = 0;
 
       if (docSnapshot.exists)
-        total = docSnapshot.get("cumulativeTotal");
+        worldTotal = docSnapshot.get("world3Total");
       
-      $("#stars").append(total);
+      $("#stars").append(worldTotal);
     }
 });
