@@ -50,6 +50,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
             if(window.location.pathname != pathname){
                 let listItem = document.createElement("li");
                 let itemContents = document.createElement("a");
+                itemContents.style = "font-size: large;"
                 //Add logout functionality to the logout button
                 if(element.link == "Logout") {
                     itemContents.addEventListener("click", e => {
