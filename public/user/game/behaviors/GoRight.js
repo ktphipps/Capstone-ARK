@@ -22,7 +22,7 @@ export default class GoRight extends Base.Behavior {
 		Initializes this behavior. Called when EdGE intializes
 	*/
     start() {
-        console.log(this.bpm * this.DistPerBeat / this.FramesPerMinute)
+        //console.log(this.bpm * this.DistPerBeat / this.FramesPerMinute)
 
     }
 
