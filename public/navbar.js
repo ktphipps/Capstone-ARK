@@ -77,7 +77,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     }
 });
 
-/*      <div class="nav-wrapper blue darken-2">
+/*      <div class="nav-wrapper indigo darken-2">
             <a href="#!" class="brand-logo">Scots</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">

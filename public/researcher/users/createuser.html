@@ -35,10 +35,10 @@ This page allows a researcher to create a user
         </style>
         <title>RAC | Create User</title>
     </head>
-    <body class="grey darken-4">
+    <body class="grey lighten-2">
       <nav>
-        <div id="navbar" class="nav-wrapper blue darken-2">
-          <a href="/index.html" class="brand-logo">RAC</a>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
@@ -49,34 +49,34 @@ This page allows a researcher to create a user
       <br><br>
       <form class="col s6 width=50% font-size=50% admin-action">
         <div class="container">
-            <h2 class="white-text">Create User</h2>
+            <h2 class="black-text">Create User</h2>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <!-- New username field -->
-                    <input type="text" id="createUname" class="white-text" onkeyup='check();'>
-                    <label class="active white-text" for="createUname">Username</label>
+                    <input type="text" id="createUname" class="black-text" onkeyup='check();'>
+                    <label class="active black-text" for="createUname">Username</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <!-- New user password field-->
-                    <input type="password" id="createPassword" class="validate white-text" onkeyup='check();'>
-                    <label class="active white-text" for="createPassword">Password</label>
+                    <input type="password" id="createPassword" class="validate black-text" onkeyup='check();'>
+                    <label class="active black-text" for="createPassword">Password</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <!-- Button to create a new user -->
-                    <button id="btnCreateUser" disabled="true" class="btn btn-large pink darken-2 waves-effect"><i class="material-icons right">chevron_right</i>Create User</button>
+                    <button id="btnCreateUser" disabled="true" class="btn btn-large grey darken-3 waves-effect"><i class="material-icons right">chevron_right</i>Create User</button>
                 </div>
             </div>
         </div>
       </form>
       <!-- Loading modal -->
       <div id="modal1" class="modal">
-        <div class="modal-content grey darken-4">
+        <div class="modal-content grey lighten-2">
           <div class="row" style="text-align: center;">
-            <h3 class="white-text">Creating User</h3>
+            <h3 class="black-text">Creating User</h3>
             <div id="spinner" class="loader">
               <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  width="70px" height="70px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">

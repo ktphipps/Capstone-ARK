@@ -120,7 +120,8 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
     type: 'scatter',
     data: {
         fill: true,
-        backgroundColor: 'rgba(255, 99, 132, 1)',
+        // backgroundColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'gainsboro',
         datasets: [{
             order: 0,
             label: 'Inter-tap Interval',
@@ -128,12 +129,13 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             pointStyle: 'rectRot',
             radius: 5,
             hoverRadius: 10,
-            borderColor: 'rgba(255, 99, 132, 1)',
+            // borderColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'gainsboro',
             borderWidth: 1.2
         },
         {
             data: greenZonePosInterval,
-            borderColor: 'rgba(44, 155, 8, 0.6)',
+            borderColor: 'rgba(44, 155, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -141,7 +143,7 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: yellowZonePosInterval,
-            borderColor: 'rgba(218, 251, 8, 0.6)',
+            borderColor: 'rgba(218, 251, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -149,7 +151,7 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: redZonePosInterval,
-            borderColor: 'rgba(194, 33, 9, 0.6)',
+            borderColor: 'rgba(194, 33, 9, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -157,7 +159,7 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: greenZoneNegInterval,
-            borderColor: 'rgba(44, 155, 8, 0.6)',
+            borderColor: 'rgba(44, 155, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -165,7 +167,7 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: yellowZoneNegInterval,
-            borderColor: 'rgba(218, 251, 8, 0.6)',
+            borderColor: 'rgba(218, 251, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -173,7 +175,7 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: redZoneNegInterval,
-            borderColor: 'rgba(194, 33, 9, 0.6)',
+            borderColor: 'rgba(194, 33, 9, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -232,7 +234,8 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
     type: 'scatter',
     data: {
         fill: true,
-        backgroundColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'gainsboro',
+        // backgroundColor: 'rgba(255, 99, 132, 1)',
         datasets: [{
             order: 0,
             label: 'Asynchrony',
@@ -240,12 +243,13 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             pointStyle: 'rectRot',
             radius: 5,
             hoverRadius: 10,
-            borderColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'gainsboro',
+            // borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1.2
         },
         {
             data: greenZonePosAsynchrony,
-            borderColor: 'rgba(44, 155, 8, 0.6)',
+            borderColor: 'rgba(44, 155, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -253,7 +257,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: yellowZonePosAsynchrony,
-            borderColor: 'rgba(218, 251, 8, 0.6)',
+            borderColor: 'rgba(218, 251, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -261,7 +265,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: redZonePosAsynchrony,
-            borderColor: 'rgba(194, 33, 9, 0.6)',
+            borderColor: 'rgba(194, 33, 9, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -269,7 +273,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: greenZoneNegAsynchrony,
-            borderColor: 'rgba(44, 155, 8, 0.6)',
+            borderColor: 'rgba(44, 155, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -277,7 +281,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: yellowZoneNegAsynchrony,
-            borderColor: 'rgba(218, 251, 8, 0.6)',
+            borderColor: 'rgba(218, 251, 8, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,
@@ -285,7 +289,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             fill: false
         }, {
             data: redZoneNegAsynchrony,
-            borderColor: 'rgba(194, 33, 9, 0.6)',
+            borderColor: 'rgba(194, 33, 9, 0.8)',
             borderDash: [5, 15],
             type: 'line',
             showLine: true,

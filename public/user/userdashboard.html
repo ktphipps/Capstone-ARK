@@ -37,10 +37,10 @@ From this screen, the navbar also contains a link to edituser.html
           </style>
         <title>RAC | Dashboard</title>
     </head>
-    <body class="grey darken-4">
+    <body class="grey lighten-2">
         <nav>
-            <div id="navbar" class="nav-wrapper blue darken-2">
-              <a href="/index.html" class="brand-logo">RAC</a>
+            <div id="navbar" class="nav-wrapper indigo darken-2">
+              <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
           </nav>
@@ -51,10 +51,10 @@ From this screen, the navbar also contains a link to edituser.html
 
         <div class="container ">
             <!-- Greeting for the user -->
-            <h1 class="white-text" id="greeting"></h1>
+            <h1 class="black-text" id="greeting"></h1>
             <br>
             <!-- Table to display assignments to the user -->
-            <table class="highlight white-text pink darken-3 centered" style="margin-top:3%">
+            <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
               <thead>
                 <tr>
                     <th>Assignment ID</th>
@@ -79,46 +79,46 @@ From this screen, the navbar also contains a link to edituser.html
         </div>
 
         <div class="container">
-          <h2 class="white-text">Play Custom Session</h2>
+          <h2 class="black-text">Play Custom Session</h2>
             <!-- Form for a user to play a custom session -->
             <form class="col s6" action="/user/start.html">
                 <div class="row">
-                    <p class="range-field white-text col s12 m3 l3">
+                    <p class="range-field black-text col s12 m3 l3">
                         BPM
                         <!-- Beats per minute -->
-                        <input type="number" id="BPM" name="BPM" class="white-text" value="100" min="30" max="1200" required/>
+                        <input type="number" id="BPM" name="BPM" class="black-text" value="100" min="30" max="1200" required/>
                     </p>
-                    <p class="range-field white-text col s12 m3 l3">
+                    <p class="range-field black-text col s12 m3 l3">
                         Time with sound
                         <!-- Time with sound-->
-                        <input type="number" name="timeWSound" class="white-text" id="timeWSound" value="10" min="1" max="180" required />
+                        <input type="number" name="timeWSound" class="black-text" id="timeWSound" value="10" min="1" max="180" required />
                     </p>
                 </div>
                 <div class="row">
-                    <p class="white-text col s12 m3 l3">Cycles
+                    <p class="black-text col s12 m3 l3">Cycles
                         <!-- Cycles -->
-                        <input type="number" name="cycles" id="cycles" class="white-text" value="1" min="1" max="10" required />
+                        <input type="number" name="cycles" id="cycles" class="black-text" value="1" min="1" max="10" required />
                     </p>
-                    <p class="range-field white-text col s12 m3 l3">
+                    <p class="range-field black-text col s12 m3 l3">
                         Time without sound
                         <!-- Time without sound -->
-                        <input type="number" name="timeWOSound" id="timeWOSound" class="white-text" value="10" min="1" max="180" required />
+                        <input type="number" name="timeWOSound" id="timeWOSound" class="black-text" value="10" min="1" max="180" required />
                     </p>
                 </div>
                 <div class="row">
-                    <p class="white-text">Feedback</p>
+                    <p class="black-text">Feedback</p>
                     <!-- Feedback checkbox -->
                     <div class="switch col s3">
-                        <label class="white-text">
+                        <label class="black-text">
                             Off
-                            <input type="checkbox" id="feedback" class="pink" checked>
+                            <input type="checkbox" id="feedback" class="indigo" checked>
                             <span class="lever"></span>
                             On
                         </label>
                     </div>
                     <!-- Button to set parameters to play the game -->
                     <div class="col">
-                        <button onclick="setParams()" class="btn btn-small  pink darken-3 waves-effect">Start Game</button>
+                        <button onclick="setParams()" class="btn btn-small  grey darken-3 waves-effect">Start Game</button>
                     </div>
                 </div>
             </form>

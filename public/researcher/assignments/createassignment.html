@@ -36,10 +36,10 @@ This page allows a researcher to create an assignment
   <title>RAC | Session Assignment</title>
 </head>
 
-<body class="grey darken-4">
+<body class="grey lighten-2">
   <nav>
-    <div id="navbar" class="nav-wrapper blue darken-2">
-      <a href="/index.html" class="brand-logo">RAC</a>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -48,44 +48,44 @@ This page allows a researcher to create an assignment
   </ul>
 
   <div class="container">
-    <h2 class="white-text">User Assignment Parameter Select</h2>
+    <h2 class="black-text">User Assignment Parameter Select</h2>
       <div class="row">
         <div class="input-field col s12 m6 l6">
           <!-- Assignment Name -->
-          <input  id="assignment_name" type="text" class="validate white-text">
-          <label for="assignment_name" class="white-text">Assignment Name</label>
+          <input  id="assignment_name" type="text" class="validate black-text">
+          <label for="assignment_name" class="black-text">Assignment Name</label>
         </div>
       </div>
       <div class="row">
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           BPM
           <!-- Beats per Minute -->
-        <input type="number" id="BPM" name="BPM" class="white-text tooltipped" data-position="left"  data-tooltip="Beats Per Minute" value="100" min="30" max="1200" />
+        <input type="number" id="BPM" name="BPM" class="black-text tooltipped" data-position="left"  data-tooltip="Beats Per Minute" value="100" min="30" max="1200" />
         </p>
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           Time with sound
           <!-- Time with Sound-->
-          <input type="number" name="timeWSound" class="white-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" />
+          <input type="number" name="timeWSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" />
         </p>
       </div>
       <div class="row">
-        <p class="white-text col s12 m3 l3">Cycles
+        <p class="black-text col s12 m3 l3">Cycles
           <!-- Number of Cycles -->
-          <input type="number" name="cycles" id="cycles" class="white-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
+          <input type="number" name="cycles" id="cycles" class="black-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
         </p>
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           Time without sound
           <!-- Time without sound -->
-          <input type="number" name="timeWOSound" id="timeWOSound" class="white-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
+          <input type="number" name="timeWOSound" id="timeWOSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
         </p>
       </div>
       <div class="row">
       <div class="col s3">
-        <p class="white-text">Feedback</p>
+        <p class="black-text">Feedback</p>
         <div class="switch">
-          <label class="white-text">
+          <label class="black-text">
             Off
-            <input type="checkbox" id="feedback" class="pink" checked>
+            <input type="checkbox" id="feedback" class="indigo" checked>
             <span class="lever tooltipped" data-position="bottom"
               data-tooltip="If on will show feedback based on tap"></span>
             On
@@ -93,11 +93,11 @@ This page allows a researcher to create an assignment
         </div>
       </div>
       <div class="col s3">
-        <p class="white-text">Default Assignments</p>
+        <p class="black-text">Default Assignments</p>
         <div class="switch">
-          <label class="white-text">
+          <label class="black-text">
             No
-            <input type="checkbox" id="default" class="pink">
+            <input type="checkbox" id="default" class="indigo">
             <span class="lever tooltipped" data-position="bottom"
               data-tooltip="If yes, all users will receive this assignment"></span>
             Yes
@@ -107,7 +107,7 @@ This page allows a researcher to create an assignment
     </div>
     <br>
     <div class="row">
-      <button id="btnSetAssignment" class="btn btn-small  pink darken-3 waves-effect">Create Assignment</button>
+      <button id="btnSetAssignment" class="btn btn-small  grey darken-3 waves-effect">Create Assignment</button>
     </div>
   </div>
 

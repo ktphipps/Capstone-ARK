@@ -33,10 +33,10 @@ This page displays the score and the graph of the gameplay
       <title>RAC | Results</title>
     </head>
 
-    <body class="grey darken-4">
+    <body class="grey lighten-2">
       <nav>
-        <div id="navbar" class="nav-wrapper blue darken-2">
-          <a href="/index.html" class="brand-logo">RAC</a>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
@@ -44,7 +44,7 @@ This page displays the score and the graph of the gameplay
       <ul class="sidenav" id="mobile-demo">
       </ul>
     <div class="container">
-      <h2 class="white-text center-align" id="score"></h2>
+      <h2 class="black-text center-align" id="score"></h2>
       <div class="row">
         <div class="col">
           <ul class="tabs tabs-fixed-width">
@@ -53,34 +53,34 @@ This page displays the score and the graph of the gameplay
           </ul>
         </div>
         <div class="col offset-s4">
-          <button data-target="modal1" class="btn btn-small pink darken-3 waves-effect modal-trigger">Graph Info</button>
+          <button data-target="modal1" class="btn btn-small grey darken-3 waves-effect modal-trigger">Graph Info</button>
         </div>
       </div>
-      <canvas id="intervalGraph"></canvas>
-      <canvas id="asynchronyGraph" style="display:none"></canvas>
+      <canvas id="intervalGraph" class="black lighten-2"></canvas>
+      <canvas id="asynchronyGraph" style="display:none" class="black lighten-2"></canvas>
       <br>
-      <button onclick="window.location='/user/start.html';" class="btn btn-small  pink darken-3 waves-effect">Play Again</button>
+      <button onclick="window.location='/user/start.html';" class="btn btn-small  grey darken-3 waves-effect">Play Again</button>
       <!-- Button to change parameters -->
-      <button onclick="resetToParamSelect()" class="btn btn-small  pink darken-3 waves-effect">Return to Parameter Select</button>
+      <button onclick="resetToParamSelect()" class="btn btn-small  grey darken-3 waves-effect">Return to Parameter Select</button>
     </div>
 
   <div id="modal1" class="modal">
-    <div class="modal-content grey darken-4">
-      <h4 class="white-text">Graph Information</h4>
-      <p class="white-text">These graphs display the asynchrony and interval length of each tap in your session.</p>
-      <p class="white-text">Asynchrony is how far away your tap was from the actual correct beat. It is normal for this
+    <div class="modal-content grey lighten-2">
+      <h4 class="black-text">Graph Information</h4>
+      <p class="black-text">These graphs display the asynchrony and interval length of each tap in your session.</p>
+      <p class="black-text">Asynchrony is how far away your tap was from the actual correct beat. It is normal for this
         value to drift over time when the beat is silent.</p>
-      <p class="white-text">Interval length is the rate you tap at with your internal imagined rhythm. This should stay
+      <p class="black-text">Interval length is the rate you tap at with your internal imagined rhythm. This should stay
         near the center line with some variation. </p>
-      <p class="white-text">If your asynchrony or interval length is within 10% of the ideal value, the point will fall
+      <p class="black-text">If your asynchrony or interval length is within 10% of the ideal value, the point will fall
         between the green lines. This is the ideal area to be.</p>
-      <p class="white-text">If the value is within 15% of the ideal value, it will fall between the yellow lines.</p>
-      <p class="white-text">If the value is within 20% of the ideal value, it will fall between the red lines.</p>
-      <p class="white-text">Anything with a variation beyond 20% will fall outside the red lines.</p>
-      <p class="white-text">The vertical pink and green lines separate phases with and without sound.</p>
-      <p class="white-text">The first phase has sound on. A pink vertical line marks a transition where the sound turns
+      <p class="black-text">If the value is within 15% of the ideal value, it will fall between the yellow lines.</p>
+      <p class="black-text">If the value is within 20% of the ideal value, it will fall between the red lines.</p>
+      <p class="black-text">Anything with a variation beyond 20% will fall outside the red lines.</p>
+      <p class="black-text">The vertical pink and green lines separate phases with and without sound.</p>
+      <p class="black-text">The first phase has sound on. A pink vertical line marks a transition where the sound turns
         off. A green vertical line marks a transition where the sound turns back on.</p>
-      <p class="white-text">A score is displayed at the top of the page. This score is calculated based on the interval
+      <p class="black-text">A score is displayed at the top of the page. This score is calculated based on the interval
         lengths. Staying in the green area will maximize your score.</p>
     </div>
   </div>

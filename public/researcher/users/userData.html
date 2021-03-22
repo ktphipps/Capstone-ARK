@@ -37,10 +37,10 @@ Additionally, a researcher can recover the selected user's password or delete th
       <title>RAC | User Data</title>
     </head>
 
-    <body class="grey darken-4">
+    <body class="grey lighten-2">
       <nav>
-        <div id="navbar" class="nav-wrapper blue darken-2">
-          <a href="/index.html" class="brand-logo">RAC</a>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
@@ -51,26 +51,26 @@ Additionally, a researcher can recover the selected user's password or delete th
 
   <div class="container">
 
-    <h1 class="white-text" id="useridheader">User ID:</h1>
+    <h1 class="black-text" id="useridheader">User ID:</h1>
     <!-- Button to open the Account Recovery Modal -->
-    <a class="waves-effect waves-light btn modal-trigger pink darken-2" href="#modal1">Account Recovery</a>
+    <a class="waves-effect waves-light btn modal-trigger grey darken-3" href="#modal1">Account Recovery</a>
     <div id="modal1" class="modal">
-      <div class="modal-content grey darken-4">
+      <div class="modal-content grey lighten-2">
         <!-- Account Recover Modal -->
-        <h2 class="white-text">Account Recovery</h2>
+        <h2 class="black-text">Account Recovery</h2>
         <form class="col s6 width=50% font-size=50% admin-recovery">
           <div class="row">
             <div class="input-field col s12 m6 l6 offset-m2 offset-l2">
               <!-- New password to assign to a user-->
-              <input type="password" id="password" class="white-text">
-              <label class="active white-text" for="password">New Password</label>
+              <input type="password" id="password" class="black-text">
+              <label class="active black-text" for="password">New Password</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l6 offset-m2 offset-l2">
               <!-- Confirm password field -->
-              <input type="password" id="confirmPassword" class="white-text" onkeyup='check();'>
-              <label class="active white-text" for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" class="black-text" onkeyup='check();'>
+              <label class="active black-text" for="confirmPassword">Confirm Password</label>
             </div>
           </div>
           <div class="row">
@@ -83,7 +83,7 @@ Additionally, a researcher can recover the selected user's password or delete th
             <!-- Button to change the password-->
             <div class="input-field col s6 offset-s2">
               <button id="btnChangePassword" disabled="true"
-                class="btn btn-large pink darken-2 waves-effect modal-close" style="margin-left: 1%"><i
+                class="btn btn-large grey darken-3 waves-effect modal-close" style="margin-left: 1%"><i
                   class="material-icons right">chevron_right</i>Change Password</button>
             </div>
           </div>
@@ -92,7 +92,7 @@ Additionally, a researcher can recover the selected user's password or delete th
           <div class="row">
             <!-- Button to delete the user-->
             <div class="input-field col s6 offset-s2">
-              <button id="btnDeleteUser" style="margin-left: 1%" class="btn btn-large pink darken-2 waves-effect"><i class="material-icons right">delete</i>Delete this User</button>
+              <button id="btnDeleteUser" style="margin-left: 1%" class="btn btn-large grey darken-3 waves-effect"><i class="material-icons right">delete</i>Delete this User</button>
             </div>
             <!-- Loading spinner -->
             <div id="spinner" class="loader col" style="visibility: hidden;">
@@ -125,14 +125,14 @@ Additionally, a researcher can recover the selected user's password or delete th
         }
       }
     </script>
-    <h3 class="white-text">User Sessions</h3>
+    <h3 class="black-text">User Sessions</h3>
     <!-- Button to download sessions -->
-    <button id="downloadbutton" class="waves-effect btn-large pink darken-3"><i class="material-icons left">file_download</i>Download</button>
+    <button id="downloadbutton" class="waves-effect btn-large grey darken-3"><i class="material-icons left">file_download</i>Download</button>
     <!-- Button to select or deselect all sessions -->
-    <button class="waves-effect btn-large pink darken-3 disabled" id="select" style="margin-left: 1%">Select/Deselect All</button>
+    <button class="waves-effect btn-large grey darken-3 disabled" id="select" style="margin-left: 1%">Select/Deselect All</button>
 
     <!-- Table of sessions -->
-    <table class="white-text pink darken-3 centered" style="margin-top:3%">
+    <table class="black-text grey darken-3 centered" style="margin-top:3%">
       <thead id="test">
         <tr>
 

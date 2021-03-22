@@ -5,7 +5,7 @@ body {
 }
 
 #startButton {
-  background-color: #ad1457;
+  background-color: #303f9f;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   line-height: 32px;
   border-radius: 2px;
@@ -24,7 +24,7 @@ body {
 
 #startButton:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
-  background-color: #880e4f;
+  background-color: #303f9f;
 }
 
 #gameCanvas {

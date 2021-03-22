@@ -38,10 +38,10 @@ and then proceed to play the game
   <title>RAC | Parameter</title>
 </head>
 
-<body class="grey darken-4">
+<body class="grey lighten-2">
   <nav>
-    <div id="navbar" class="nav-wrapper blue darken-2">
-      <a href="/index.html" class="brand-logo">RAC</a>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -50,46 +50,46 @@ and then proceed to play the game
   </ul>
 
   <div class="container">
-    <h2 class="white-text">Parameter Select</h2>
+    <h2 class="black-text">Parameter Select</h2>
 
     <form class="col s6" action="/user/start.html">
       <div class="row">
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           BPM
           <!-- Beats per minute -->
-          <input type="number" id="BPM" name="BPM" class="white-text tooltipped" data-position="left"  data-tooltip="Beats Per Minute" value="100" min="30" max="1200" required />
+          <input type="number" id="BPM" name="BPM" class="black-text tooltipped" data-position="left"  data-tooltip="Beats Per Minute" value="100" min="30" max="1200" required />
         </p>
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           Time with sound
           <!-- Time with sound -->
-          <input type="number" name="timeWSound" class="white-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" required />
+          <input type="number" name="timeWSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" required />
         </p>
       </div>
       <div class="row">
-        <p class="white-text col s12 m3 l3">Cycles
+        <p class="black-text col s12 m3 l3">Cycles
           <!-- Cycles -->
-          <input type="number" name="cycles" id="cycles" class="white-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" required />
+          <input type="number" name="cycles" id="cycles" class="black-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" required />
         </p>
-        <p class="range-field white-text col s12 m3 l3">
+        <p class="range-field black-text col s12 m3 l3">
           Time without sound
           <!-- Time with sound -->
-          <input type="number" name="timeWOSound" id="timeWOSound" class="white-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" required />
+          <input type="number" name="timeWOSound" id="timeWOSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" required />
         </p>
       </div>
       <div class="row">
-      <p class="white-text">Feedback</p>
+      <p class="black-text">Feedback</p>
       <div class="switch col s3">
-        <label class="white-text">
+        <label class="black-text">
           Off
           <!-- Feedback checkbox -->
-          <input type="checkbox" id="feedback" class="pink" checked>
+          <input type="checkbox" id="feedback" class="indigo" checked>
           <span class="lever tooltipped" data-position="bottom" data-tooltip="If on will show feedback based on tap"></span>
           On
         </label>
       </div>
       <!-- Button to set the parameters in sessionStorage. Clicking this button redirects to the start page -->
       <div class="col">
-        <button onclick="setParams()" class="btn btn-small  pink darken-3 waves-effect">Start Game</button>
+        <button onclick="setParams()" class="btn btn-small  grey darken-3 waves-effect">Start Game</button>
         </div>
       </div>
     </form>
