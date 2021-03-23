@@ -73,7 +73,9 @@ export default class Timer extends Base.Behavior {
         // CREATE VARIABLE THAT CHANGES TRANSPARENCY AS TIME PROGRESSES
         let target = new Base.GameObject(100, 100);
         //target.addComponent(new Components.CircleComponent(30, "white", "white"))
-        target.addComponent(new Components.CircleComponent(30, "../assets/UFOCapstone.png", "none", "image"));
+        let img = new Image()
+        img.src = "./game/assets/UFOCapstone.png"
+        target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
         target.addComponent(new GameBehaviors.GoRight(this.bpm))
         this.scene.children.push(target)
         //Check if we're in the sound on phase

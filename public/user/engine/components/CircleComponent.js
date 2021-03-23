@@ -15,9 +15,7 @@ export default class CircleComponent extends Base.Component{
     draw(ctx){
         ctx.save();
         if(this.type == "image") {
-            this.image = new Image();
-            this.image.src = this.fill;
-            ctx.drawImage(this.image, this.x, this.y);
+            ctx.drawImage(this.fill, this.gameObject.x, this.gameObject.y);
         }
         else {
             ctx.fillStyle = this.fill;
