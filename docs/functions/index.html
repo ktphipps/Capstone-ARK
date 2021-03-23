@@ -5,7 +5,7 @@
   <title>index.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-  <link rel="stylesheet" media="all" href="..\docco.css" />
+  <link rel="stylesheet" media="all" href="docco.css" />
 </head>
 <body>
   <div id="container">
@@ -24,14 +24,14 @@
         <li id="section-1">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-1">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-1">&#x00a7;</a>
               </div>
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> functions = <span class="hljs-built_in">require</span>(<span class="hljs-string">'firebase-functions'</span>);
-<span class="hljs-keyword">const</span> admin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'firebase-admin'</span>)
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> functions = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;firebase-functions&#x27;</span>);
+<span class="hljs-keyword">const</span> admin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;firebase-admin&#x27;</span>)
 
 admin.initializeApp();
 
@@ -41,7 +41,7 @@ admin.initializeApp();
     Takes in a user email, and admin user context
     and adds the admin role to the passed in user
 */</span>
-exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {</pre></div></div>
+<span class="hljs-built_in">exports</span>.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {</pre></div></div>
             
         </li>
         
@@ -49,8 +49,8 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-2">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-2">&#x00a7;</a>
               </div>
               <p>If a user is not authenticated, return an error message</p>
 
@@ -58,7 +58,7 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
             
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (!context.auth)
     {
-        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"The user is not authenticated."</span>};
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;The user is not authenticated.&quot;</span>};
     }</pre></div></div>
             
         </li>
@@ -67,8 +67,8 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-3">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-3">&#x00a7;</a>
               </div>
               <p>If a user is not an admin, return an error message</p>
 
@@ -76,7 +76,7 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
             
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(!context.auth.token.admin)
     {
-        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Only admin users can add other admins."</span>};
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Only admin users can add other admins.&quot;</span>};
     }</pre></div></div>
             
         </li>
@@ -85,8 +85,8 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-4">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-4">&#x00a7;</a>
               </div>
               <p>Get the email of the user that you want to make an admin</p>
 
@@ -100,14 +100,14 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-5">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-5">&#x00a7;</a>
               </div>
               <p>Delete that user’s record from the database</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> docRef = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"users"</span>).doc(user.uid);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> docRef = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(user.uid);
         <span class="hljs-keyword">await</span> docRef.delete();</pre></div></div>
             
         </li>
@@ -116,17 +116,17 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-6">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-6">&#x00a7;</a>
               </div>
               <p>Delete the sessions created by the user</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> sessionQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"sessions"</span>).where(<span class="hljs-string">"userID"</span>, <span class="hljs-string">"=="</span>, user.uid)
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> sessionQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;sessions&quot;</span>).where(<span class="hljs-string">&quot;userID&quot;</span>, <span class="hljs-string">&quot;==&quot;</span>, user.uid)
         <span class="hljs-keyword">await</span> sessionQuery.get().then(<span class="hljs-function"><span class="hljs-params">querySnapshot</span> =&gt;</span> {
             querySnapshot.forEach(<span class="hljs-function"><span class="hljs-params">documentSnapshot</span> =&gt;</span> {
-                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">"sessions"</span>).doc(documentSnapshot.id);
+                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">&quot;sessions&quot;</span>).doc(documentSnapshot.id);
                 documentRef.delete();
             });
         });</pre></div></div>
@@ -137,19 +137,19 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-7">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-7">&#x00a7;</a>
               </div>
               <p>Remove the user from each assignment record that the user was assigned to</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> assignmentQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"assignments"</span>).where(<span class="hljs-string">"userIDs"</span>, <span class="hljs-string">"array-contains"</span>, user.uid);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> assignmentQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;assignments&quot;</span>).where(<span class="hljs-string">&quot;userIDs&quot;</span>, <span class="hljs-string">&quot;array-contains&quot;</span>, user.uid);
         <span class="hljs-keyword">let</span> assignmentPromise = <span class="hljs-keyword">await</span> assignmentQuery.get();
         <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> assignmentDoc <span class="hljs-keyword">of</span> assignmentPromise.docs) {
             <span class="hljs-keyword">let</span> assignedUIDs = <span class="hljs-keyword">await</span> assignmentDoc.data().userIDs;
             <span class="hljs-keyword">await</span> assignedUIDs.splice( assignedUIDs.indexOf(data.uid), <span class="hljs-number">1</span> );
-            <span class="hljs-keyword">let</span> assignmentRef = admin.firestore().collection(<span class="hljs-string">"assignments"</span>).doc(assignmentDoc.id);
+            <span class="hljs-keyword">let</span> assignmentRef = admin.firestore().collection(<span class="hljs-string">&quot;assignments&quot;</span>).doc(assignmentDoc.id);
             
             <span class="hljs-keyword">await</span> assignmentRef.update({
                 <span class="hljs-attr">userIDs</span>: assignedUIDs
@@ -162,8 +162,8 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-8">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-8">&#x00a7;</a>
               </div>
               <p>Set their custom claim to admin: true</p>
 
@@ -172,7 +172,7 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> admin.auth().setCustomUserClaims(user.uid, {
             <span class="hljs-attr">admin</span>: <span class="hljs-literal">true</span>
         });
-    }).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {</pre></div></div>
+    }).then(<span class="hljs-function">() =&gt;</span> {</pre></div></div>
             
         </li>
         
@@ -180,15 +180,15 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-9">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-9">&#x00a7;</a>
               </div>
               <p>Return success message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> {
-            <span class="hljs-attr">message</span>: <span class="hljs-string">'Success! The user has been made an admin.'</span>
+            <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Success! The user has been made an admin.&#x27;</span>
         }
     }).catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {</pre></div></div>
             
@@ -198,8 +198,8 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
         <li id="section-10">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-10">&#x00a7;</a>
               </div>
               <p>Return error message</p>
 
@@ -215,7 +215,7 @@ exports.addAdminRole = functions.https.onCall(<span class="hljs-keyword">async</
     Takes in a user email, and admin user context
     and adds the admin role to the passed in user, no security checks
 */</span>
-exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
+<span class="hljs-built_in">exports</span>.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
     <span class="hljs-keyword">var</span> anyAdmins = getAdmins();
 
     <span class="hljs-keyword">if</span> (!anyAdmins)
@@ -227,8 +227,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-11">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-11">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-11">&#x00a7;</a>
               </div>
               <p>Get the email of the user that you want to make an admin</p>
 
@@ -242,8 +242,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-12">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-12">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-12">&#x00a7;</a>
               </div>
               <p>Set their custom claim to admin: true</p>
 
@@ -252,7 +252,7 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
             <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">return</span> admin.auth().setCustomUserClaims(user.uid, {
                 <span class="hljs-attr">admin</span>: <span class="hljs-literal">true</span>
             });
-        }).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {</pre></div></div>
+        }).then(<span class="hljs-function">() =&gt;</span> {</pre></div></div>
             
         </li>
         
@@ -260,15 +260,15 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-13">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-13">&#x00a7;</a>
               </div>
               <p>Return success message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">return</span> {
-                <span class="hljs-attr">message</span>: <span class="hljs-string">'Success! The user has been made an admin.'</span>
+                <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Success! The user has been made an admin.&#x27;</span>
             }
         }).catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {</pre></div></div>
             
@@ -278,8 +278,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-14">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-14">&#x00a7;</a>
               </div>
               <p>Return error message</p>
 
@@ -290,7 +290,7 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
     }
     <span class="hljs-keyword">else</span>
     {
-        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">'There are admins in the system'</span>};
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;There are admins in the system&#x27;</span>};
     }       
 });
 
@@ -307,8 +307,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-15">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-15">&#x00a7;</a>
               </div>
               <p>Call admin auth api to list users</p>
 
@@ -322,8 +322,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-16">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-16">&#x00a7;</a>
               </div>
               <p>Loop through list of user records</p>
 
@@ -338,8 +338,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-17">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-17">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-17">&#x00a7;</a>
               </div>
               <p>If the user has custom claims</p>
 
@@ -354,8 +354,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-18">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-18">&#x00a7;</a>
               </div>
               <p>If the user has the admin custom claim, return true</p>
 
@@ -374,8 +374,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-19">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-19">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-19">&#x00a7;</a>
               </div>
               <p>If there are more batches of users, call the function again with the pageToken offset</p>
 
@@ -391,8 +391,8 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
         <li id="section-20">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-20">&#x00a7;</a>
               </div>
               <p>If we have gone through entire list, return false</p>
 
@@ -411,7 +411,7 @@ exports.createAdmin = functions.https.onCall(<span class="hljs-keyword">async</s
     Takes in a uid and password and changes the password
     corresponding users password
 */</span>
-exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
+<span class="hljs-built_in">exports</span>.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
     <span class="hljs-keyword">try</span> {</pre></div></div>
             
         </li>
@@ -420,8 +420,8 @@ exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">a
         <li id="section-21">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-21">&#x00a7;</a>
               </div>
               <p>If the user is not authenticated, return an error message</p>
 
@@ -429,7 +429,7 @@ exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">a
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth)
         {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"The user is not authenticated."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;The user is not authenticated.&quot;</span>};
         }</pre></div></div>
             
         </li>
@@ -438,8 +438,8 @@ exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">a
         <li id="section-22">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-22">&#x00a7;</a>
               </div>
               <p>If the user is not an admin, return an error message</p>
 
@@ -447,14 +447,14 @@ exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">a
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth.token.admin)
         {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Only admin users can change other users' passwords."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Only admin users can change other users&#x27; passwords.&quot;</span>};
         }
 
         admin.auth().updateUser(data.uid, {
             <span class="hljs-attr">password</span>: data.password
         });
 
-        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Successfully updated user password."</span>};
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Successfully updated user password.&quot;</span>};
     }
     <span class="hljs-keyword">catch</span> (error)
     {
@@ -467,7 +467,7 @@ exports.changeUserPassword = functions.https.onCall(<span class="hljs-keyword">a
     param: uid
     Deletes a user based on the passed in uid
 */</span>
-exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
+<span class="hljs-built_in">exports</span>.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</span>(data, context) =&gt; {
     <span class="hljs-keyword">try</span> {</pre></div></div>
             
         </li>
@@ -476,15 +476,15 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-23">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-23">&#x00a7;</a>
               </div>
               <p>If the user is not authentication, return an error message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth) {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"The user is not authenticated."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;The user is not authenticated.&quot;</span>};
         }</pre></div></div>
             
         </li>
@@ -493,15 +493,15 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-24">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-24">&#x00a7;</a>
               </div>
               <p>If the user is not an admin, return an error message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth.token.admin) {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Only admin users can delete users."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Only admin users can delete users.&quot;</span>};
         }</pre></div></div>
             
         </li>
@@ -510,8 +510,8 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-25">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-25">&#x00a7;</a>
               </div>
               <p>Delete the user from firebase auth</p>
 
@@ -525,14 +525,14 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-26">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-26">&#x00a7;</a>
               </div>
               <p>Delete the user from users document</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> userDoc = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"users"</span>).doc(data.uid);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> userDoc = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(data.uid);
         <span class="hljs-keyword">await</span> userDoc.delete();</pre></div></div>
             
         </li>
@@ -541,17 +541,17 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-27">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-27">&#x00a7;</a>
               </div>
               <p>Delete the sessions created by the user</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> sessionQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"sessions"</span>).where(<span class="hljs-string">"userID"</span>, <span class="hljs-string">"=="</span>, data.uid)
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> sessionQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;sessions&quot;</span>).where(<span class="hljs-string">&quot;userID&quot;</span>, <span class="hljs-string">&quot;==&quot;</span>, data.uid)
         <span class="hljs-keyword">await</span> sessionQuery.get().then(<span class="hljs-function"><span class="hljs-params">querySnapshot</span> =&gt;</span> {
             querySnapshot.forEach(<span class="hljs-function"><span class="hljs-params">documentSnapshot</span> =&gt;</span> {
-                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">"sessions"</span>).doc(documentSnapshot.id);
+                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">&quot;sessions&quot;</span>).doc(documentSnapshot.id);
                 documentRef.delete();
             });
         });</pre></div></div>
@@ -562,19 +562,19 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-28">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-28">&#x00a7;</a>
               </div>
               <p>Remove the user from each assignment record that the user was assigned to</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> assignmentQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"assignments"</span>).where(<span class="hljs-string">"userIDs"</span>, <span class="hljs-string">"array-contains"</span>, data.uid);
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> assignmentQuery = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;assignments&quot;</span>).where(<span class="hljs-string">&quot;userIDs&quot;</span>, <span class="hljs-string">&quot;array-contains&quot;</span>, data.uid);
         <span class="hljs-keyword">let</span> assignmentPromise = <span class="hljs-keyword">await</span> assignmentQuery.get();
         <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> assignmentDoc <span class="hljs-keyword">of</span> assignmentPromise.docs) {
             <span class="hljs-keyword">let</span> assignedUIDs = <span class="hljs-keyword">await</span> assignmentDoc.data().userIDs;
             <span class="hljs-keyword">await</span> assignedUIDs.splice( assignedUIDs.indexOf(data.uid), <span class="hljs-number">1</span> );
-            <span class="hljs-keyword">let</span> assignmentRef = admin.firestore().collection(<span class="hljs-string">"assignments"</span>).doc(assignmentDoc.id);
+            <span class="hljs-keyword">let</span> assignmentRef = admin.firestore().collection(<span class="hljs-string">&quot;assignments&quot;</span>).doc(assignmentDoc.id);
             
             <span class="hljs-keyword">await</span> assignmentRef.update({
                 <span class="hljs-attr">userIDs</span>: assignedUIDs
@@ -582,7 +582,7 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         }
 
 
-        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Successfully deleted user"</span>};
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Successfully deleted user&quot;</span>};
     } <span class="hljs-keyword">catch</span>(error) {
         <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: error.message};
     }
@@ -595,7 +595,7 @@ exports.deleteUser = functions.https.onCall(<span class="hljs-keyword">async</sp
     and creates a new user based on the passed in email and password
 
 */</span>
-exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</span> (data, context) =&gt; {
+<span class="hljs-built_in">exports</span>.createUser = functions.https.onCall(<span class="hljs-keyword">async</span> (data, context) =&gt; {
     <span class="hljs-keyword">try</span> {</pre></div></div>
             
         </li>
@@ -604,15 +604,15 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-29">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-29">&#x00a7;</a>
               </div>
               <p>If the user is not authenticated, return an error message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth) {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"The user is not authenticated."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;The user is not authenticated.&quot;</span>};
         }</pre></div></div>
             
         </li>
@@ -621,15 +621,15 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-30">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-30">&#x00a7;</a>
               </div>
               <p>If the user is not an admin, return an error message</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(!context.auth.token.admin) {
-            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">"Only admin users can create new users."</span>};
+            <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;Only admin users can create new users.&quot;</span>};
         }</pre></div></div>
             
         </li>
@@ -638,8 +638,8 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-31">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-31">&#x00a7;</a>
               </div>
               <p>Construct a new user object</p>
 
@@ -656,8 +656,8 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-32">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-32">&#x00a7;</a>
               </div>
               <p>Create a new user using the admin API</p>
 
@@ -665,7 +665,7 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">const</span> userRecord = <span class="hljs-keyword">await</span> admin.auth().createUser(newUser);
         <span class="hljs-keyword">const</span> userUID = userRecord.uid;
-        <span class="hljs-keyword">const</span> userID = data.email.split(<span class="hljs-string">"@"</span>)[<span class="hljs-number">0</span>];</pre></div></div>
+        <span class="hljs-keyword">const</span> userID = data.email.split(<span class="hljs-string">&quot;@&quot;</span>)[<span class="hljs-number">0</span>];</pre></div></div>
             
         </li>
         
@@ -673,8 +673,8 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-33">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-33">&#x00a7;</a>
               </div>
               <p>Construct a new database record object</p>
 
@@ -691,15 +691,15 @@ exports.createUser = functions.https.onCall(<span class="hljs-keyword">async</sp
         <li id="section-34">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-34">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-34">&#x00a7;</a>
               </div>
               <p>Create a new document in the users collection with the document
 ID as the user uid</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">"users"</span>).doc(userUID).set(dbRecord);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(userUID).set(dbRecord);</pre></div></div>
             
         </li>
         
@@ -707,15 +707,24 @@ ID as the user uid</p>
         <li id="section-35">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-35">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-35">&#x00a7;</a>
               </div>
-              <p>Return success message</p>
+              <p>Create a new subcollection with documents containing the user’s highest score for each level</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">'Success! The user has been created.'</span>}
-    } <span class="hljs-keyword">catch</span> (error) {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">const</span> numWorlds = <span class="hljs-number">3</span>;
+        <span class="hljs-keyword">const</span> numLevels = <span class="hljs-number">11</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> w = <span class="hljs-number">1</span>; w &lt;= numWorlds; w++) {    
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> l = <span class="hljs-number">1</span>; l &lt;= numLevels; l++) {
+                <span class="hljs-keyword">let</span> docData = {
+                    <span class="hljs-attr">highScore</span>: <span class="hljs-number">0</span>
+                };
+                <span class="hljs-keyword">var</span> docName = <span class="hljs-string">&quot;World&quot;</span> + w + <span class="hljs-string">&quot;Level&quot;</span> + l;
+                <span class="hljs-keyword">var</span> res = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(userUID).collection(<span class="hljs-string">&quot;highscores&quot;</span>).doc(docName).set(docData);
+            }
+        }</pre></div></div>
             
         </li>
         
@@ -723,8 +732,24 @@ ID as the user uid</p>
         <li id="section-36">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-36">&#182;</a>
+              <div class="sswrap ">
+                <a class="ss" href="#section-36">&#x00a7;</a>
+              </div>
+              <p>Return success message</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> {<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Success! The user has been created.&#x27;</span>}
+    } <span class="hljs-keyword">catch</span> (error) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-37">&#x00a7;</a>
               </div>
               <p>Return error message</p>
 
