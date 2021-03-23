@@ -30,7 +30,7 @@ export default class PlayScene extends Engine.Base.Scene {
         spaceLaser.addComponent(TapHandler);
 
         //Create a CircleBehavior behavior and add it to the spaceLaser GameObject
-        let LaserBehavior = new GameBehaviors.LaserBehavior(feedback);
+        let LaserBehavior = new GameBehaviors.LaserBehavior(feedback, this);
         spaceLaser.addComponent(LaserBehavior);
 
         //Create the intruction guideText GameObject

@@ -8,6 +8,7 @@ export default class GoRight extends Base.Behavior {
     FramesPerMinute = 2000;
     DistPerBeat = 320;
     bpm;
+    tag = "GoRight";
 
     constructor(bpm) {
         super();
@@ -21,7 +22,7 @@ export default class GoRight extends Base.Behavior {
 		Initializes this behavior. Called when EdGE intializes
 	*/
     start() {
-        console.log(this.bpm * this.DistPerBeat / this.FramesPerMinute)
+        //console.log(this.bpm * this.DistPerBeat / this.FramesPerMinute)
 
     }
 

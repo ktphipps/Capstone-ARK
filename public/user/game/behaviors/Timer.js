@@ -67,9 +67,15 @@ export default class Timer extends Base.Behavior {
         Handles any necessary volume changes and plays the beat sound.
     */
     playBeat() {
-        console.log(this.scene)
-        let target = new Base.GameObject(15, 100);
-        target.addComponent(new Components.CircleComponent(30, "white", "white"))
+
+        // NEED TO ATTACH ASSETS TO THESE GAME OBJECTS, THEN MAKE THEM GO TRANSPARENT OVER TIME.
+        // USE UPDATE FUNCTION FROM TEXTCONTROLLER FOR IDEA
+        // CREATE VARIABLE THAT CHANGES TRANSPARENCY AS TIME PROGRESSES
+        let target = new Base.GameObject(100, 100);
+        let img = new Image()
+        img.src = "./game/assets/UFOCapstone.png"
+        //target.addComponent(new Components.CircleComponent(30, "white", "white", "circle"))
+        target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
         target.addComponent(new GameBehaviors.GoRight(this.bpm))
         this.scene.children.push(target)
         //Check if we're in the sound on phase

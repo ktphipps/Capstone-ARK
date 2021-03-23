@@ -11,10 +11,12 @@ export default class LaserBehavior extends Base.Behavior {
     rectangle;
     tapHandler;
     feedback;
+    scene;
 
-    constructor(feedback) {
+    constructor(feedback, scene) {
         super();
         this.feedback = feedback;
+        this.scene = scene;
     }
 
     /*
@@ -53,6 +55,9 @@ export default class LaserBehavior extends Base.Behavior {
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
+
+            //let thisTarget = this.scene.children.find(t => t.components.find(c => c.tag == "GoRight") != undefined)
+            //console.log(thisTarget)
             
             //If feedback is enabled
             if(this.feedback == "true") {
@@ -61,16 +66,28 @@ export default class LaserBehavior extends Base.Behavior {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
                         this.rectangle.fill = "green";
+                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
                         this.rectangle.fill = "yellow"
+                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
                     }
                     //Otherwise color the circle red
                     else {
                         this.rectangle.fill = "red";
+                        //change the tag of the missed target
+                        //thisTarget.components.find(c => c.tag == "GoRight").tag = "MissedTarget";
                     }
                 }
+            }
+
+            let targetsMinRange = this.scene.children.filter(c => c.x > 275);
+            let targetsMaxRange = targetsMinRange.filter(target => target.x < 365);
+            let targets = targetsMaxRange.find(target => target.components.find(c => c.tag == "GoRight") != undefined);
+                        
+            if (targets != undefined ) {
+                this.scene.children.splice(this.scene.children.findIndex(c => c == targets), 1);
             }
         } 
 
