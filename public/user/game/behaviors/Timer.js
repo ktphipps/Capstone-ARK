@@ -72,9 +72,9 @@ export default class Timer extends Base.Behavior {
         // USE UPDATE FUNCTION FROM TEXTCONTROLLER FOR IDEA
         // CREATE VARIABLE THAT CHANGES TRANSPARENCY AS TIME PROGRESSES
         let target = new Base.GameObject(100, 100);
-        //target.addComponent(new Components.CircleComponent(30, "white", "white"))
         let img = new Image()
         img.src = "./game/assets/UFOCapstone.png"
+        //target.addComponent(new Components.CircleComponent(30, "white", "white", "circle"))
         target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
         target.addComponent(new GameBehaviors.GoRight(this.bpm))
         this.scene.children.push(target)
