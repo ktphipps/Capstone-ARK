@@ -19,6 +19,9 @@ A page that displays the levels of world 1 available to the patient to play.
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/user/param.css">
+    <link rel="stylesheet" href="./worlds.css">
+    <link rel="stylesheet" href="../skeleton.css">
+    <link rel="stylesheet" href="../normalize.css">
     <script src="/__/firebase/7.9.2/firebase-app.js"></script>
     <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
     <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
@@ -40,51 +43,129 @@ A page that displays the levels of world 1 available to the patient to play.
       <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/researcher/rPortal.html">Research Portal</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/researcher/rPortal.html" style="font-size: large;">Research Portal</a></li>
+        <li><a href="#" style="font-size: large;">About</a></li>
+        <li><a href="contact.html" style="font-size: large;">Contact</a></li>
       </ul>
     </div>
 </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/researcher/rPortal.html">Research Portal</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="/researcher/rPortal.html" style="font-size: large;">Research Portal</a></li>
+    <li><a href="#" style="font-size: large;">About</a></li>
+    <li><a href="contact.html" style="font-size: large;">Contact</a></li>
   </ul>
 
       <br><br>
         <div class="container">
-              <h1 class="black-text">World 3</h1>
+              <h1 class="black-text" style="font-size: xx-large;">World 3</h1>
               <!-- Information about this project -->
-              <p class="black-text flow-text">Choose a level. Complete levels and earn stars to unlock more.</p>
-              <p id="stars" class="black-text flow-text">Stars: ...</p>
+              <p class="black-text flow-text" style="font-size: large;">Choose a level. Complete levels and earn stars to unlock more.</p>
+              <p id="stars" class="black-text flow-text" style="font-size: larger;">Stars: ...</p>
               
-              <div class="row">
-                <!-- There will be 11 levels -->
-
-                <div class="col offset-4">
-                  <!-- Button to redirect to Level 1 -->
-                  <!-- <button id="btnPlay" class="btn grey darken-3 waves-effect" onclick="location.href='/world1levels.html';" type="button">Level 1</button> -->
-                  
-                  <!--100 BPM, 20 seconds Time With Sound, 1 Cycle, 10 seconds Time Without Sound, On Feedback -->
-                  <form action="/user/start.html">
-                    <button onclick="setPresetParams(3, 1, 100, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 1</button>
-                    <button onclick="setPresetParams(3, 2, 90, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 2</button>
-                    <button onclick="setPresetParams(3, 3, 110, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 3</button>
-                    <button onclick="setPresetParams(3, 4, 80, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 4</button>
-                    <button onclick="setPresetParams(3, 5, 120, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 5</button>
-                    <button onclick="setPresetParams(3, 6, 70, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 6</button>
-                    <button onclick="setPresetParams(3, 7, 130, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 7</button>
-                    <button onclick="setPresetParams(3, 8, 60, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 8</button>
-                    <button onclick="setPresetParams(3, 9, 140, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 9</button>
-                    <button onclick="setPresetParams(3, 10, 50, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 10</button>
-                    <button onclick="setPresetParams(3, 11, 150, 5, 1, 10, true)" class="btn btn-small  grey darken-3 waves-effect">Level 11</button>
-                  </form>
-                </div>
-
-                
-              </div>
+              <form action="/user/start.html">
+                <table style="width:100%">
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 1, 100, 10, 1, 20, true)" id="lvl"
+                        class="btn grey darken-3 waves-effect">Level 1</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>100 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 2, 90, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 2</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>90 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 3, 110, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 3</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>110 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 4, 80, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 4</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>80 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 5, 120, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 5</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>120 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 6, 70, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 6</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>70 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 7, 130, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 7</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>130 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 8, 60, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 8</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>60 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 9, 140, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 9</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>140 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 10, 50, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 10</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>50 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="lvl" class="two columns">
+                      <button onclick="setPresetParams(1, 11, 150, 10, 1, 20, true)" id="lvl"
+                      class="btn grey darken-3 waves-effect">Level 11</button>
+                    </td>
+                    <td class="black-text ten columns" style="font-size: large;" id="info">
+                      <span>150 BPM, 10 seconds with feedback, 20 seconds without feedback</span>
+                    </td>
+                  </tr>
+                </table>
+              </form>
 
         <!-- End of Container -->
         </div>
