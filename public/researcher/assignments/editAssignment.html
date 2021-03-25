@@ -22,6 +22,8 @@ or even delete the assignment.
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/user/param.css">
+  <link rel="stylesheet" href="../../normalize.css">
+  <link rel="stylesheet" href="../../skeleton.css">
   <script src="/__/firebase/7.9.2/firebase-app.js"></script>
   <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
   <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
@@ -39,10 +41,10 @@ or even delete the assignment.
   <title>RAC | Edit Assignment</title>
 </head>
 
-<body class="grey darken-4">
+<body class="grey lighten-2">
   <nav>
-    <div id="navbar" class="nav-wrapper blue darken-2">
-      <a href="/index.html" class="brand-logo">RAC</a>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -50,106 +52,105 @@ or even delete the assignment.
   <ul class="sidenav" id="mobile-demo">
   </ul>
 
-  <div class="container">
-    <h2 class="white-text" id="assignmentidheader">Assignment: </h2>
-    <h3 class="white-text">Edit Assignment</h3>
-    <div class="row">
-      <div class="input-field col s12 m6 l6">
-        <!-- Assignment name -->
-        <input  id="assignment_name" type="text" class="validate white-text" value=" ">
-        <label for="assignment_name" class="white-text">Assignment Name</label>
+  <div class="container row" style="padding-top: 50px">
+    <div class="eight columns">
+      <h2 class="black-text" id="assignmentidheader">Assignment: </h2>
+      <!-- <h3 class="black-text">Edit Assignment</h3> -->
+      <div class="row">
+        <!-- <div class="input-field col s12 m6 l6"> -->
+          <!-- Assignment name -->
+          <input  id="assignment_name" type="text" class="validate black-text" value=" ">
+          <label for="assignment_name" class="black-text" style="font-size: small;">Assignment Name</label>
+        <!-- </div> -->
       </div>
-    </div>
-    <div class="row">
-      <p class="range-field white-text col s12 m3 l3">
-        BPM
-        <!-- Beats per Minute -->
-      <input type="number" id="BPM" name="BPM" class="white-text tooltipped" data-position="left"
-          data-tooltip="Beats Per Minute" value="100" min="30" max="1200" />
-      </p>
-      <p class="range-field white-text col s12 m3 l3">
-        Time with sound
-        <!-- Time with Sound -->
-        <input type="number" name="timeWSound" class="white-text tooltipped" data-position="right"
-          data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" />
-      </p>
-    </div>
-    <div class="row">
-      <p class="white-text col s12 m3 l3">Cycles
-        <!-- Number of Cycles -->
-        <input type="number" name="cycles" id="cycles" class="white-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
-      </p>
-      <p class="range-field white-text col s12 m3 l3">
-        Time without sound
-        <!--Time without sound -->
-        <input type="number" name="timeWOSound" id="timeWOSound" class="white-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
-      </p>
-    </div>
-    <div class="row">
-      <div class="col s3">
-        <p class="white-text">Feedback</p>
-        <div class="switch">
-          <label class="white-text">
-            Off
-            <input type="checkbox" id="feedback" class="pink rip_kobe" checked>
-            <span class="lever tooltipped" data-position="bottom"
-              data-tooltip="If on will show feedback based on tap"></span>
-            On
-          </label>
+      <div class="row">
+        <p class="range-field black-text col s12 m6 l3">
+          BPM
+          <!-- Beats per Minute -->
+        <input type="number" id="BPM" name="BPM" class="black-text tooltipped" data-position="left"
+            data-tooltip="Beats Per Minute" value="100" min="30" max="1200" />
+        </p>
+        <p class="range-field black-text col s12 m6 l3">
+          Time with sound
+          <!-- Time with Sound -->
+          <input type="number" name="timeWSound" class="black-text tooltipped" data-position="right"
+            data-tooltip="Number of seconds where beat will be played" id="timeWSound" value="10" min="1" max="180" />
+        </p>
+        <p class="black-text col s12 m6 l3">Cycles
+          <!-- Number of Cycles -->
+          <input type="number" name="cycles" id="cycles" class="black-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
+        </p>
+        <p class="range-field black-text col s12 m6 l3">
+          Time without sound
+          <!--Time without sound -->
+          <input type="number" name="timeWOSound" id="timeWOSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
+        </p>
+      </div>
+      <div class="row">
+        <div class="six columns" style="display: flex; justify-content: center;">
+          <div class="switch">
+            <p class="black-text" style="font-size: medium; margin:0 auto">Feedback</p>
+            <label class="black-text" style="font-size: small; margin:0 auto">
+              Off
+              <input type="checkbox" id="feedback" class="indigo rip_kobe" checked>
+              <span class="lever tooltipped" data-position="bottom"
+                data-tooltip="If on will show feedback based on tap"></span>
+              On
+            </label>
+          </div>
+        </div>
+        <div class="six columns" style="display: flex; justify-content: center;">
+          <div class="switch">
+            <p class="black-text" style="font-size: medium; margin:0 auto">Default Assignments</p>
+            <label class="black-text" style="font-size: small; margin:0 auto">
+              No
+              <input type="checkbox" id="default" class="indigo rip_kobe">
+              <span class="lever tooltipped" data-position="bottom"
+                data-tooltip="If yes, all users will receive this assignment"></span>
+              Yes
+            </label>
+          </div>
         </div>
       </div>
-      <div class="col s3">
-        <p class="white-text">Default Assignments</p>
-        <div class="switch">
-          <label class="white-text">
-            No
-            <input type="checkbox" id="default" class="pink rip_kobe">
-            <span class="lever tooltipped" data-position="bottom"
-              data-tooltip="If yes, all users will receive this assignment"></span>
-            Yes
-          </label>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button id="btnSetAssignment" class="btn btn-small  grey darken-3 waves-effect"><i
+              class="material-icons right">assignment</i>Set Assignment</button>
+        </div>
+        <div class="col">
+          <button id="btnDeleteAssignment" class="btn btn-small grey darken-3 waves-effect4"><i
+              class="material-icons right">delete</i>Delete Assignment</button>
         </div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col">
-        <button id="btnSetAssignment" class="btn btn-small  pink darken-3 waves-effect"><i
-            class="material-icons right">assignment</i>Set Assignment</button>
-      </div>
-      <div class="col">
-        <button id="btnDeleteAssignment" class="btn btn-small pink darken-3 waves-effect4"><i
-            class="material-icons right">delete</i>Delete Assignment</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h3 class="white-text">Users</h3>
-    <!-- Button that assigns the assignment to selected users -->
-    <button id="btnAssignToUsers" class="waves-effect btn-large pink darken-3"><i
-        class="material-icons right">assignment_ind</i>Assign to Selected Users</button>
-    <!-- Button to select or deselect all users-->
-    <button id="btnSelectAll" class="waves-effect btn-large pink darken-3" style="margin-left: 1%">Select/Deselct All</button>
-    <!-- Table of all users in the system -->
-    <table class="highlight white-text pink darken-3 centered" style="margin-top:3%; margin-bottom:3%">
-      <thead>
-        <tr>
-          <th>User ID</th>
-          <th>Last Session</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody id="tablebody">
-      </tbody>
-    </table>
-
-    <div class="row">
-      <div class="col offset-s4">
-      <ul class="pagination" id="pagination">
-     </ul>
+    
+    <div class="four columns">
+      <h3 class="black-text">Users</h3>
+      <!-- Button that assigns the assignment to selected users -->
+      <button id="btnAssignToUsers" class="waves-effect btn-large grey darken-3">Assign to Selected Users</button>
+      <!-- Button to select or deselect all users-->
+      <button id="btnSelectAll" class="waves-effect btn-large grey darken-3" style="margin-left: 1%">Select/Deselct All</button>
+      <!-- Table of all users in the system -->
+      <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%; margin-bottom:3%; margin-right: 3%;">
+        <thead>
+          <tr>
+            <th style="padding-left: 12px;">User ID</th>
+            <th>Last Session</th>
+            <th style="padding-right: 12px;">Select</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+        </tbody>
+      </table>
+  
+      <div class="row">
+        <div class="col offset-s4">
+        <ul class="pagination" id="pagination">
+       </ul>
+       </div>
      </div>
-   </div>
+    </div>
   </div>
 
   <script src="/navbar.js" type="module"></script>

@@ -20,6 +20,7 @@ contains links to assignments.html, createassignment.html, and createuser.html
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       <link rel="stylesheet" href="/spinner.css">
+      <link rel="stylesheet" href="rPortal.css">
       <script src="/__/firebase/7.9.2/firebase-app.js"></script>
       <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
       <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
@@ -42,10 +43,10 @@ contains links to assignments.html, createassignment.html, and createuser.html
       <title>RAC | Researcher</title>
     </head>
 
-    <body class="grey darken-4">
+    <body class="grey lighten-2">
       <nav>
-        <div id="navbar" class="nav-wrapper blue darken-2">
-          <a href="/index.html" class="brand-logo">RAC</a>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
@@ -55,23 +56,23 @@ contains links to assignments.html, createassignment.html, and createuser.html
 
   <div class="container">
       <!-- Heading to welcome the user -->
-      <h1 class="white-text" id="greeting"></h1>
-      <h3 class="white-text">View Users</h3>
+      <h1 class="black-text" id="greeting"></h1>
+      <h3 class="black-text">View Users</h3>
         <!-- Modal to give a user admin privileges-->
           <div id="modal1" class="modal">
-            <div class="modal-content grey darken-4">
-              <h2 class="white-text">Create an Admin User</h2>
+            <div class="modal-content grey lighten-2">
+              <h2 class="black-text">Create an Admin User</h2>
               <form class="col s12 width=50% font-size=50% admin-action">
                 <div class="row">
                   <div class="input-field col s6">
                     <!-- Email of the user the researcher wants to give admin privileges -->
-                    <input type="email" id="admin-email" class="white-text"/>
-                    <label class="active white-text" for="admin-email">Enter a user to make an admin</label>
+                    <input type="email" id="admin-email" class="black-text"/>
+                    <label class="active black-text" for="admin-email">Enter a user to make an admin</label>
                   </div>
                 </div>
                 <div class="row">
                   <!-- Button to make a user an admin -->
-                  <button id="btnMakeAdmin" class="btn btn-small pink darken-3 waves effect">Make Admin</button>
+                  <button id="btnMakeAdmin" class="btn btn-small grey darken-3 waves effect">Make Admin</button>
                 </div>
                 <!-- Loading spinner -->
                 <div id="spinner" class="loader col" style="visibility: hidden;">
@@ -94,17 +95,17 @@ contains links to assignments.html, createassignment.html, and createuser.html
       <div class="row">
         <div class="col " style="padding-top:3.5%">
           <!-- Button to open up modal -->
-          <a class="waves-effect waves-light btn modal-trigger pink darken-2" href="#modal1">Make a User an Admin</a>
+          <a class="waves-effect waves-light btn modal-trigger grey darken-3" href="#modal1">Make a User an Admin</a>
         </div>
-        <div class="col s12 m4 l4 offset-m6 offset-l5">
+        <div class="col s12 m4 l4 offset-m6 offset-l5" style="padding-top:3.5%">
           <!-- Search box to filter through users in the system -->
-          <input type="text" id="search" style="margin-top:8%"  class="white-text" placeholder="Search User Id...">
+          <input type="text" id="search" style="color: black; opacity: 1 !important;" placeholder="Search User Id...">
         </div>
 
       </div>
 
       <!-- Table of all users in the system -->
-      <table class="highlight white-text pink darken-3 centered" style="margin-top:3%">
+      <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
         <thead>
           <tr>
               <th>User ID</th>

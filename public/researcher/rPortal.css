@@ -1,0 +1,18 @@
+::-webkit-input-placeholder {
+    color: black;
+    opacity: 1 !important; /* for older chrome versions. may no longer apply. */
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: black;
+    opacity: 1 !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: black;
+    opacity: 1 !important;
+}
+
+:-ms-input-placeholder {  
+   color: black;
+}

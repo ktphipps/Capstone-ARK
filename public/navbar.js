@@ -50,6 +50,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
             if(window.location.pathname != pathname){
                 let listItem = document.createElement("li");
                 let itemContents = document.createElement("a");
+                itemContents.style = "font-size: large;"
                 //Add logout functionality to the logout button
                 if(element.link == "Logout") {
                     itemContents.addEventListener("click", e => {
@@ -77,7 +78,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     }
 });
 
-/*      <div class="nav-wrapper blue darken-2">
+/*      <div class="nav-wrapper indigo darken-2">
             <a href="#!" class="brand-logo">Scots</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
