@@ -18,3 +18,8 @@ span {
 th, td {
     border-top: 10px solid #e1e1e1 !important;
 }
+
+img {
+    height: 25px;
+    width: 25px;
+}
