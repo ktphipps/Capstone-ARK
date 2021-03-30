@@ -68,12 +68,22 @@ export default class Timer extends Base.Behavior {
     */
     playBeat() {
 
-        // NEED TO ATTACH ASSETS TO THESE GAME OBJECTS, THEN MAKE THEM GO TRANSPARENT OVER TIME.
-        // USE UPDATE FUNCTION FROM TEXTCONTROLLER FOR IDEA
-        // CREATE VARIABLE THAT CHANGES TRANSPARENCY AS TIME PROGRESSES
+        // MIGHT NEED TO CHANGE THE TIMING OF THE FADE OUT
         let target = new Base.GameObject(100, 100);
         let img = new Image()
-        img.src = "./game/assets/UFOCapstone.png"
+        if (this.currentTime >= (this.startTime + (0.75 * this.soundPhaseTime)) && this.startTime != -1) {
+            img.src = "./game/assets/UFO/UFOCapstoneTransparent.png";
+        }
+        else if (this.currentTime >= (this.startTime + (0.50 * this.soundPhaseTime)) && this.startTime != -1) {
+            img.src = "./game/assets/UFO/UFOCapstoneTwoThirdsTransparent.png";
+        }
+        else if (this.currentTime >= (this.startTime + (0.25 * this.soundPhaseTime)) && this.startTime != -1) {
+            img.src = "./game/assets/UFO/UFOCapstoneOneThirdTransparent.png";
+        }
+        else {
+            img.src = "./game/assets/UFO/UFOCapstone.png";
+        }
+        
         //target.addComponent(new Components.CircleComponent(30, "white", "white", "circle"))
         target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
         target.addComponent(new GameBehaviors.GoRight(this.bpm))
