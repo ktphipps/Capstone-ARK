@@ -115,13 +115,13 @@ for (let i = 1; i < cycles; i++) {
 }
 
 
+//https://www.chartjs.org/docs/ Docs for charts
 //Create the chart for the intertap interval graph
 let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
     type: 'scatter',
     data: {
         fill: true,
-        // backgroundColor: 'rgba(255, 99, 132, 1)',
-        backgroundColor: 'gainsboro',
+        backgroundColor: 'black',
         datasets: [{
             order: 0,
             label: 'Inter-tap Interval',
@@ -129,38 +129,39 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             pointStyle: 'rectRot',
             radius: 5,
             hoverRadius: 10,
-            // borderColor: 'rgba(255, 99, 132, 1)',
-            borderColor: 'gainsboro',
+            borderColor: 'black',
             borderWidth: 1.2
         },
         {
+            label: 'Great',
             data: greenZonePosInterval,
             borderColor: 'rgba(44, 155, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(44, 155, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 4
         }, {
+            label: 'Good',
             data: yellowZonePosInterval,
             borderColor: 'rgba(218, 251, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(218, 251, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 1
         }, {
+            label: 'Pass',
             data: redZonePosInterval,
             borderColor: 'rgba(194, 33, 9, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(194, 33, 9, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 2
         }, {
             data: greenZoneNegInterval,
             borderColor: 'rgba(44, 155, 8, 0.8)',
-            borderDash: [5, 15],
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -168,24 +169,24 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
         }, {
             data: yellowZoneNegInterval,
             borderColor: 'rgba(218, 251, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(218, 251, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 4
         }, {
             data: redZoneNegInterval,
             borderColor: 'rgba(194, 33, 9, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(194, 33, 9, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 5
         },
         {
+            label: "Sound Off",
             data: soundOffLineInterval,
-            borderColor: 'rgba(255, 99, 132, 0.3)',
-            borderDash: [5, 15],
+            borderColor: 'black',
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -195,7 +196,6 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
         {
             data: soundOnLineInterval,
             borderColor: 'rgba(12, 176, 12, 0.3)',
-            borderDash: [5, 15],
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -206,6 +206,10 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
     options: {
         scales: {
             yAxes: [{
+                title: {
+                    display: true,
+                    text: "something",
+                },
                 ticks: {
                     beginAtZero: false,
                     max: yMaxInterval,
@@ -213,6 +217,10 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
                 }
             }],
             xAxes: [{
+                title: {
+                    display: true,
+                    text: "something",
+                },
                 ticks: {
                     max: xMax
                 }
@@ -222,20 +230,20 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
             labels: {
                 //Only display the label for the accuracy of taps
                 filter: function (legendItem, data) {
-                    return legendItem.datasetIndex == 0;
+                    return legendItem.datasetIndex < 4 && legendItem.datasetIndex > 0 || legendItem.datasetIndex == 7;
                 }
             }
         }
     }
 });
 
+//https://www.chartjs.org/docs/ Docs for charts
 //Create the chart for the asynchrony graph
 let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
     type: 'scatter',
     data: {
         fill: true,
-        backgroundColor: 'gainsboro',
-        // backgroundColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'black',
         datasets: [{
             order: 0,
             label: 'Asynchrony',
@@ -243,38 +251,39 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             pointStyle: 'rectRot',
             radius: 5,
             hoverRadius: 10,
-            borderColor: 'gainsboro',
-            // borderColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'black',
             borderWidth: 1.2
         },
         {
+            label: "Great",
             data: greenZonePosAsynchrony,
             borderColor: 'rgba(44, 155, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(44, 155, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 4
         }, {
+            label: "Good",
             data: yellowZonePosAsynchrony,
             borderColor: 'rgba(218, 251, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(218, 251, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 1
         }, {
+            label: "Pass",
             data: redZonePosAsynchrony,
             borderColor: 'rgba(194, 33, 9, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(194, 33, 9, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 2
         }, {
             data: greenZoneNegAsynchrony,
             borderColor: 'rgba(44, 155, 8, 0.8)',
-            borderDash: [5, 15],
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -282,24 +291,24 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
         }, {
             data: yellowZoneNegAsynchrony,
             borderColor: 'rgba(218, 251, 8, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(218, 251, 8, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 4
         }, {
             data: redZoneNegAsynchrony,
             borderColor: 'rgba(194, 33, 9, 0.8)',
-            borderDash: [5, 15],
+            backgroundColor: 'rgba(194, 33, 9, 0.3)',
             type: 'line',
             showLine: true,
             pointRadius: 0,
-            fill: false
+            fill: 5
         },
         {
+            label: "Sound Off",
             data: soundOffLineAsynchrony,
-            borderColor: 'rgba(255, 99, 132, 0.3)',
-            borderDash: [5, 15],
+            borderColor: 'black',
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -309,7 +318,6 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
         {
             data: soundOnLineAsynchrony,
             borderColor: 'rgba(12, 176, 12, 0.3)',
-            borderDash: [5, 15],
             type: 'line',
             showLine: true,
             pointRadius: 0,
@@ -336,7 +344,7 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
             labels: {
                 //Only display the label for the accuracy of taps
                 filter: function (legendItem, data) {
-                    return legendItem.datasetIndex == 0;
+                    return legendItem.datasetIndex > 0 && legendItem.datasetIndex < 4 || legendItem.datasetIndex == 7;
                 }
             }
         }

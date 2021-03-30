@@ -16,3 +16,7 @@
 .tabs .indicator {
     background-color:lightblue;
 } /*Color of underline*/
+
+canvas {
+    background-color: gainsboro;
+}
