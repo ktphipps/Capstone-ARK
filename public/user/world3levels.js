@@ -46,5 +46,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
       }
       return $(this).html(images[0] + images[1] + images[2])
     })
+    
+    $(".btn").attr("disabled", function() {
+      let levelNum = $(this).attr('id').match(/\d+/)[0];
+
+      return worldTotal < (levelNum-1)*2;
+    })
   }
 });
