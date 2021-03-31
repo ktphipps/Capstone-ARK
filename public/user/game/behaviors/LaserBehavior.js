@@ -52,6 +52,13 @@ export default class LaserBehavior extends Base.Behavior {
             //Make the laser appear
             this.rectangle.height = 600;
             this.rectangle.width = 60;
+            
+            let img = new Image()
+            img.src = "./game/assets/LaserWhite.png";
+            this.rectangle.fill(img);
+            this.type = "image";
+            // NEED TO MAKE GAME OBJECT THEN ATTACH IT TO IT ??
+            //target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
