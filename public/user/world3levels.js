@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
     let numStars = [];
 
     for (let i = 0; i < 11; i++) {
-      lvlRatingRef.push(firebase.firestore().collection('users').doc(user.uid).collection("highscores").doc("World3Level"+i));
+      lvlRatingRef.push(firebase.firestore().collection('users').doc(user.uid).collection("highscores").doc("World3Level"+(i+1)));
       docSnap.push(await lvlRatingRef[i].get());
 
       if (docSnap[i].exists) {
@@ -34,7 +34,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
     });
     
     $(".stars").append(function () {
-      let levelNum = $(this).attr('id').match(/\d+/)[0];
+      let levelNum = $(this).attr('id').match(/\d+/)[0]-1;
       let images = []
       
       for (let i = 0; i < 3; i++) {
@@ -48,9 +48,9 @@ firebase.auth().onAuthStateChanged(async function (user) {
     })
     
     $(".btn").attr("disabled", function() {
-      let levelNum = $(this).attr('id').match(/\d+/)[0];
+      let levelNum = $(this).attr('id').match(/\d+/)[0]-1;
 
-      return worldTotal < (levelNum-1)*2;
+      return !(worldTotal >= levelNum*2);
     })
   }
 });
