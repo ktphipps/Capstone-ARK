@@ -352,11 +352,84 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
 });
 
 let scoreString = document.querySelector("#score");
+let star1 = document.querySelector("#star1");
+let star2 = document.querySelector("#star2");
+let star3 = document.querySelector("#star3");
 
 score = Math.round(score * 100) / 100;
 
-
 scoreString.innerHTML = "Score: " + score + "%";
+
+loadScoreBar();
+
+if (score > 85) {
+    star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
+    star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
+    star3.innerHTML = "<img id='star3img' src='./game/assets/star.png'/>"
+}
+else if (score > 70) {
+    star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
+    star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
+    star3.innerHTML = "<img id='star3img' src='./game/assets/emptyStar.png'/>"
+}
+else if (score > 55) {
+    star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
+    star2.innerHTML = "<img id='star2img' src='./game/assets/emptyStar.png'/>"
+    star3.innerHTML = "<img id='star3img' src='./game/assets/emptyStar.png'/>"
+}
+else {
+    star1.innerHTML = "<img id='star1img' src='./game/assets/emptyStar.png'/>"
+    star2.innerHTML = "<img id='star2img' src='./game/assets/emptyStar.png'/>"
+    star3.innerHTML = "<img id='star3img' src='./game/assets/emptyStar.png'/>"
+}
+
+
+var count = 1;
+var timer2 = setInterval(function () {
+    if (count >= 31){
+        clearInterval(timer2);
+    }
+    else if (count % 10 == 0)
+        fadeIn(document.getElementById('star' + (count / 10) + 'img'));
+    count += 1;
+}, 50);
+
+
+function fadeIn(element) {
+    var op = 0.0;  // initial opacity
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        op += 0.1;
+    }, 25);
+}
+
+function loadScoreBar() {
+    var elem = document.getElementById("scoreBar");   
+    var width = 1;
+    var id = setInterval(frame, 1);
+    function frame() {
+
+      if (width + 0.5 >= score) {
+        if (width + 0.1 >= score) {
+            if (width >= score) {
+                clearInterval(id);
+              } else {
+                width+=0.01; 
+                elem.style.width = width + '%';
+              }
+        } else {
+        width+=0.1; 
+        elem.style.width = width + '%';
+        }
+      } else {
+        width+=0.5; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
 
 
 function resetToParamSelect() {

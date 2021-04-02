@@ -44,7 +44,23 @@ This page displays the score and the graph of the gameplay
       <ul class="sidenav" id="mobile-demo">
       </ul>
     <div class="container">
-      <h2 class="black-text center-align" id="score"></h2>
+      <h2 class="black-text center-align" id="score" style="margin-top: 20px;">Score</h2>
+      <div class="w3-light-grey" style="height:40px;margin-bottom:10px;">
+        <div id="scoreBar" class="w3-container w3-green w3-center" style="height:40px;width:0;margin-bottom:10px;font-size:165%"></div>
+      </div>
+      <h2 class="black-text center-align">
+        <div id="rating">
+          <div class="ratingStar" id="star1" style="background-image: './game/assets/star.png';">
+            <img id='star1img' src='./game/assets/emptyStar.png'/>
+          </div>
+          <div class="ratingStar" id="star2" style="background-image: './game/assets/star.png';">
+            <img id='star2img' src='./game/assets/emptyStar.png'/>
+          </div>
+          <div class="ratingStar" id="star3" style="background-image: './game/assets/star.png';">
+            <img id='star3img' src='./game/assets/emptyStar.png'/>
+          </div>
+        </div>
+      </h2>
       <div class="row">
         <div class="col">
           <ul class="tabs tabs-fixed-width">

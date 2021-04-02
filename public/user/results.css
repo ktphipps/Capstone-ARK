@@ -20,3 +20,34 @@
 canvas {
     background-color: gainsboro;
 }
+
+.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+    text-align: center !important;
+    height:30px;
+}
+
+.w3-green, .w3-hover-green:hover {
+    color: #fff !important;
+    background-color: #303f9f !important;
+    text-align: center !important;
+    height:30px;
+    margin-bottom:20px;
+    width:0;
+}
+
+img {
+    height: 60px;
+    width: 60px;
+    opacity: 0.0;
+}
+
+#rating {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ratingStar {
+    display: inline-block
+}
