@@ -29,12 +29,12 @@ export default class LaserBehavior extends Base.Behavior {
         this.rectangle = this.gameObject.getComponent(RectangleComponent);
         this.tapHandler = this.gameObject.getComponent(TapHandler);
 
-        this.rectangle.height = 600;
-        this.rectangle.width = 60;
-        let img = new Image()
-        img.src = "./game/assets/Laser/NoLaser.png";
-        this.rectangle.fill = img;
-        this.rectangle.type = "image";
+        // this.rectangle.height = 600;
+        // this.rectangle.width = 60;
+        // let img = new Image()
+        // img.src = "./game/assets/Laser/NoLaser.png";
+        // this.rectangle.fill = img;
+        // this.rectangle.type = "image";
         this.rectangle.scaleX = 56;
         this.rectangle.scaleY = 370;
     }
@@ -59,14 +59,15 @@ export default class LaserBehavior extends Base.Behavior {
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
             //Make the laser appear
-            this.rectangle.height = 600;
-            this.rectangle.width = 60;
+            //this.rectangle.height = 600;
+            //this.rectangle.width = 60;
             let img = new Image()
             img.src = "./game/assets/Laser/LaserWhite.png";
             this.rectangle.fill = img;
-            this.rectangle.type = "image";
-            this.rectangle.scaleX = 56;
-            this.rectangle.scaleY = 370;
+            console.log(img.src);
+            //this.rectangle.type = "image";
+            //this.rectangle.scaleX = 56;
+            //this.rectangle.scaleY = 370;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
@@ -105,18 +106,19 @@ export default class LaserBehavior extends Base.Behavior {
         //If a tap is not in progress
         if (!Input.keys[' '] && !Input.touch){
             //Make the laser not visible
-            this.rectangle.height = 1;
-            this.rectangle.width = 1;
+            //this.rectangle.height = 1;
+            //this.rectangle.width = 1;
             //this.rectangle.fill = "white";
             
-            // this.rectangle.height = 600;
-            // this.rectangle.width = 60;
-            // let img = new Image()
-            // img.src = "./game/assets/Laser/NoLaser.png";
-            // this.rectangle.fill = img;
-            // this.rectangle.type = "image";
-            // this.rectangle.scaleX = 56;
-            // this.rectangle.scaleY = 370;
+            //this.rectangle.height = 600;
+            //this.rectangle.width = 60;
+            let img = new Image()
+            img.src = "./game/assets/Laser/NoLaser.png";
+            this.rectangle.fill = img;
+            console.log(img.src);
+            //this.rectangle.type = "image";
+            //this.rectangle.scaleX = 56;
+            //this.rectangle.scaleY = 370;
             
             //Call the taphandler to handle the release
             this.tapHandler.tapUp();
