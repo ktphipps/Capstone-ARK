@@ -28,6 +28,15 @@ export default class LaserBehavior extends Base.Behavior {
     start() {
         this.rectangle = this.gameObject.getComponent(RectangleComponent);
         this.tapHandler = this.gameObject.getComponent(TapHandler);
+
+        this.rectangle.height = 600;
+        this.rectangle.width = 60;
+        let img = new Image()
+        img.src = "./game/assets/Laser/NoLaser.png";
+        this.rectangle.fill = img;
+        this.rectangle.type = "image";
+        this.rectangle.scaleX = 56;
+        this.rectangle.scaleY = 370;
     }
 
     /*
@@ -46,25 +55,21 @@ export default class LaserBehavior extends Base.Behavior {
 		returns: none
 		Recieves keypress events from EdGE and displays the feedback with the circle object
 	*/
-    pulse() {
+    pulse() {       
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
             //Make the laser appear
             this.rectangle.height = 600;
             this.rectangle.width = 60;
-            
             let img = new Image()
-            img.src = "./game/assets/LaserWhite.png";
-            this.rectangle.fill(img);
-            this.type = "image";
-            // NEED TO MAKE GAME OBJECT THEN ATTACH IT TO IT ??
-            //target.addComponent(new Components.CircleComponent(30, img, "none", "image"));
+            img.src = "./game/assets/Laser/LaserWhite.png";
+            this.rectangle.fill = img;
+            this.rectangle.type = "image";
+            this.rectangle.scaleX = 56;
+            this.rectangle.scaleY = 370;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
-
-            //let thisTarget = this.scene.children.find(t => t.components.find(c => c.tag == "GoRight") != undefined)
-            //console.log(thisTarget)
             
             //If feedback is enabled
             if(this.feedback == "true") {
@@ -72,19 +77,18 @@ export default class LaserBehavior extends Base.Behavior {
                 if (this.tapHandler.timer.soundOn) {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
-                        this.rectangle.fill = "green";
-                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
+                        //this.rectangle.fill = "green";
+                        // CHANGE TO GREEN SPRITE
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
-                        this.rectangle.fill = "yellow"
-                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
+                        //this.rectangle.fill = "yellow"
+                        // CHANGE TO YELLOW SPRITE
                     }
                     //Otherwise color the circle red
                     else {
-                        this.rectangle.fill = "red";
-                        //change the tag of the missed target
-                        //thisTarget.components.find(c => c.tag == "GoRight").tag = "MissedTarget";
+                        //this.rectangle.fill = "red";
+                        // CHANGE TO RED SPRITE
                     }
                 }
             }
@@ -103,7 +107,16 @@ export default class LaserBehavior extends Base.Behavior {
             //Make the laser not visible
             this.rectangle.height = 1;
             this.rectangle.width = 1;
-            this.rectangle.fill = "white";
+            //this.rectangle.fill = "white";
+            
+            // this.rectangle.height = 600;
+            // this.rectangle.width = 60;
+            // let img = new Image()
+            // img.src = "./game/assets/Laser/NoLaser.png";
+            // this.rectangle.fill = img;
+            // this.rectangle.type = "image";
+            // this.rectangle.scaleX = 56;
+            // this.rectangle.scaleY = 370;
             
             //Call the taphandler to handle the release
             this.tapHandler.tapUp();
