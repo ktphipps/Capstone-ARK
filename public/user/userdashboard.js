@@ -12,7 +12,7 @@ let assignmentsArray = [];
 let currentAssignmentArray;
 let currentPage = 1;
 let numPages;
-let entriesPerPage = 5;
+let entriesPerPage = window.location.href.endsWith('l') ? 5 : window.location.href.substring(window.location.href.lastIndexOf('#') + 1);
 
 /*
   onAuthStateChanged(user)
@@ -202,3 +202,10 @@ $("#pagination").on("click", "a", function changePage() {
 $("td > a").on("click", function (e) {
     e.stopPropagation();
 });
+
+$('option').on('click', function () {
+    if (this.value == 'all')
+      this.value = userData.length;
+    window.location.replace("#" + this.value);
+    window.location.reload();
+  })

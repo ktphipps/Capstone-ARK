@@ -13,7 +13,7 @@ let userData;
 let currentUserArray;
 let numPages;
 let currentPage = 1;
-let entriesPerPage = 5;
+let entriesPerPage = window.location.href.includes('#') ? window.location.href.substring(window.location.href.lastIndexOf('#') + 1) : 5;
 
 /*
     btnDeleteAssignment:
@@ -195,7 +195,7 @@ async function populateUserTable(assignmentId, newPage)
 
     let startPosition = (newPage - 1) * entriesPerPage;
 
-    let newArray = currentUserArray.slice(startPosition, startPosition + 5);
+    let newArray = currentUserArray.slice(startPosition, startPosition + entriesPerPage);
 
     // Loop through usersData
     for(let i = 0; i < newArray.length; i++){
@@ -465,3 +465,10 @@ function encode(str){
        return '&#'+c.charCodeAt(0)+';';
     });
 }
+
+$('option').on('click', function () {
+    if (this.value == 'all')
+      this.value = userData.length;
+    window.location.replace("#" + this.value);
+    window.location.reload();
+  })

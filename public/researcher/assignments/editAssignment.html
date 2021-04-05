@@ -11,11 +11,11 @@ or even delete the assignment.
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
   <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-          gtag('config', 'UA-165901337-1');
+    gtag('config', 'UA-165901337-1');
   </script>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -37,9 +37,14 @@ or even delete the assignment.
     a.brand-logo {
       padding-left: 10px
     }
+
     [type="checkbox"]:checked+span:not(.lever):before {
-      border-right:2px solid #303f9f !important;
-      border-bottom:2px solid #303f9f !important;
+      border-right: 2px solid #303f9f !important;
+      border-bottom: 2px solid #303f9f !important;
+    }
+
+    .pagination li.active {
+      background-color: #303f9f !important;
     }
   </style>
   <title>RAC | Edit Assignment</title>
@@ -57,21 +62,21 @@ or even delete the assignment.
   </ul>
 
   <div class="container row" style="padding-top: 50px">
-    <div class="eight columns">
+    <div class="row">
       <h2 class="black-text" id="assignmentidheader">Assignment: </h2>
       <!-- <h3 class="black-text">Edit Assignment</h3> -->
       <div class="row">
         <!-- <div class="input-field col s12 m6 l6"> -->
-          <!-- Assignment name -->
-          <input  id="assignment_name" type="text" class="validate black-text" value=" ">
-          <label for="assignment_name" class="black-text" style="font-size: small;">Assignment Name</label>
+        <!-- Assignment name -->
+        <input id="assignment_name" type="text" class="validate black-text" value=" ">
+        <label for="assignment_name" class="black-text" style="font-size: small;">Assignment Name</label>
         <!-- </div> -->
       </div>
       <div class="row">
         <p class="range-field black-text col s12 m6 l3">
           BPM
           <!-- Beats per Minute -->
-        <input type="number" id="BPM" name="BPM" class="black-text tooltipped" data-position="left"
+          <input type="number" id="BPM" name="BPM" class="black-text tooltipped" data-position="left"
             data-tooltip="Beats Per Minute" value="100" min="30" max="1200" />
         </p>
         <p class="range-field black-text col s12 m6 l3">
@@ -82,12 +87,14 @@ or even delete the assignment.
         </p>
         <p class="black-text col s12 m6 l3">Cycles
           <!-- Number of Cycles -->
-          <input type="number" name="cycles" id="cycles" class="black-text tooltipped" data-position="left" data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
+          <input type="number" name="cycles" id="cycles" class="black-text tooltipped" data-position="left"
+            data-tooltip="Number of cyles where sound is on & off" value="1" min="1" max="10" />
         </p>
         <p class="range-field black-text col s12 m6 l3">
           Time without sound
           <!--Time without sound -->
-          <input type="number" name="timeWOSound" id="timeWOSound" class="black-text tooltipped" data-position="right" data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
+          <input type="number" name="timeWOSound" id="timeWOSound" class="black-text tooltipped" data-position="right"
+            data-tooltip="Number of seconds where beat is off" value="10" min="1" max="180" />
         </p>
       </div>
       <div class="row">
@@ -128,32 +135,46 @@ or even delete the assignment.
         </div>
       </div>
     </div>
-    
-    <div class="four columns">
-      <h3 class="black-text">Users</h3>
-      <!-- Button that assigns the assignment to selected users -->
-      <button id="btnAssignToUsers" class="waves-effect btn-large grey darken-3">Assign to Selected Users</button>
-      <!-- Button to select or deselect all users-->
-      <button id="btnSelectAll" class="waves-effect btn-large grey darken-3" style="margin-left: 1%">Select/Deselct All</button>
-      <!-- Table of all users in the system -->
-      <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%; margin-bottom:3%; margin-right: 3%;">
-        <thead>
-          <tr>
-            <th style="padding-left: 12px;">User ID</th>
-            <th>Last Session</th>
-            <th style="padding-right: 12px;">Select</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody">
-        </tbody>
-      </table>
-  
-      <div class="row">
-        <div class="col offset-s4">
+
+    <h3 class="black-text">Users</h3>
+    <div class="row">
+      <div class="four columns">
+        <!-- Button that assigns the assignment to selected users -->
+        <button id="btnAssignToUsers" class="waves-effect btn-large grey darken-3">Assign to Selected Users</button>
+      </div>
+      <div class="four columns">
+        <!-- Button to select or deselect all users-->
+        <button id="btnSelectAll" class="waves-effect btn-large grey darken-3" style="margin-left: 1%">Select/Deselct
+          All</button>
+      </div>
+      <div class="four columns">
+        <select>
+          <option value="5">Display 5 users</option>
+          <option value="10">Display 10 users</option>
+          <option value="25">Display 25 users</option>
+          <option value="all">Display all users</option>
+        </select>
+      </div>
+    </div>
+    <!-- Table of all users in the system -->
+    <table class="highlight black-text indigo lighten-2 centered"
+      style="margin-top:3%; margin-bottom:3%; margin-right: 3%;">
+      <thead>
+        <tr>
+          <th style="padding-left: 12px;">User ID</th>
+          <th>Last Session</th>
+          <th style="padding-right: 12px;">Select</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col offset-s4">
         <ul class="pagination" id="pagination">
-       </ul>
-       </div>
-     </div>
+        </ul>
+      </div>
     </div>
   </div>
 

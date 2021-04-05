@@ -4,128 +4,152 @@ to userData.html. Here, a researcher can also give a current user of the system 
 contains links to assignments.html, createassignment.html, and createuser.html
 -->
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-       <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
-       <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
+<html lang="en">
 
-               gtag('config', 'UA-165901337-1');
-       </script>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="/spinner.css">
-      <link rel="stylesheet" href="rPortal.css">
-      <script src="/__/firebase/7.9.2/firebase-app.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
-      <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
-      <script defer src="/__/firebase/init.js"></script>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-165901337-1');
+  </script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/spinner.css">
+  <link rel="stylesheet" href="rPortal.css">
+  <link rel="stylesheet" href="../skeleton.css">
+  <link rel="stylesheet" href="../normalize.css">
+  <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
 
-      <style>
-        a.brand-logo {
-        padding-left: 10px
-      }
-      tr[data-href] {
-        cursor: pointer;
-      }
-      .pagination li.active {
-        background-color: #303f9f !important;
-      }
-      </style>
-      <title>RAC | Researcher</title>
-    </head>
+  <style>
+    a.brand-logo {
+      padding-left: 10px
+    }
 
-    <body class="grey lighten-2">
-      <nav>
-        <div id="navbar" class="nav-wrapper indigo darken-2">
-          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
+    table {
+      width: 100%;
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
 
-      <ul class="sidenav" id="mobile-demo">
-      </ul>
+    tr[data-href] {
+      cursor: pointer;
+    }
+
+    .pagination li.active {
+      background-color: #303f9f !important;
+    }
+  </style>
+  <title>RAC | Researcher</title>
+</head>
+
+<body class="grey lighten-2">
+  <nav>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+  </ul>
 
   <div class="container">
-      <!-- Heading to welcome the user -->
-      <h1 class="black-text" id="greeting"></h1>
-      <h3 class="black-text">View Users</h3>
-        <!-- Modal to give a user admin privileges-->
-          <div id="modal1" class="modal">
-            <div class="modal-content grey lighten-2">
-              <h2 class="black-text">Create an Admin User</h2>
-              <form class="col s12 width=50% font-size=50% admin-action">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <!-- Email of the user the researcher wants to give admin privileges -->
-                    <input type="email" id="admin-email" class="black-text"/>
-                    <label class="active black-text" for="admin-email">Enter a user to make an admin</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <!-- Button to make a user an admin -->
-                  <button id="btnMakeAdmin" class="btn btn-small grey darken-3 waves effect">Make Admin</button>
-                </div>
-                <!-- Loading spinner -->
-                <div id="spinner" class="loader col" style="visibility: hidden;">
-                  <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     width="60px" height="60px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                  <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                    <animateTransform attributeType="xml"
-                      attributeName="transform"
-                      type="rotate"
-                      from="0 25 25"
-                      to="360 25 25"
-                      dur="0.6s"
-                      repeatCount="indefinite"/>
-                    </path>
-                  </svg>
-                </div>
-              </form>
+    <!-- Heading to welcome the user -->
+    <h1 class="black-text" id="greeting"></h1>
+    <h3 class="black-text">View Users</h3>
+    <!-- Modal to give a user admin privileges-->
+    <div id="modal1" class="modal">
+      <div class="modal-content grey lighten-2">
+        <h2 class="black-text">Create an Admin User</h2>
+        <form class="col s12 width=50% font-size=50% admin-action">
+          <div class="row">
+            <div class="input-field col s6">
+              <!-- Email of the user the researcher wants to give admin privileges -->
+              <input type="email" id="admin-email" class="black-text" />
+              <label class="active black-text" for="admin-email">Enter a user to make an admin</label>
             </div>
           </div>
-      <div class="row">
-        <div class="col " style="padding-top:3.5%">
-          <!-- Button to open up modal -->
-          <a class="waves-effect waves-light btn modal-trigger grey darken-3" href="#modal1">Make a User an Admin</a>
-        </div>
-        <div class="col s12 m4 l4 offset-m6 offset-l5" style="padding-top:3.5%">
-          <!-- Search box to filter through users in the system -->
-          <input type="text" id="search" style="color: black; opacity: 1 !important;" placeholder="Search User Id...">
-        </div>
+          <div class="row">
+            <!-- Button to make a user an admin -->
+            <button id="btnMakeAdmin" class="btn btn-small grey darken-3 waves effect">Make Admin</button>
+          </div>
+          <!-- Loading spinner -->
+          <div id="spinner" class="loader col" style="visibility: hidden;">
+            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 50 50"
+              style="enable-background:new 0 0 50 50;" xml:space="preserve">
+              <path fill="#000"
+                d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25"
+                  to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+              </path>
+            </svg>
+          </div>
+        </form>
+      </div>
+    </div>
 
+
+    <div class="row">
+      <div class="three columns">
+        <!-- <div class="col " style="padding-top:3.5%"> -->
+        <!-- Button to open up modal -->
+        <a class="waves-effect waves-light btn modal-trigger grey darken-3" href="#modal1">Make a User an Admin</a>
+      </div>
+      <div class="six columns">
+        <!-- <div class="col s12 m4 l4 offset-m6 offset-l5" style="padding-top:3.5%"> -->
+        <!-- Search box to filter through users in the system -->
+        <input type="text" id="search" style="color: black; opacity: 1 !important;" placeholder="Search User Id...">
+        <!-- </div> -->
       </div>
 
-      <!-- Table of all users in the system -->
-      <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
-        <thead>
-          <tr>
-              <th>User ID</th>
-              <th>Last Session</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody">
-        </tbody>
-      </table>
+      <div class="three columns">
+        <select>
+          <option value="5">Display 5 users</option>
+          <option value="10">Display 10 users</option>
+          <option value="25">Display 25 users</option>
+          <option value="all">Display all users</option>
+        </select>
+      </div>
+
+    </div>
 
 
-      <div class="row">
-        <div class="col offset-s4">
+    <!-- Table of all users in the system -->
+    <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Last Session</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+
+
+    <div class="row">
+      <div class="col offset-s4">
         <ul class="pagination" id="pagination">
-       </ul>
-       </div>
-     </div>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="container">

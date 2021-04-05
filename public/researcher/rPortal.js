@@ -15,7 +15,8 @@ let userData;
 let currentUserArray;
 let numPages;
 let currentPage = 1;
-let entriesPerPage = 5;
+let entriesPerPage = window.location.href.includes('#') ? window.location.href.substring(window.location.href.lastIndexOf('#') + 1) : 5;
+
 
 /*
   onAuthStateChanged(user)
@@ -263,3 +264,10 @@ $(document).ready(function (){
     window.location.href = this.dataset.href;
   })
 });
+
+$('option').on('click', function () {
+  if (this.value == 'all')
+    this.value = userData.length;
+  window.location.replace("#" + this.value);
+  window.location.reload();
+})

@@ -12,7 +12,7 @@ let currentAssignmentArray = [];
 let checkedArray;
 let numPages;
 let currentPage = 1;
-let entriesPerPage = 5;
+let entriesPerPage = window.location.href.includes('#') ? window.location.href.substring(window.location.href.lastIndexOf('#') + 1) : 5;
 
 /*
     setHeader
@@ -34,7 +34,7 @@ async function setHeader(userid) {
 async function populateTable(newPage) {
     table.innerHTML = "";
     let startPosition = (newPage - 1) * entriesPerPage;
-    let newArray = currentAssignmentArray.slice(startPosition, startPosition + 5);
+    let newArray = currentAssignmentArray.slice(startPosition, startPosition + entriesPerPage);
 
     // Loop through sessionData
     for(let i = 0; i < newArray.length; i++){
@@ -399,3 +399,10 @@ $("#pagination").on("click", "a", function changePage(){
             }
     }
   });
+
+  $('option').on('click', function () {
+    if (this.value == 'all')
+      this.value = currentAssignmentArray.length;
+    window.location.replace("#" + this.value);
+    window.location.reload();
+  })
