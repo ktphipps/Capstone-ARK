@@ -206,9 +206,9 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
     options: {
         scales: {
             yAxes: [{
-                title: {
+                scaleLabel: {
                     display: true,
-                    text: "something",
+                    labelString: "Inter-tap Interval Length",
                 },
                 ticks: {
                     beginAtZero: false,
@@ -217,9 +217,9 @@ let intervalGraph = new Chart(intervalGraphElement.getContext('2d'), {
                 }
             }],
             xAxes: [{
-                title: {
+                scaleLabel: {
                     display: true,
-                    text: "something",
+                    labelString: "Beat Number",
                 },
                 ticks: {
                     max: xMax
@@ -328,6 +328,10 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
     options: {
         scales: {
             yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Asynchrony'
+                },
                 ticks: {
                     beginAtZero: false,
                     max: yMaxAsynchrony,
@@ -335,6 +339,10 @@ let asynchronyGraph = new Chart(asynchronyGraphElement.getContext('2d'), {
                 }
             }],
             xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Beat Number'
+                },
                 ticks: {
                     max: xMax
                 }
