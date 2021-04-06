@@ -12,6 +12,11 @@ export default class LaserBehavior extends Base.Behavior {
     tapHandler;
     feedback;
     scene;
+    img;
+    img2;
+    img3;
+    img4;
+    img5;
 
     constructor(feedback, scene) {
         super();
@@ -29,14 +34,27 @@ export default class LaserBehavior extends Base.Behavior {
         this.rectangle = this.gameObject.getComponent(RectangleComponent);
         this.tapHandler = this.gameObject.getComponent(TapHandler);
 
-        // this.rectangle.height = 600;
-        // this.rectangle.width = 60;
-        // let img = new Image()
-        // img.src = "./game/assets/Laser/NoLaser.png";
-        // this.rectangle.fill = img;
-        // this.rectangle.type = "image";
+        //this.rectangle.height = 600;
+        //this.rectangle.width = 60;
+        
+        this.img = new Image()
+        this.img.src = "./game/assets/Laser/LaserWhite.jpeg";
+
+        this.img2 = new Image()
+        this.img2.src = "./game/assets/Laser/NoLaser.png";
+
+        this.img3 = new Image()
+        this.img3.src = "./game/assets/Laser/LaserGreen.jpeg";
+
+        this.img4 = new Image()
+        this.img4.src = "./game/assets/Laser/LaserYellow.jpeg";
+
+        this.img5 = new Image()
+        this.img5.src = "./game/assets/Laser/LaserRed.jpeg";
+
         this.rectangle.scaleX = 56;
         this.rectangle.scaleY = 370;
+        
     }
 
     /*
@@ -59,15 +77,7 @@ export default class LaserBehavior extends Base.Behavior {
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
             //Make the laser appear
-            //this.rectangle.height = 600;
-            //this.rectangle.width = 60;
-            let img = new Image()
-            img.src = "./game/assets/Laser/LaserWhite.png";
-            this.rectangle.fill = img;
-            console.log(img.src);
-            //this.rectangle.type = "image";
-            //this.rectangle.scaleX = 56;
-            //this.rectangle.scaleY = 370;
+            this.rectangle.fill = this.img;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
@@ -79,17 +89,17 @@ export default class LaserBehavior extends Base.Behavior {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
                         //this.rectangle.fill = "green";
-                        // CHANGE TO GREEN SPRITE
+                        this.rectangle.fill = this.img3;
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
                         //this.rectangle.fill = "yellow"
-                        // CHANGE TO YELLOW SPRITE
+                        this.rectangle.fill = this.img4;
                     }
                     //Otherwise color the circle red
                     else {
                         //this.rectangle.fill = "red";
-                        // CHANGE TO RED SPRITE
+                        this.rectangle.fill = this.img5;
                     }
                 }
             }
@@ -106,19 +116,7 @@ export default class LaserBehavior extends Base.Behavior {
         //If a tap is not in progress
         if (!Input.keys[' '] && !Input.touch){
             //Make the laser not visible
-            //this.rectangle.height = 1;
-            //this.rectangle.width = 1;
-            //this.rectangle.fill = "white";
-            
-            //this.rectangle.height = 600;
-            //this.rectangle.width = 60;
-            let img = new Image()
-            img.src = "./game/assets/Laser/NoLaser.png";
-            this.rectangle.fill = img;
-            console.log(img.src);
-            //this.rectangle.type = "image";
-            //this.rectangle.scaleX = 56;
-            //this.rectangle.scaleY = 370;
+            this.rectangle.fill = this.img2;
             
             //Call the taphandler to handle the release
             this.tapHandler.tapUp();

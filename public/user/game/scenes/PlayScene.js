@@ -16,7 +16,9 @@ export default class PlayScene extends Engine.Base.Scene {
         //Create a renderable component and add it to the spaceLaser GameObject
         let img = new Image()
         img.src = "./game/assets/Laser/NoLaser.png";
-        let laser = new Engine.Components.RectangleComponent(60, 600, img, "none", "image");
+        // width 60
+        // height 600
+        let laser = new Engine.Components.RectangleComponent(1, 1, img, "none", "image");
         spaceLaser.addComponent(laser);
 
         //Create a ScoreCalculator behavior and add it to the spaceLaser GameObject
@@ -58,13 +60,22 @@ export default class PlayScene extends Engine.Base.Scene {
         laserbody.addComponent(laserbodyComponent);
         this.children.push(laserbody);
 
-        //add crosshairs
-        let crosshairLeft = new Engine.Base.GameObject(290, 100);
-        let crosshairRight = new Engine.Base.GameObject(350, 100);
-        let crosshairLine = new Engine.Components.RectangleComponent(2, 60, "green", "white");
-        crosshairLeft.addComponent(crosshairLine);
-        crosshairRight.addComponent(crosshairLine);
-        this.children.push(crosshairLeft);
-        this.children.push(crosshairRight);
+        // ADD CROSSHAIRS
+        // let crosshairLeft = new Engine.Base.GameObject(290, 100);
+        // let crosshairRight = new Engine.Base.GameObject(350, 100);
+        // let crosshairLine = new Engine.Components.RectangleComponent(2, 60, "green", "white");
+        // crosshairLeft.addComponent(crosshairLine);
+        // crosshairRight.addComponent(crosshairLine);
+        // this.children.push(crosshairLeft);
+        // this.children.push(crosshairRight);
+
+        let crosshairImage = new Image()
+        crosshairImage.src = "./game/assets/Crosshair.png";
+        let crosshair = new Engine.Base.GameObject(290, 71);
+        let crosshairBody = new Engine.Components.RectangleComponent(1, 1, crosshairImage, "none", "image");
+        crosshairBody.scaleX = 60;
+        crosshairBody.scaleY = 60;
+        crosshair.addComponent(crosshairBody);
+        this.children.push(crosshair);
     }
 }
