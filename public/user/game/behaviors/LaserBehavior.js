@@ -12,6 +12,11 @@ export default class LaserBehavior extends Base.Behavior {
     tapHandler;
     feedback;
     scene;
+    img;
+    img2;
+    img3;
+    img4;
+    img5;
 
     constructor(feedback, scene) {
         super();
@@ -28,6 +33,28 @@ export default class LaserBehavior extends Base.Behavior {
     start() {
         this.rectangle = this.gameObject.getComponent(RectangleComponent);
         this.tapHandler = this.gameObject.getComponent(TapHandler);
+
+        //this.rectangle.height = 600;
+        //this.rectangle.width = 60;
+        
+        this.img = new Image()
+        this.img.src = "./game/assets/Laser/LaserWhite.jpeg";
+
+        this.img2 = new Image()
+        this.img2.src = "./game/assets/Laser/NoLaser.png";
+
+        this.img3 = new Image()
+        this.img3.src = "./game/assets/Laser/LaserGreen.jpeg";
+
+        this.img4 = new Image()
+        this.img4.src = "./game/assets/Laser/LaserYellow.jpeg";
+
+        this.img5 = new Image()
+        this.img5.src = "./game/assets/Laser/LaserRed.jpeg";
+
+        this.rectangle.scaleX = 56;
+        this.rectangle.scaleY = 370;
+        
     }
 
     /*
@@ -46,18 +73,14 @@ export default class LaserBehavior extends Base.Behavior {
 		returns: none
 		Recieves keypress events from EdGE and displays the feedback with the circle object
 	*/
-    pulse() {
+    pulse() {       
         //If a tap is in progress
         if(Input.keys[' '] || Input.touch) {
             //Make the laser appear
-            this.rectangle.height = 600;
-            this.rectangle.width = 60;
+            this.rectangle.fill = this.img;
 
             //Call the taphandler to handle the press
             let delta = this.tapHandler.tapDown();
-
-            //let thisTarget = this.scene.children.find(t => t.components.find(c => c.tag == "GoRight") != undefined)
-            //console.log(thisTarget)
             
             //If feedback is enabled
             if(this.feedback == "true") {
@@ -65,19 +88,18 @@ export default class LaserBehavior extends Base.Behavior {
                 if (this.tapHandler.timer.soundOn) {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
-                        this.rectangle.fill = "green";
-                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
+                        //this.rectangle.fill = "green";
+                        this.rectangle.fill = this.img3;
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
-                        this.rectangle.fill = "yellow"
-                        //this.scene.children.splice(this.scene.children.findIndex(c => c == thisTarget), 1)
+                        //this.rectangle.fill = "yellow"
+                        this.rectangle.fill = this.img4;
                     }
                     //Otherwise color the circle red
                     else {
-                        this.rectangle.fill = "red";
-                        //change the tag of the missed target
-                        //thisTarget.components.find(c => c.tag == "GoRight").tag = "MissedTarget";
+                        //this.rectangle.fill = "red";
+                        this.rectangle.fill = this.img5;
                     }
                 }
             }
@@ -94,9 +116,7 @@ export default class LaserBehavior extends Base.Behavior {
         //If a tap is not in progress
         if (!Input.keys[' '] && !Input.touch){
             //Make the laser not visible
-            this.rectangle.height = 1;
-            this.rectangle.width = 1;
-            this.rectangle.fill = "white";
+            this.rectangle.fill = this.img2;
             
             //Call the taphandler to handle the release
             this.tapHandler.tapUp();
