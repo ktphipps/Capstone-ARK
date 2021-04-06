@@ -41,13 +41,14 @@ From this screen, the navbar also contains a link to edituser.html
       border-collapse: collapse;
       border-spacing: 0;
     }
-    
+
     tr {
       cursor: pointer;
     }
+
     .pagination li.active {
-        background-color: #303f9f !important;
-      }
+      background-color: #303f9f !important;
+    }
   </style>
   <title>RAC | Dashboard</title>
 </head>
@@ -112,26 +113,19 @@ From this screen, the navbar also contains a link to edituser.html
             </div>
           </div>
         </form>
-
-        <script src="/navbar.js" type="module"></script>
-        <script src="/user/userdashboard.js" type="module"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script>
-          $(document).ready(function () {
-            $('.sidenav').sidenav();
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="/user/param.js"></script>
       </div>
 
       <div class="seven columns">
         <div class="row">
-          <!-- Greeting for the user -->
-          <h1 class="black-text" id="greeting"></h1>
-          <br>
+          <div class="eight columns">
+            <!-- Greeting for the user -->
+            <h1 class="black-text" id="greeting"></h1>
+          </div>
+          <div class="four columns">
+            <button class="btn grey darken-3 waves-effect" onclick="location.href='/user/edituser.html';">Change Password</button>
+          </div>
+        </div>
+        <div class="row">
           <!-- Table to display assignments to the user -->
           <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
             <thead>
@@ -158,6 +152,20 @@ From this screen, the navbar also contains a link to edituser.html
       </div>
     </div>
   </div>
+
+  <script src="/navbar.js" type="module"></script>
+  <script src="/user/userdashboard.js" type="module"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/user/param.js"></script>
+
 </body>
 
 </html>

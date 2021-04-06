@@ -62,8 +62,7 @@
                             // Else redirect to the userdashboard
                             else
                             {
-                                // window.location = "/user/userdashboard.html";
-                                window.location = document.referrer;
+                                window.location = "/user/userdashboard.html";
                             }
                         }
                         else {

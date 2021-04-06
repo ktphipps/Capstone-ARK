@@ -18,17 +18,15 @@ firebase.auth().onAuthStateChanged(async function(user) {
     if(loggedIn) {
         //Do the links for a researcher
         if(rPortal) {
-            linkArray.push({link: "/researcher/rPortal.html", text: "Researcher Portal Home"}, {link:"/researcher/assignments/assignments.html", text: "View Assignments"},
-            {link:"/researcher/assignments/createassignment.html", text:"Create Assignment"}, {link:"/researcher/users/createuser.html", text: "Create User"}, {link: "Logout", text: "Logout"}, {link: "/about.html", text: "About"},
-            {link: "/contact.html", text: "Contact"});
+            linkArray.push({link: "/researcher/rPortal.html", text: "Research Portal"}, {link:"/researcher/assignments/assignments.html", text: "Assignments"},
+            {link: "/about.html", text: "About"}, {link: "Logout", text: "Logout"});
         }
         //Do the links for a user
         else {
-            linkArray.push({link: "/user/userdashboard.html", text: "User Dashboard"}, {link: "/user/edituser.html", text: "Change Password"}, {link: "Logout", text: "Logout"},
-            {link: "/about.html", text: "About"}, {link: "contact.html", text: "Contact"});
+            linkArray.push({link: "/user/userdashboard.html", text: "User Dashboard"}, {link: "/user/worlds.html", text: "Play Game"}, {link: "/about.html", text: "About"}, {link: "Logout", text: "Logout"});
         }
     } else {
-        linkArray.push({link: "/login.html", text: "Login"}, {link: "/user/parameters.html", text: "Parameter Select"}, {link: "about.html", text: "About"}, {link: "/contact.html", text: "Contact"});
+        linkArray.push({link: "/login.html", text: "Login"}, {link: "about.html", text: "About"});
     }
 
     //Grab the navbar element
@@ -37,6 +35,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     //Grab the mobile demo list
     let mobileDemo = document.querySelector("#mobile-demo");
 
+    console.log(linkArray)
     //Create the list
     if(document.querySelector("#linkList") == null){
         let linkList = document.createElement("ul");
@@ -86,7 +85,6 @@ firebase.auth().onAuthStateChanged(async function(user) {
                 <li><a href="/researcher/assignments/createassignment.html">Create Assignment</a></li>
                 <li><a href="/researcher/users/createuser.html">Create User</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
             </ul>
       </div>*/
 
@@ -94,4 +92,4 @@ firebase.auth().onAuthStateChanged(async function(user) {
       <li><a href="/researcher/assignments/createassignment.html">Create Assignment</a></li>
       <li><a href="/researcher/users/createuser.html">Create User</a></li>
       <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>*/
+*/

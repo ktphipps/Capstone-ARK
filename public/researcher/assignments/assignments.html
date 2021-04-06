@@ -3,100 +3,112 @@ This contains a table that displays all created assignments. By clicking on an a
 table, the user will be redirected to editAssignment.html
 -->
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
-      <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+<html lang="en">
 
-              gtag('config', 'UA-165901337-1');
-      </script>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="start.css">
-      <link rel="stylesheet" href="../rPortal.css">
-      <script src="/__/firebase/7.9.2/firebase-app.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
-      <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
-      <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
-      <script defer src="/__/firebase/init.js"></script>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      <style>
-        a.brand-logo {
-        padding-left: 10px
-      }
-      tr[data-href] {
-        cursor: pointer;
-      }
-      .pagination li.active {
-        background-color: #303f9f !important;
-      }
-      </style>
-      <title>RAC | User Assignment</title>
-    </head>
-    
-    <body class="grey lighten-2">
-      <nav>
-        <div id="navbar" class="nav-wrapper indigo darken-2">
-          <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
+    gtag('config', 'UA-165901337-1');
+  </script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="start.css">
+  <link rel="stylesheet" href="../rPortal.css">
+  <link rel="stylesheet" href="../../skeleton.css">
+  <link rel="stylesheet" href="../../normalize.css">
+  <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <ul class="sidenav" id="mobile-demo">
-      </ul>
+  <style>
+    a.brand-logo {
+      padding-left: 10px
+    }
+
+    tr[data-href] {
+      cursor: pointer;
+    }
+
+    .pagination li.active {
+      background-color: #303f9f !important;
+    }
+  </style>
+  <title>RAC | User Assignment</title>
+</head>
+
+<body class="grey lighten-2">
+  <nav>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+  </ul>
 
   <div class="container">
+    <br><br>
     <h3 class="black-text">View Assignments</h3>
-    <!-- Search bar -->
+    <br>
     <div class="row">
-        <input type="text" id="searchAssignment" style="margin-top:8%"  class="black-text" placeholder="Search Assignments...">
+      <div class="three columns">
+        <button class="btn grey darken-3 waves-effect" onclick="location.href='/researcher/assignments/createassignment.html';">Create Assignment</button>
       </div>
+      <!-- Search bar -->
+      <div class="nine columns">
+        <input type="text" id="searchAssignment" class="black-text"
+          placeholder="Search Assignments...">
+      </div>
+    </div>
 
-        <div class="col s6">
+    <div class="col s6">
       <!-- Table to display assignments-->
       <table class="highlight black-text indigo lighten-2 centered" style="margin-top:3%">
         <thead>
           <tr>
-              <th>Assignment</th>
-              <th>Parameters</th>
+            <th>Assignment</th>
+            <th>Parameters</th>
           </tr>
         </thead>
         <tbody id="assignmentTableBody">
         </tbody>
       </table>
-        </div>
+    </div>
 
-        <div class="row">
-          <div class="col offset-s4">
-          <ul class="pagination" id="pagination">
-         </ul>
-         </div>
-       </div>
-   </div>
+    <div class="row">
+      <div class="col offset-s4">
+        <ul class="pagination" id="pagination">
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
 
   <script src="/researcher/assignments/assignments.js" type="module"></script>
   <script src="/navbar.js" type="module"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-      <!--JavaScript at end of body for optimized loading-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script>
-      $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-      </script>
-    </body>
-  </html>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+</body>
+
+</html>

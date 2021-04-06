@@ -70,8 +70,10 @@ contains links to assignments.html, createassignment.html, and createuser.html
   </ul>
 
   <div class="container">
+    <br><br>
     <!-- Heading to welcome the user -->
     <h1 class="black-text" id="greeting"></h1>
+    <br>
     <h3 class="black-text">View Users</h3>
     <!-- Modal to give a user admin privileges-->
     <div id="modal1" class="modal">
@@ -107,18 +109,19 @@ contains links to assignments.html, createassignment.html, and createuser.html
 
 
     <div class="row">
+      <div class="two columns">
+        <!-- Button to create a user -->
+        <button class="btn grey darken-3 waves-effect" onclick="location.href='/researcher/users/createuser.html';">Create User</button>
+      </div>
       <div class="three columns">
-        <!-- <div class="col " style="padding-top:3.5%"> -->
         <!-- Button to open up modal -->
         <a class="waves-effect waves-light btn modal-trigger grey darken-3" href="#modal1">Make a User an Admin</a>
       </div>
-      <div class="six columns">
-        <!-- <div class="col s12 m4 l4 offset-m6 offset-l5" style="padding-top:3.5%"> -->
+      <div class="four columns">
         <!-- Search box to filter through users in the system -->
         <input type="text" id="search" style="color: black; opacity: 1 !important;" placeholder="Search User Id...">
         <!-- </div> -->
       </div>
-
       <div class="three columns">
         <select>
           <option value="5">Display 5 users</option>

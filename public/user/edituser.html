@@ -4,105 +4,107 @@ This page allows a logged in user to change their personal password
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
-         <script>
-                 window.dataLayer = window.dataLayer || [];
-                 function gtag(){dataLayer.push(arguments);}
-                 gtag('js', new Date());
 
-                 gtag('config', 'UA-165901337-1');
-         </script>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="/user/param.css">
-        <script src="/__/firebase/7.9.2/firebase-app.js"></script>
-        <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
-        <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
-        <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-165901337-1');
+    </script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/user/param.css">
+    <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-        <style>
-            a.brand-logo {
-              padding-left: 10px
-          }
-          </style>
-        <title>RAC | Edit User</title>
-    </head>
-    <body class="grey lighten-2">
-        <nav>
-            <div id="navbar" class="nav-wrapper indigo darken-2">
-              <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
-          </nav>
+    <style>
+        a.brand-logo {
+            padding-left: 10px
+        }
+    </style>
+    <title>RAC | Edit User</title>
+</head>
 
-          <ul class="sidenav" id="mobile-demo">
-          </ul>
-
-        <br><br>
-        <div class="container">
-            <h2 class="black-text">Change Password</h2>
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <!-- New password input field -->
-                    <input type="password" id="password" class="black-text" onkeyup='check();'>
-                    <label class="active black-text" for="password">New Password</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <!-- Confirm password input field -->
-                    <input type="password" id="confirmPassword" class="black-text" onkeyup='check();'>
-                    <label class="active black-text" for="confirmPassword">Confirm Password</label>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Confirm message if the two passwords match -->
-                <div class="input-field col s6 offset-s2">
-                    <span id="confirmMessage"></span>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Button to change password -->
-                <div class="input-field col s6">
-                    <button id="btnChangePassword" disabled="true" class="btn btn-large grey darken-3 waves-effect"><i class="material-icons right">chevron_right</i>Change Password</button>
-                </div>
-            </div>
-            <script
-              src="https://code.jquery.com/jquery-3.4.1.min.js"
-              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-              crossorigin="anonymous"></script>
-            <!--JavaScript at end of body for optimized loading-->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script src="/navbar.js" type="module"></script>
-            <script>
-            $(document).ready(function(){
-                $('.sidenav').sidenav();
-              });
-            </script>
-            <!-- Function to check if the password field and the confirm password field match-->
-            <script>
-                var check = function() {
-                    if ((document.getElementById('password').value == document.getElementById('confirmPassword').value) &&
-                        document.getElementById('password').value != null && document.getElementById('confirmPassword').value != null) {
-                        document.getElementById('confirmMessage').style.color = 'green';
-                        document.getElementById('confirmMessage').innerHTML = 'Password confirmed';
-                        document.getElementById('btnChangePassword').disabled = false;
-                    } else {
-                        document.getElementById('confirmMessage').style.color = 'red';
-                        document.getElementById('confirmMessage').innerHTML = 'Passwords must match';
-                        document.getElementById('btnChangePassword').disabled = true;
-                    }
-                }
-            </script>
-            <script src="/user/edituser.js"></script>
+<body class="grey lighten-2">
+    <nav>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+            <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-    </body>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+    </ul>
+
+    <br><br>
+    <div class="container">
+        <h2 class="black-text">Change Password</h2>
+        <div class="row">
+            <div class="input-field col s12 m6 l6">
+                <!-- New password input field -->
+                <input type="password" id="password" class="black-text" onkeyup='check();'>
+                <label class="active black-text" for="password">New Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m6 l6">
+                <!-- Confirm password input field -->
+                <input type="password" id="confirmPassword" class="black-text" onkeyup='check();'>
+                <label class="active black-text" for="confirmPassword">Confirm Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Confirm message if the two passwords match -->
+            <div class="input-field col s6 offset-s2">
+                <span id="confirmMessage"></span>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Button to change password -->
+            <div class="input-field col s6">
+                <button id="btnChangePassword" disabled="true" class="btn btn-large grey darken-3 waves-effect"><i
+                        class="material-icons right">chevron_right</i>Change Password</button>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/navbar.js" type="module"></script>
+        <script>
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
+        <!-- Function to check if the password field and the confirm password field match-->
+        <script>
+            var check = function () {
+                if ((document.getElementById('password').value == document.getElementById('confirmPassword').value) &&
+                    document.getElementById('password').value != null && document.getElementById('confirmPassword').value != null) {
+                    document.getElementById('confirmMessage').style.color = 'green';
+                    document.getElementById('confirmMessage').innerHTML = 'Password confirmed';
+                    document.getElementById('btnChangePassword').disabled = false;
+                } else {
+                    document.getElementById('confirmMessage').style.color = 'red';
+                    document.getElementById('confirmMessage').innerHTML = 'Passwords must match';
+                    document.getElementById('btnChangePassword').disabled = true;
+                }
+            }
+        </script>
+        <script src="/user/edituser.js"></script>
+    </div>
+</body>
+
 </html>
