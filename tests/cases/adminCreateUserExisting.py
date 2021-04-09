@@ -1,18 +1,20 @@
 import pyautogui;
 import time;
 import unittest 
-from selenium import webdriver 
-from selenium.webdriver.common.keys import Keys 
+from selenium import webdriver
+from selenium.webdriver.common import alert 
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.alert import Alert
 
 # inherit TestCase Class and create a new test class 
-class customSessionTest(unittest.TestCase): 
+class adminCreateUserExisting(unittest.TestCase): 
 
 	# initialization of webdriver 
 	def setUp(self): 
 		self.driver = webdriver.Firefox() 
-
-	# Test case method.
-	def test_get_perfect_score(self): 
+    
+    # Test case method.
+	def test_create_existing(self): 
 		
 		# get driver 
 		driver = self.driver 
@@ -31,7 +33,7 @@ class customSessionTest(unittest.TestCase):
 		# locate element using id
 		elem = driver.find_element_by_id("Uname")
 		# send data 
-		elem.send_keys('011@test.com')
+		elem.send_keys('devteam@ractrainer.com')
 		# locate element using id
 		elem = driver.find_element_by_id("password")
 		# send data 
@@ -44,32 +46,33 @@ class customSessionTest(unittest.TestCase):
 		time.sleep(2)
 
 		# locate element using name 
-		elem = driver.find_element_by_xpath("//button[contains(.,'Start Game')]") 
+		elem = driver.find_element_by_xpath("//button[contains(.,'Create User')]") 
 		# send data 
 		elem.click() 
-
+		# give the browser time to respond
 		time.sleep(2)
 
-		# locate element using name 
-		elem = driver.find_element_by_xpath("//button[contains(.,'START')]") 
+        # locate element using id
+		elem = driver.find_element_by_id("createUname")
 		# send data 
+		elem.send_keys('Temp@test.com')
+		# locate element using id
+		elem = driver.find_element_by_id("createPassword")
+		# send data 
+		elem.send_keys('123456789')
+        # locate element using id
+		elem = driver.find_element_by_id("btnCreateUser")
+        # send data 
 		elem.click() 
-
-		time.sleep(0.38)
-
-		# simulate playing the game
-		timeLimit = time.time() + 30
-		while time.time() < timeLimit:
-			pyautogui.keyDown('space')
-			time.sleep(0.1)
-			pyautogui.keyUp('space')
-			time.sleep(0.3)
-
-		# check to make sure we are on the results screen
-		elem = driver.find_element_by_id("score").text
-		assert "Score:" in elem 
-
-		time.sleep(1)
+		# give the database time to respond
+		time.sleep(10)
+		# create alert object
+		alert = Alert(driver)
+		# see if alert denies creation of new account with existing username
+		alertText = alert.text
+		pyautogui.press('space')
+		assert "The email address is already in use by another account." in alertText
+		
 
 	# cleanup method called after every test performed 
 	def tearDown(self): 
