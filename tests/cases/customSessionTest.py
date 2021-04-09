@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
 
 # inherit TestCase Class and create a new test class 
-class legacyGameTest(unittest.TestCase): 
+class customSessionTest(unittest.TestCase): 
 
 	# initialization of webdriver 
 	def setUp(self): 
@@ -17,15 +17,30 @@ class legacyGameTest(unittest.TestCase):
 		# get driver 
 		driver = self.driver 
 		# get ractrainer web app using selenium 
-		driver.get("https://ractrainer.web.app/") 
+		driver.get("http://localhost:5000/") 
 
 		time.sleep(2)
 
 		# locate element using name 
-		elem = driver.find_element_by_xpath("//button[contains(.,'Play Game')]") 
+		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
 		# send data 
 		elem.click() 
+		# give the browser time to respond
+		time.sleep(2)
 
+		# locate element using id
+		elem = driver.find_element_by_id("Uname")
+		# send data 
+		elem.send_keys('011@test.com')
+		# locate element using id
+		elem = driver.find_element_by_id("password")
+		# send data 
+		elem.send_keys('MEGAFISH')
+		# locate element using name 
+		elem = driver.find_element_by_xpath("//button[contains(.,'Log in')]") 
+		# send data 
+		elem.click() 
+		# give the browser time to respond
 		time.sleep(2)
 
 		# locate element using name 
@@ -42,16 +57,17 @@ class legacyGameTest(unittest.TestCase):
 
 		time.sleep(0.38)
 
-		timeLimit = time.time() + 25
+		# simulate playing the game
+		timeLimit = time.time() + 30
 		while time.time() < timeLimit:
 			pyautogui.keyDown('space')
 			time.sleep(0.1)
 			pyautogui.keyUp('space')
 			time.sleep(0.3)
 
-		# check score
+		# check to make sure we are on the results screen
 		elem = driver.find_element_by_id("score").text
-		assert "Score: 100%" in elem 
+		assert "Score:" in elem 
 
 		time.sleep(1)
 

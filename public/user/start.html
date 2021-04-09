@@ -88,7 +88,14 @@ Upon clicking the start button, the game is also played on this screen
   <script src="/user/EdgeRACTrainer.js" type="module"></script>
   <script>
     firebase.auth().onAuthStateChanged(user => {
-      if (user) {
+      // if the current person is not a valid user
+      if(!user)
+      {
+        console.log("You are not signed in.");
+        window.location = "/login.html";
+      }
+      // otherwise they are a user
+      else {
         user.getIdTokenResult().then(idTokenResult => {
           user.admin = idTokenResult.claims.admin;
           if (user.admin) {
@@ -97,6 +104,7 @@ Upon clicking the start button, the game is also played on this screen
           }
         });
       }
+
     })
   </script>
 </body>

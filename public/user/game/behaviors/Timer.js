@@ -187,8 +187,12 @@ export default class Timer extends Base.Behavior {
 
                                 //Save the session to the database using the array of csv strings
                                 let sesh = await createSession(assignmentId, world, level, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
-                                let highscore = await updateHighScoreForUser(firebaseUser.uid, score, world, level);
-                                let rating = await updateRatingsForUser(firebaseUser.uid);
+                                
+                                //Update highscore and rating as long as the session is from the Main Game
+                                if (assignmentId === "Main Game") {
+                                    let highscore = await updateHighScoreForUser(firebaseUser.uid, score, world, level);
+                                    let rating = await updateRatingsForUser(firebaseUser.uid);
+                                }
 
                                 document.location.href = "/user/results.html";
 
