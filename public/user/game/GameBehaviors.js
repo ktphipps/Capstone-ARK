@@ -4,7 +4,8 @@ import TapHandler from "./Behaviors/TapHandler.js"
 import Timer from "./Behaviors/Timer.js"
 import TimerOld from "./Behaviors/TimerOld.js"
 import ScoreCalculator from "./Behaviors/ScoreCalculator.js"
-import TextController from "./Behaviors/TextController.js"
+import TextController from "./behaviors/TextController.js"
+import TextControllerOld from "./behaviors/TextControllerOld.js"
 import GoRight from "./Behaviors/GoRight.js"
 
 export default{
@@ -15,5 +16,6 @@ export default{
   TimerOld,
   ScoreCalculator,
   TextController,
+  TextControllerOld,
   GoRight
 }

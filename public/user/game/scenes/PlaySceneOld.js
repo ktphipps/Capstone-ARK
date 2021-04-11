@@ -41,7 +41,7 @@ export default class PlaySceneOld extends Engine.Base.Scene {
         guideText.addComponent(text);
 
         //Create a TextController behavior and add it to the guideText GameObject
-        let textController = new GameBehaviors.TextController(Timer, text);
+        let textController = new GameBehaviors.TextControllerOld(Timer, text);
         guideText.addComponent(textController);
 
         //Add the guideText GameObject as a child of the feedbackCircle GameObject
