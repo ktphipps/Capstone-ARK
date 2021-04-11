@@ -69,7 +69,7 @@ export default class Timer extends Base.Behavior {
     playBeat() {
 
         // MIGHT NEED TO CHANGE THE TIMING OF THE FADE OUT
-        let target = new Base.GameObject(100, 100);
+        let target = new Base.GameObject(100, 145);
         let img = new Image()
         if (this.currentTime >= (this.startTime + (0.75 * this.soundPhaseTime)) && this.startTime != -1) {
             img.src = "./game/assets/UFO/UFOCapstoneTransparent.png";
@@ -81,7 +81,7 @@ export default class Timer extends Base.Behavior {
             img.src = "./game/assets/UFO/UFOCapstoneOneThirdTransparent.png";
         }
         else {
-            img.src = "./game/assets/UFO/UFOCapstone.png";
+            img.src = "./game/assets/UFO/UFOCapstoneResized.png";
         }
         
         //target.addComponent(new Components.CircleComponent(30, "white", "white", "circle"))

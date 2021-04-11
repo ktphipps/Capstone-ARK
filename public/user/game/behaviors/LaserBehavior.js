@@ -38,7 +38,7 @@ export default class LaserBehavior extends Base.Behavior {
         //this.rectangle.width = 60;
         
         this.img = new Image()
-        this.img.src = "./game/assets/Laser/LaserWhite.jpeg";
+        this.img.src = "./game/assets/Laser/LaserWhiteResized.png";
 
         this.img2 = new Image()
         this.img2.src = "./game/assets/Laser/NoLaser.png";
@@ -52,8 +52,8 @@ export default class LaserBehavior extends Base.Behavior {
         this.img5 = new Image()
         this.img5.src = "./game/assets/Laser/LaserRed.jpeg";
 
-        this.rectangle.scaleX = 56;
-        this.rectangle.scaleY = 370;
+        this.rectangle.scaleX = 59;
+        this.rectangle.scaleY = 410;
         
     }
 
@@ -89,17 +89,17 @@ export default class LaserBehavior extends Base.Behavior {
                     //If the tap is within 33% of the beat, color the circle green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
                         //this.rectangle.fill = "green";
-                        this.rectangle.fill = this.img3;
+                        //this.rectangle.fill = this.img3;
                     }
                     //If the tap is within 66% of the beat, color the circle yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
                         //this.rectangle.fill = "yellow"
-                        this.rectangle.fill = this.img4;
+                        //this.rectangle.fill = this.img4;
                     }
                     //Otherwise color the circle red
                     else {
                         //this.rectangle.fill = "red";
-                        this.rectangle.fill = this.img5;
+                        //this.rectangle.fill = this.img5;
                     }
                 }
             }

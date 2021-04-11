@@ -10,8 +10,18 @@ export default class PlayScene extends Engine.Base.Scene {
         //Construct a Scene with name "PlayScene"
         super("PlayScene");
 
+        // CREATE BACKGROUND
+        let backgroundImage = new Image()
+        backgroundImage.src = "./game/assets/BackgroundResized.jpeg";
+        let background = new Engine.Base.GameObject(0, 0);
+        let backgroundBody = new Engine.Components.RectangleComponent(1, 1, backgroundImage, "none", "image");
+        backgroundBody.scaleX = 640;
+        backgroundBody.scaleY = 500;
+        background.addComponent(backgroundBody);
+        this.children.push(background);
+
         //Create the spaceLaser GameObject
-        let spaceLaser = new Engine.Base.GameObject(293, 0);
+        let spaceLaser = new Engine.Base.GameObject(292, 3);
 
         //Create a renderable component and add it to the spaceLaser GameObject
         let img = new Image()
@@ -38,7 +48,7 @@ export default class PlayScene extends Engine.Base.Scene {
         spaceLaser.addComponent(LaserBehavior);
 
         //Create the intruction guideText GameObject
-        let guideText = new Engine.Base.GameObject(0, -150);
+        let guideText = new Engine.Base.GameObject(27, 250);
         
         //Create a renderable TextComponent component and add it to the guideText GameObject
         let text = new Engine.Components.TextComponent("", "20px Roboto", "white");
@@ -55,26 +65,32 @@ export default class PlayScene extends Engine.Base.Scene {
         this.children.push(spaceLaser);
 
         // add laser body
-        let laserbody = new Engine.Base.GameObject(320, 400);
-        let laserbodyComponent = new Engine.Components.RectangleComponent(120, 120, "gray", "gray");
+        let laserbodyImage = new Image();
+        laserbodyImage.src = "./game/assets/LaserBodyResized.png";
+        let laserbody = new Engine.Base.GameObject(0, 350);
+        let laserbodyComponent = new Engine.Components.RectangleComponent(1, 1, laserbodyImage, "none", "image");
+        laserbodyComponent.scaleX = 640;
+        laserbodyComponent.scaleY = 130;
         laserbody.addComponent(laserbodyComponent);
         this.children.push(laserbody);
 
-        // ADD CROSSHAIRS
-        // let crosshairLeft = new Engine.Base.GameObject(290, 100);
-        // let crosshairRight = new Engine.Base.GameObject(350, 100);
-        // let crosshairLine = new Engine.Components.RectangleComponent(2, 60, "green", "white");
-        // crosshairLeft.addComponent(crosshairLine);
-        // crosshairRight.addComponent(crosshairLine);
-        // this.children.push(crosshairLeft);
-        // this.children.push(crosshairRight);
+        // TEST PURPOSES
+        // CANVAS SIZE (BASED ON A 1,1 RECTANGLE): x: 0 - 640   y: 0 - 480
+        // SIZE OF PIXELART BACKGROUND (TRY ~213, 160)
+        // SCALE UP PIXELART TO MAKE SURE IT IS NOT BLURRY
+        // let testPixel = new Engine.Base.GameObject(100, 100);
+        // let testPixelComponent = new Engine.Components.RectangleComponent(48, 48, "white", "white");
+        // testPixel.addComponent(testPixelComponent);
+        // this.children.push(testPixel);
 
+        // ADD CROSSHAIRS
         let crosshairImage = new Image()
-        crosshairImage.src = "./game/assets/Crosshair.png";
-        let crosshair = new Engine.Base.GameObject(290, 71);
+        crosshairImage.src = "./game/assets/CrosshairResized.png";
+        let crosshair = new Engine.Base.GameObject(298, 120);
+        //let crosshair = new Engine.Base.GameObject(76, 76);
         let crosshairBody = new Engine.Components.RectangleComponent(1, 1, crosshairImage, "none", "image");
-        crosshairBody.scaleX = 60;
-        crosshairBody.scaleY = 60;
+        crosshairBody.scaleX = 47;
+        crosshairBody.scaleY = 47;
         crosshair.addComponent(crosshairBody);
         this.children.push(crosshair);
     }
