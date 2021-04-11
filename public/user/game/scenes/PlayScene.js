@@ -40,7 +40,7 @@ export default class PlayScene extends Engine.Base.Scene {
         spaceLaser.addComponent(Timer);
 
         //Create a TapHandler behavior and add it to the spaceLaser GameObject
-        let TapHandler = new GameBehaviors.TapHandler(bpm);
+        let TapHandler = new GameBehaviors.TapHandler(bpm, this);
         spaceLaser.addComponent(TapHandler);
 
         //Create a CircleBehavior behavior and add it to the spaceLaser GameObject

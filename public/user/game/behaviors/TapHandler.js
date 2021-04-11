@@ -5,11 +5,13 @@
 import Base from "../../engine/Base.js"
 import TapInfo from "../data/TapInfo.js"
 import Timer from "./Timer.js"
+import TimerOld from "./TimerOld.js"
 
 export default class TapHandler extends Base.Behavior {
 
     startTime = -1;
     beatTime = 0;
+    scene;
     lastTap = 0;
     soundOn = true;
     side = 0;
@@ -19,9 +21,10 @@ export default class TapHandler extends Base.Behavior {
     tapDataTotal = [];
     currentCycle = 1;
 
-    constructor(bpm) {
+    constructor(bpm, scene) {
         super();
         this.beatTime = Math.round(60000/bpm);
+        this.scene = scene;
     }
 
     /*
@@ -32,7 +35,11 @@ export default class TapHandler extends Base.Behavior {
 	*/
     start() {
         //Get a reference to the game's Timer behavior.
-        this.timer = this.gameObject.getComponent(Timer);
+        if (this.scene.name == "PlaySceneOld") {
+            this.timer = this.gameObject.getComponent(TimerOld);
+        } else {
+            this.timer = this.gameObject.getComponent(Timer);
+        }
     }
 
     /*

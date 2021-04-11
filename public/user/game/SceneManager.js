@@ -23,11 +23,15 @@ export default class SceneManager {
     }
     else {
       if (typeof argument === "string") {
+        console.log(this.scenes)
         let index = this.scenes.findIndex(i=>i.name == argument);
         if(index != -1){
           this._currentSceneIndex = index;
         }
-        else throw "No scene has that name. Current scene index not set."
+        else {
+          console.log(argument)
+          throw "No scene has that name. Current scene index not set."
+        }
       }
       else {
         let index = +argument;

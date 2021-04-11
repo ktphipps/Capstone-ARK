@@ -5,7 +5,7 @@
 import Engine from "../../engine/Engine.js"
 import GameBehaviors from "../GameBehaviors.js"
 
-export default class PlayScene extends Engine.Base.Scene {
+export default class PlaySceneOld extends Engine.Base.Scene {
     constructor(bpm, timeWSound, timeWOSound, cycles, feedback) {
         //Construct a Scene with name "PlayScene"
         super("PlaySceneOld");
@@ -22,11 +22,11 @@ export default class PlayScene extends Engine.Base.Scene {
         feedbackCircle.addComponent(ScoreCalculator);
 
         //Create a Timer behavior and add it to the feedbackCircle GameObject
-        let Timer = new GameBehaviors.TimerOld(bpm, timeWSound, timeWOSound, cycles);
+        let Timer = new GameBehaviors.TimerOld(bpm, timeWSound, timeWOSound, cycles, this);
         feedbackCircle.addComponent(Timer);
 
         //Create a TapHandler behavior and add it to the feedbackCircle GameObject
-        let TapHandler = new GameBehaviors.TapHandler(bpm);
+        let TapHandler = new GameBehaviors.TapHandler(bpm, this);
         feedbackCircle.addComponent(TapHandler);
 
         //Create a CircleBehavior behavior and add it to the feedbackCircle GameObject

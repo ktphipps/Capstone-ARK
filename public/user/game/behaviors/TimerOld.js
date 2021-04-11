@@ -12,7 +12,7 @@ import Components from "../../engine/Components.js";
 import GameBehaviors from "../GameBehaviors.js";
 
 
-export default class Timer extends Base.Behavior {
+export default class TimerOld extends Base.Behavior {
     bpm;
     currentTime;
     startTime = -1;
@@ -164,7 +164,7 @@ export default class Timer extends Base.Behavior {
                                 sessionStorage.setItem('data', JSON.stringify(ref.tapHandler.tapDataSoundOff));
 
                                 //Save the session to the database using the array of csv strings
-                                let sesh = await createSession(assignmentId, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
+                                // let sesh = await createSession(assignmentId, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
 
                                 document.location.href = "/user/results.html";
 
