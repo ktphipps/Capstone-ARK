@@ -6,7 +6,8 @@ import Base from "../../engine/Base.js"
 
 export default class GoRight extends Base.Behavior {
     FramesPerMinute = 2000;
-    DistPerBeat = 320;
+    //DistPerBeat = 320;
+    DistPerBeat = 350;
     bpm;
     tag = "GoRight";
 

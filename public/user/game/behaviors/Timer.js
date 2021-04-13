@@ -69,7 +69,7 @@ export default class Timer extends Base.Behavior {
     playBeat() {
 
         // MIGHT NEED TO CHANGE THE TIMING OF THE FADE OUT
-        let target = new Base.GameObject(1, 145);
+        let target = new Base.GameObject(0, 145);
 
         let img = new Image()
         if (this.currentTime >= (this.startTime + (0.99 * this.soundPhaseTime)) && this.startTime != -1) {
