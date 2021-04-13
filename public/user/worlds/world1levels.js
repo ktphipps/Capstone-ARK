@@ -38,9 +38,9 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
       for (let i = 0; i < 3; i++) {
         if (numStars[levelNum] !== undefined && i < numStars[levelNum]) {
-          images.push("<img id='" + i + "' src='./game/assets/star.png'/>")
+          images.push("<img id='" + i + "' src='../game/assets/star.png'/>")
         } else {
-          images.push("<img id='" + i + "' src='./game/assets/emptyStar.png'/>")
+          images.push("<img id='" + i + "' src='../game/assets/emptyStar.png'/>")
         }
       }
       return $(this).html(images[0] + images[1] + images[2])
