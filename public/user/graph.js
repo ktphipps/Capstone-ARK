@@ -441,13 +441,7 @@ function loadScoreBar() {
 
 
 function resetToParamSelect() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            window.location = "userdashboard.html";
-        } else {
-            window.location = "parameters.html";
-        }
-    });
+    window.location = "/user/worlds/worlds.html"
 }
 
 function changeToIntervalGraph() {

@@ -1,0 +1,195 @@
+<!-- world1levels.html
+A page that displays the levels of world 1 available to the patient to play.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-165901337-1');
+  </script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/user/param.css">
+  <link rel="stylesheet" href="./worlds.css">
+  <link rel="stylesheet" href="../skeleton.css">
+  <link rel="stylesheet" href="../normalize.css">
+  <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    a.brand-logo {
+      padding-left: 10px
+    }
+  </style>
+  <title>RAC | World 3 Levels</title>
+</head>
+
+<body class="grey lighten-2">
+  <nav>
+    <div id="navbar" class="nav-wrapper indigo darken-2">
+      <a href="/index.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+  </ul>
+
+  <br><br>
+  <div class="container">
+    <h1 class="black-text" style="font-size: xx-large;">World 3</h1>
+    <!-- Information about this project -->
+    <p class="black-text flow-text" style="font-size: medium;">Choose a level. Complete levels and earn stars to unlock
+      more.</p>
+    <p id="stars" class="black-text flow-text" style="font-size: large;">Stars: ...</p>
+
+    <form action="/user/start.html">
+      <table style="width:100%">
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 1, 100, 5, 1, 10, true)" id="lvl_1"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 1</button>
+          </td>
+          <td id="level_1" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>100 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 2, 90, 5, 1, 10, true)" id="lvl_2"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 2</button>
+          </td>
+          <td id="level_2" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>90 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 3, 110, 5, 1, 10, true)" id="lvl_3"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 3</button>
+          </td>
+          <td id="level_3" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>110 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 4, 80, 5, 1, 10, true)" id="lvl_4"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 4</button>
+          </td>
+          <td id="level_4" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>80 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 5, 120, 5, 1, 10, true)" id="lvl_5"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 5</button>
+          </td>
+          <td id="level_5" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>120 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 6, 70, 5, 1, 10, true)" id="lvl_6"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 6</button>
+          </td>
+          <td id="level_6" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>70 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 7, 130, 5, 1, 10, true)" id="lvl_7"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 7</button>
+          </td>
+          <td id="level_7" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>130 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 8, 60, 5, 1, 10, true)" id="lvl_8"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 8</button>
+          </td>
+          <td id="level_8" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>60 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 9, 140, 5, 1, 10, true)" id="lvl_9"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 9</button>
+          </td>
+          <td id="level_9" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>140 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 10, 50, 5, 1, 10, true)" id="lvl_10"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 10</button>
+          </td>
+          <td id="level_10" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>50 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="lvl" class="two columns">
+            <button onclick="setPresetParams(1, 11, 150, 5, 1, 10, true)" id="lvl_11"
+              class="btn grey darken-3 waves-effect" disabled="true">Level 11</button>
+          </td>
+          <td id="level_11" class="stars two columns"></td>
+          <td class="black-text seven columns" style="font-size: medium;" id="info">
+            <span>150 BPM, 5 seconds with feedback, 10 seconds without feedback</span>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <!-- End of Container -->
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/navbar.js" type="module"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+  <script src="/user/param.js"></script>
+  <script src="/user/worlds/world3levels.js" type="module"></script>
+</body>
+
+</html>

@@ -7,6 +7,10 @@
     display: block;
 }
 
+.btn {
+    width: 95px !important;
+}
+
 #info {
     display: none;
 }

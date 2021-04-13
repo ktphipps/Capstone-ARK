@@ -13,14 +13,14 @@ firebase.auth().onAuthStateChanged(async function (user) {
     var worldTotal = 0;
 
     if (docSnapshot.exists)
-      worldTotal = docSnapshot.get("world2Total");
+      worldTotal = docSnapshot.get("world6Total");
       
     let lvlRatingRef = [];
     let docSnap = [];
     let numStars = [];
 
     for (let i = 0; i < 11; i++) {
-      lvlRatingRef.push(firebase.firestore().collection('users').doc(user.uid).collection("highscores").doc("World2Level"+(i+1)));
+      lvlRatingRef.push(firebase.firestore().collection('users').doc(user.uid).collection("highscores").doc("World6Level"+(i+1)));
       docSnap.push(await lvlRatingRef[i].get());
 
       if (docSnap[i].exists) {

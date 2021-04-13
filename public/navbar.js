@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
         }
         //Do the links for a user
         else {
-            linkArray.push({link: "/user/userdashboard.html", text: "User Dashboard"}, {link: "/user/worlds.html", text: "Play Game"}, {link: "/about.html", text: "About"}, {link: "Logout", text: "Logout"});
+            linkArray.push({link: "/user/userdashboard.html", text: "User Dashboard"}, {link: "/user/worlds/worlds.html", text: "Play Game"}, {link: "/about.html", text: "About"}, {link: "Logout", text: "Logout"});
         }
     } else {
         linkArray.push({link: "/login.html", text: "Login"}, {link: "about.html", text: "About"});
