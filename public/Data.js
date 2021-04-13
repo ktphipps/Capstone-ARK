@@ -405,10 +405,10 @@ function calculateRating(score) {
 }
 
 async function updateRatingsForUser(userID) {
-    var world1Total = 0;
-    var world2Total = 0;
-    var world3Total = 0;
-      for (var w = 1; w <= 3; w++) {
+    var world1Total = 0; var world2Total = 0; var world3Total = 0;
+    var world4Total = 0; var world5Total = 0; var world6Total = 0;
+    var world7Total = 0; var world8Total = 0; var world9Total = 0;
+      for (var w = 1; w <= 9; w++) {
           for (var l = 1; l <= 11; l++) {
               let docName = 'World' + w + 'Level' + l;
               let highscoresRef = firebase.firestore().collection('users').doc(userID).collection('highscores').doc(docName);
@@ -421,14 +421,37 @@ async function updateRatingsForUser(userID) {
                 world1Total += rating;
               else if (w == 2)
                 world2Total += rating;
-              else
+              else if (w == 3)
                 world3Total += rating;
+              else if (w == 4)
+                world4Total += rating;
+              else if (w == 5)
+                world5Total += rating;
+              else if (w == 6)
+                world6Total += rating;
+              else if (w == 7)
+                world7Total += rating;
+              else if (w == 8)
+                world8Total += rating;
+              else
+                world9Total += rating;
           }
       }
 
-    var total = world1Total + world2Total + world3Total;
+    var total = world1Total + world2Total + world3Total + world4Total + world5Total + world6Total + world7Total + world8Total + world9Total;
 
-    firestore.collection('users').doc(userID).collection("ratings").doc("RatingTotals").set({"cumulativeTotal": total, "world1Total": world1Total, "world2Total": world2Total, "world3Total": world3Total});
+    firestore.collection('users').doc(userID).collection("ratings").doc("RatingTotals").set({
+        "cumulativeTotal": total, 
+        "world1Total": world1Total, 
+        "world2Total": world2Total, 
+        "world3Total": world3Total, 
+        "world4Total": world4Total, 
+        "world5Total": world5Total, 
+        "world6Total": world6Total, 
+        "world7Total": world7Total, 
+        "world8Total": world8Total, 
+        "world9Total": world9Total
+    });
 }
 
 
