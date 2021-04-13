@@ -164,7 +164,7 @@ export default class TimerOld extends Base.Behavior {
                                 sessionStorage.setItem('data', JSON.stringify(ref.tapHandler.tapDataSoundOff));
 
                                 //Save the session to the database using the array of csv strings
-                                // let sesh = await createSession(assignmentId, ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
+                                let sesh = await createSession(assignmentId, "N/A", "N/A", ref.bpm, ref.soundPhaseTime, ref.noSoundPhaseTime, ref.cycles, feedback, firebaseUser.uid, tapArrayString, score);
 
                                 document.location.href = "/user/results.html";
 
