@@ -261,7 +261,7 @@ exports.createUser = functions.https.onCall(async (data, context) => {
         await admin.firestore().collection("users").doc(userUID).set(dbRecord);
 
         // Create a new subcollection with documents containing the user's highest score for each level
-        const numWorlds = 3;
+        const numWorlds = 9;
         const numLevels = 11;
         for (var w = 1; w <= numWorlds; w++) {    
             for (var l = 1; l <= numLevels; l++) {

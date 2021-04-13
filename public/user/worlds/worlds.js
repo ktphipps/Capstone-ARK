@@ -27,5 +27,11 @@ firebase.auth().onAuthStateChanged(async function (user) {
       $("#stars").text(function () {
         return $(this).text().replace("...", total); 
       });
+
+      $(".btn").attr("disabled", function() {
+        let worldNum = $(this).attr('id').match(/\d+/)[0]-1;
+
+        return !(total >= worldNum*22);
+      })
     }
 });
