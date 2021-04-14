@@ -8,7 +8,7 @@ from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support import expected_conditions as EC
 
 # inherit TestCase Class and create a new test class 
-class userFirstTimeLogin(unittest.TestCase): 
+class userFirstLevel(unittest.TestCase): 
 
 	# initialization of webdriver 
 	def setUp(self): 
@@ -16,7 +16,7 @@ class userFirstTimeLogin(unittest.TestCase):
 		self.driver.implicitly_wait(30)
 
 	# Test case method.
-	def test_play_world1_level1(self): 
+	def test_play_world1_level1_first_time(self): 
 		
 		# get driver 
 		driver = self.driver 
