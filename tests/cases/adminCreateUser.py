@@ -1,16 +1,19 @@
 import pyautogui;
 import time;
-import unittest 
-from selenium import webdriver 
+import unittest; 
+from selenium import webdriver
+from selenium.common.exceptions import NoAlertPresentException 
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support import expected_conditions as EC
 
 # inherit TestCase Class and create a new test class 
 class adminCreateUser(unittest.TestCase): 
 
 	# initialization of webdriver 
 	def setUp(self): 
-		self.driver = webdriver.Firefox() 
+		self.driver = webdriver.Firefox()
+		self.driver.implicitly_wait(30)
 
 	# Test case method.
 	def test_create_user_new_first(self): 
@@ -20,14 +23,10 @@ class adminCreateUser(unittest.TestCase):
 		# get ractrainer web app using selenium 
 		driver.get("http://localhost:5000/") 
 
-		time.sleep(2)
-
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
 		# locate element using id
 		elem = driver.find_element_by_id("Uname")
@@ -41,15 +40,11 @@ class adminCreateUser(unittest.TestCase):
 		elem = driver.find_element_by_xpath("//button[contains(.,'Log in')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'Create User')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
         # locate element using id
 		elem = driver.find_element_by_id("createUname")
@@ -64,23 +59,25 @@ class adminCreateUser(unittest.TestCase):
         # send data 
 		elem.click() 
 		# give the database time to respond
-		time.sleep(15)
-		pyautogui.press('space')
+		while (1):
+			try:
+				alert = driver.switch_to_alert()
+				alert.accept()
+				break
+			except NoAlertPresentException:
+				continue
 
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Research Portal')]") 
 		# send data 
-		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
+		elem.click()
 
 		# locate element using id
 		elem = driver.find_element_by_id("search")
 		# send data 
-		elem.send_keys('Temp')
-        # give the browser time to respond
 		time.sleep(2)
-
+		elem.send_keys('Temp')
+		
 		try:
 			# locate elements using name 
 			elem = driver.find_element_by_xpath("//td[contains(.,'Temp')]")

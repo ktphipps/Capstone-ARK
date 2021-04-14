@@ -2,6 +2,7 @@ import pyautogui;
 import time;
 import unittest 
 from selenium import webdriver
+from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.common import alert 
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
@@ -11,7 +12,8 @@ class adminCreateUserExisting(unittest.TestCase):
 
 	# initialization of webdriver 
 	def setUp(self): 
-		self.driver = webdriver.Firefox() 
+		self.driver = webdriver.Firefox()
+		self.driver.implicitly_wait(30)
     
     # Test case method.
 	def test_create_existing(self): 
@@ -21,14 +23,10 @@ class adminCreateUserExisting(unittest.TestCase):
 		# get ractrainer web app using selenium 
 		driver.get("http://localhost:5000/") 
 
-		time.sleep(2)
-
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
 		# locate element using id
 		elem = driver.find_element_by_id("Uname")
@@ -42,15 +40,11 @@ class adminCreateUserExisting(unittest.TestCase):
 		elem = driver.find_element_by_xpath("//button[contains(.,'Log in')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'Create User')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
         # locate element using id
 		elem = driver.find_element_by_id("createUname")
@@ -65,12 +59,14 @@ class adminCreateUserExisting(unittest.TestCase):
         # send data 
 		elem.click() 
 		# give the database time to respond
-		time.sleep(10)
-		# create alert object
-		alert = Alert(driver)
-		# see if alert denies creation of new account with existing username
-		alertText = alert.text
-		pyautogui.press('space')
+		while (1):
+			try:
+				alert = driver.switch_to_alert()
+				alertText = alert.text
+				alert.accept()
+				break
+			except NoAlertPresentException:
+				continue
 		assert "The email address is already in use by another account." in alertText
 		
 

@@ -9,7 +9,8 @@ class userCustomSession(unittest.TestCase):
 
 	# initialization of webdriver 
 	def setUp(self): 
-		self.driver = webdriver.Firefox() 
+		self.driver = webdriver.Firefox()
+		self.driver.implicitly_wait(30)
 
 	# Test case method.
 	def test_custom_session_play(self): 
@@ -19,14 +20,10 @@ class userCustomSession(unittest.TestCase):
 		# get ractrainer web app using selenium 
 		driver.get("http://localhost:5000/") 
 
-		time.sleep(2)
-
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
 		# locate element using id
 		elem = driver.find_element_by_id("Uname")
@@ -40,16 +37,14 @@ class userCustomSession(unittest.TestCase):
 		elem = driver.find_element_by_xpath("//button[contains(.,'Log in')]") 
 		# send data 
 		elem.click() 
-		# give the browser time to respond
-		time.sleep(2)
 
+		time.sleep(1)
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'Start Game')]") 
 		# send data 
 		elem.click() 
 
-		time.sleep(2)
-
+		time.sleep(1)
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'START')]") 
 		# send data 
