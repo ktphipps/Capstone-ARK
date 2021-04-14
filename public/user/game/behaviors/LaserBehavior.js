@@ -44,13 +44,13 @@ export default class LaserBehavior extends Base.Behavior {
         this.img2.src = "./game/assets/Laser/NoLaser.png";
 
         this.img3 = new Image()
-        this.img3.src = "./game/assets/Laser/LaserGreen.jpeg";
+        this.img3.src = "./game/assets/Laser/LaserGreenResized.png";
 
         this.img4 = new Image()
-        this.img4.src = "./game/assets/Laser/LaserYellow.jpeg";
+        this.img4.src = "./game/assets/Laser/LaserYellowResized.png";
 
         this.img5 = new Image()
-        this.img5.src = "./game/assets/Laser/LaserRed.jpeg";
+        this.img5.src = "./game/assets/Laser/LaserRedResized.png";
 
         this.rectangle.scaleX = 59;
         this.rectangle.scaleY = 410;
@@ -86,20 +86,20 @@ export default class LaserBehavior extends Base.Behavior {
             if(this.feedback == "true") {
                 //If we are in the soundOn phase (feedback is not displayed during soundOff)
                 if (this.tapHandler.timer.soundOn) {
-                    //If the tap is within 33% of the beat, color the circle green
+                    //If the tap is within 33% of the beat, color the laser green
                     if (Math.abs(delta) < this.tapHandler.beatTime / 6) {
                         //this.rectangle.fill = "green";
-                        //this.rectangle.fill = this.img3;
+                        this.rectangle.fill = this.img3;
                     }
-                    //If the tap is within 66% of the beat, color the circle yellow
+                    //If the tap is within 66% of the beat, color the laser yellow
                     else if (Math.abs(delta) < this.tapHandler.beatTime * 2 / 6) {
                         //this.rectangle.fill = "yellow"
-                        //this.rectangle.fill = this.img4;
+                        this.rectangle.fill = this.img4;
                     }
-                    //Otherwise color the circle red
+                    //Otherwise color the laser red
                     else {
                         //this.rectangle.fill = "red";
-                        //this.rectangle.fill = this.img5;
+                        this.rectangle.fill = this.img5;
                     }
                 }
             }
