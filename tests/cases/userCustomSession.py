@@ -28,11 +28,11 @@ class userCustomSession(unittest.TestCase):
 		# locate element using id
 		elem = driver.find_element_by_id("Uname")
 		# send data 
-		elem.send_keys('011@test.com')
+		elem.send_keys('Temp@test.com')
 		# locate element using id
 		elem = driver.find_element_by_id("password")
 		# send data 
-		elem.send_keys('MEGAFISH')
+		elem.send_keys('123456789')
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'Log in')]") 
 		# send data 

@@ -70,7 +70,7 @@ class adminCreateUser(unittest.TestCase):
         # give the database time to respond
 		while (1):
 			try:
-				alert = driver.switch_to_alert()
+				alert = driver.switch_to.alert
 				alert.accept()
 				break
 			except NoAlertPresentException:
@@ -78,7 +78,7 @@ class adminCreateUser(unittest.TestCase):
         # give the database time to respond
 		while (1):
 			try:
-				alert = driver.switch_to_alert()
+				alert = driver.switch_to.alert
 				alert.accept()
 				break
 			except NoAlertPresentException:
