@@ -59,10 +59,10 @@
                                 alert("You have not changed your password since you were first registered. Please change your password before proceeding.");
                                 window.location = "/user/edituser.html";
                             }
-                            // Else redirect to the userdashboard
+                            // Else redirect to the index
                             else
                             {
-                                window.location = "/user/userdashboard.html";
+                                window.location = "/user/userIndex.html";
                             }
                         }
                         else {
