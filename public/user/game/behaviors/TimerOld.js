@@ -51,7 +51,7 @@ export default class TimerOld extends Base.Behavior {
     */
     start() {
         this.scoreCalculator = this.gameObject.getComponent(ScoreCalculator);
-        this.beatSound = new Audio("./game/assets/newbeat.wav");
+        this.beatSound = new Audio("./game/assets/sound/newbeat.wav");
 
         //Algorithm to determine the amount of volume change each beat once 3/4 of the way through soundPhase
         this.volumeChange = 1 / (((0.25 * (this.soundPhaseTime / 1000))) / (this.beatTime / 1000));
