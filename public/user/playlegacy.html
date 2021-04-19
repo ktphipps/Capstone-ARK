@@ -1,0 +1,134 @@
+<!-- userdashboard.html
+This screen displays the assignments that are assigned to this user. The user can also play a custom session.
+From this screen, the navbar also contains a link to edituser.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165901337-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-165901337-1');
+    </script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/user/param.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../skeleton.css">
+    <script src="/__/firebase/7.9.2/firebase-app.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.9.2/firebase-functions.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        a.brand-logo {
+            padding-left: 10px
+        }
+
+        table {
+            width: 100%;
+            display: table;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        tr {
+            cursor: pointer;
+        }
+
+        .pagination li.active {
+            background-color: #303f9f !important;
+        }
+    </style>
+    <title>RAC | Dashboard</title>
+</head>
+
+<body class="grey lighten-2">
+    <nav>
+        <div id="navbar" class="nav-wrapper indigo darken-2">
+            <a href="/user/userIndex.html" class="brand-logo" style="font-size: xx-large;">RAC Home</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+    </ul>
+    <br><br>
+
+    <div class="container">
+        <h2 class="black-text">Play Legacy Game</h2>
+        <!-- Form for a user to play a custom session -->
+        <form action="/user/startOld.html">
+            <div class="row">
+                <p class="range-field black-text col s12 m6 l6">
+                    BPM
+                    <!-- Beats per minute -->
+                    <input type="number" id="BPM" name="BPM" class="black-text" value="100" min="30" max="1200"
+                        required />
+                </p>
+                <p class="range-field black-text col s12 m6 l6">
+                    Time with sound
+                    <!-- Time with sound-->
+                    <input type="number" name="timeWSound" class="black-text" id="timeWSound" value="10" min="1"
+                        max="180" required />
+                </p>
+            </div>
+            <div class="row">
+                <p class="black-text col s12 m6 l6">Cycles
+                    <!-- Cycles -->
+                    <input type="number" name="cycles" id="cycles" class="black-text" value="1" min="1" max="10"
+                        required />
+                </p>
+                <p class="range-field black-text col s12 m6 l6">
+                    Time without sound
+                    <!-- Time without sound -->
+                    <input type="number" name="timeWOSound" id="timeWOSound" class="black-text" value="10"
+                        min="1" max="180" required />
+                </p>
+            </div>
+            <div class="row">
+                <p class="black-text">Feedback</p>
+                <!-- Feedback checkbox -->
+                <div class="switch col s6">
+                    <label class="black-text">
+                        Off
+                        <input type="checkbox" id="feedback" class="indigo" checked>
+                        <span class="lever"></span>
+                        On
+                    </label>
+                </div>
+                <!-- Button to set parameters to play the game -->
+                <div class="col">
+                    <button onclick="setParams()" class="btn btn-small  grey darken-3 waves-effect">Start
+                        Game</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="/navbar.js" type="module"></script>
+    <script src="/user/userdashboard.js" type="module"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/user/param.js"></script>
+
+</body>
+
+</html>
