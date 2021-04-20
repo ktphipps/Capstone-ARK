@@ -62,7 +62,7 @@ export default class ScoreCalculator extends Base.Behavior{
         score -= missPenalty;
         score /= ((phaseTime * cycles) + (0.5 * beatTime));
 
-        if(score < 0) {
+        if(Number.isNaN(score) || score < 0) {
             score = 0;
         }
 
@@ -86,7 +86,7 @@ export default class ScoreCalculator extends Base.Behavior{
 
         let score = total/data.length;
         
-        if(score < 0) {
+        if(Number.isNaN(score) || score < 0) {
             score = 0;
         } else if(score > 100) {
             score = 100;
