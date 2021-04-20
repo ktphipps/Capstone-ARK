@@ -18,7 +18,7 @@ class userCustomSession(unittest.TestCase):
 		# get driver 
 		driver = self.driver 
 		# get ractrainer web app using selenium 
-		driver.get("http://localhost:5000/") 
+		driver.get("https://ractrainer.web.app/") 
 
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
@@ -40,9 +40,15 @@ class userCustomSession(unittest.TestCase):
 
 		time.sleep(1)
 		# locate element using name 
+		elem = driver.find_element_by_xpath("//button[contains(.,'Play Legacy')]") 
+		# send data 
+		elem.click()
+
+		time.sleep(1)
+		# locate element using name 
 		elem = driver.find_element_by_xpath("//button[contains(.,'Start Game')]") 
 		# send data 
-		elem.click() 
+		elem.click()  
 
 		time.sleep(1)
 		# locate element using name 
