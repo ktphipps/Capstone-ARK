@@ -42,7 +42,7 @@ export default class TextController extends Base.Behavior {
             this.text.text = "The sound is coming back. Use this time to get back on beat!";
             //The sound is steady (During first 3/4 of soundOn phases, unless fading in)
         } else if (this.timer.currentTime < this.timer.startTime + this.timer.soundPhaseTime / 4 * 3) {
-            this.text.text = "The UFO's will soon become invisible. Keep firing in rythm!";
+            this.text.text = "The UFO's will soon become invisible. Keep firing in rhythm!";
             //The sound is fading out (During last 1/4 of soundOn phases)
         } else if (this.timer.currentTime < this.timer.startTime + this.timer.soundPhaseTime) {
             this.text.text = "The UFO's are disappearing. Keep firing!";
