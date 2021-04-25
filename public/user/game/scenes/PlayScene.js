@@ -21,7 +21,7 @@ export default class PlayScene extends Engine.Base.Scene {
         this.children.push(background);
 
         //Create the spaceLaser GameObject
-        let spaceLaser = new Engine.Base.GameObject(292, 3);
+        let spaceLaser = new Engine.Base.GameObject(292, 1);
 
         //Create a renderable component and add it to the spaceLaser GameObject
         let img = new Image()
