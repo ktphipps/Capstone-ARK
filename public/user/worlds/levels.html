@@ -36,7 +36,7 @@ A page that displays the levels of world 1 available to the patient to play.
       padding-left: 10px
     }
   </style>
-  <title>Timekeeper | World 9 Levels</title>
+  <title>Timekeeper | World 1 Levels</title>
 </head>
 
 <body class="grey lighten-2">
@@ -54,129 +54,133 @@ A page that displays the levels of world 1 available to the patient to play.
 
   <br><br>
   <div class="container">
-    <h1 class="black-text" style="font-size: xx-large;">World 9</h1>
+    <h1 id="worldTitle" class="black-text" style="font-size: xx-large;">World ...</h1>
     <!-- Information about this project -->
     <p class="black-text flow-text" style="font-size: medium;">Choose a level. Complete levels and earn stars to unlock
       more.</p>
     <p id="stars" class="black-text flow-text" style="font-size: large;">Stars: ...</p>
 
+    <!-- There will be 11 levels -->
+
+    <!-- Button to redirect to Level 1 -->
+    <!-- <button id="btnPlay" class="btn grey darken-3 waves-effect" disabled="true" onclick="location.href='/world1levels.html';" type="button">Level 1</button> -->
+
     <form action="/user/start.html">
       <table style="width:100%">
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 1, 100, 10, 1, 30, true)" id="lvl_1"
+            <button onclick="setPresetParams(world, 1, 100, soundOn, 1, soundOff, true)" id="lvl_1"
               class="btn grey darken-3 waves-effect" disabled="true">Level 1</button>
           </td>
           <td id="level_1" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>100 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>100 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 2, 90, 10, 1, 30, true)" id="lvl_2"
+            <button onclick="setPresetParams(world, 2, 90, soundOn, 1, soundOff, true)" id="lvl_2"
               class="btn grey darken-3 waves-effect" disabled="true">Level 2</button>
           </td>
           <td id="level_2" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>90 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>90 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 3, 110, 10, 1, 30, true)" id="lvl_3"
+            <button onclick="setPresetParams(world, 3, 110, soundOn, 1, soundOff, true)" id="lvl_3"
               class="btn grey darken-3 waves-effect" disabled="true">Level 3</button>
           </td>
           <td id="level_3" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>110 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>110 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 4, 80, 10, 1, 30, true)" id="lvl_4"
+            <button onclick="setPresetParams(world, 4, 80, soundOn, 1, soundOff, true)" id="lvl_4"
               class="btn grey darken-3 waves-effect" disabled="true">Level 4</button>
           </td>
           <td id="level_4" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>80 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>80 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 5, 120, 10, 1, 30, true)" id="lvl_5"
+            <button onclick="setPresetParams(world, 5, 120, soundOn, 1, soundOff, true)" id="lvl_5"
               class="btn grey darken-3 waves-effect" disabled="true">Level 5</button>
           </td>
           <td id="level_5" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>120 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>120 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 6, 70, 10, 1, 30, true)" id="lvl_6"
+            <button onclick="setPresetParams(world, 6, 70, soundOn, 1, soundOff, true)" id="lvl_6"
               class="btn grey darken-3 waves-effect" disabled="true">Level 6</button>
           </td>
           <td id="level_6" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>70 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>70 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 7, 130, 10, 1, 30, true)" id="lvl_7"
+            <button onclick="setPresetParams(world, 7, 130, soundOn, 1, soundOff, true)" id="lvl_7"
               class="btn grey darken-3 waves-effect" disabled="true">Level 7</button>
           </td>
           <td id="level_7" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>130 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>130 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 8, 60, 10, 1, 30, true)" id="lvl_8"
+            <button onclick="setPresetParams(world, 8, 60, soundOn, 1, soundOff, true)" id="lvl_8"
               class="btn grey darken-3 waves-effect" disabled="true">Level 8</button>
           </td>
           <td id="level_8" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>60 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>60 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 9, 140, 10, 1, 30, true)" id="lvl_9"
+            <button onclick="setPresetParams(world, 9, 140, soundOn, 1, soundOff, true)" id="lvl_9"
               class="btn grey darken-3 waves-effect" disabled="true">Level 9</button>
           </td>
           <td id="level_9" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>140 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>140 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 10, 50, 10, 1, 30, true)" id="lvl_10"
+            <button onclick="setPresetParams(world, 10, 50, soundOn, 1, soundOff, true)" id="lvl_10"
               class="btn grey darken-3 waves-effect" disabled="true">Level 10</button>
           </td>
           <td id="level_10" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>50 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>50 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
         <tr>
           <td id="lvl" class="two columns">
-            <button onclick="setPresetParams(9, 11, 150, 10, 1, 30, true)" id="lvl_11"
+            <button onclick="setPresetParams(world, 11, 150, soundOn, 1, soundOff, true)" id="lvl_11"
               class="btn grey darken-3 waves-effect" disabled="true">Level 11</button>
           </td>
           <td id="level_11" class="stars two columns"></td>
           <td class="black-text seven columns" style="font-size: medium;" id="info">
-            <span>150 BPM, 10 seconds with feedback, 30 seconds without feedback</span>
+            <span>150 BPM, s_off seconds with feedback, s_on seconds without feedback</span>
           </td>
         </tr>
       </table>
     </form>
-
-    <!-- End of Container -->
   </div>
+
 
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -184,12 +188,26 @@ A page that displays the levels of world 1 available to the patient to play.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/navbar.js" type="module"></script>
   <script>
+    let world = sessionStorage.getItem('world')
+    let soundOnArr = [20, 10, 15, 10, 20, 10, 20, 15, 10]
+    let soundOffArr = [10, 10, 15, 15, 20, 20, 30, 30, 30]
+    let soundOn = soundOnArr[parseInt(world)-1]
+    let soundOff = soundOffArr[parseInt(world)-1]
+    
+    $("span").text(function () {
+      return $(this).text().replace("s_on", soundOn);
+    });
+
+    $("span").text(function () {
+      return $(this).text().replace("s_off", soundOff);
+    });
+
     $(document).ready(function () {
       $('.sidenav').sidenav();
     });
   </script>
   <script src="/user/param.js"></script>
-  <script src="/user/worlds/world9levels.js" type="module"></script>
+  <script src="/user/worlds/levels.js" type="module"></script>
 </body>
 
 </html>

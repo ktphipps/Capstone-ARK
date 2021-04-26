@@ -8,6 +8,13 @@ let cycles = sessionStorage.getItem('cycles');
 let bpm = sessionStorage.getItem('bpm');
 let total = sessionStorage.getItem('totalTapArray');
 
+//Information for making the next level button
+let world = parseInt(sessionStorage.getItem('world'))
+let level = parseInt(sessionStorage.getItem('level'))
+let bpmArr = [100, 90, 110, 80, 120, 70, 130, 60, 140, 50, 150]
+let soundOnArr = [20, 10, 15, 10, 20, 10, 20, 15, 10]
+let soundOffArr = [10, 10, 15, 15, 20, 20, 30, 30, 30]
+
 data = JSON.parse(data);
 
 let yMaxInterval = 0, yMinInterval = -1, xMax = 0;
@@ -363,7 +370,7 @@ let scoreString = document.querySelector("#score");
 let star1 = document.querySelector("#star1");
 let star2 = document.querySelector("#star2");
 let star3 = document.querySelector("#star3");
-// let nextLevel = document.querySelector("#nextLevel");
+let nextLevelButton = document.querySelector("#nextLevel");
 
 score = Math.round(score * 100) / 100;
 
@@ -371,17 +378,30 @@ scoreString.innerHTML = "Score: " + score + "%";
 
 loadScoreBar();
 
+let nextLevel = level % 11 + 1;
+let nextWorld = nextLevel == 0 ? world + 1 : world;
+
 if (score > 85) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
     star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
     star3.innerHTML = "<img id='star3img' src='./game/assets/star.png'/>"
-    // nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
+    if (nextWorld != 10) {
+        nextLevelButton.innerHTML += 
+            `<form action="/user/start.html">
+                <button onclick='setPresetParams(${nextWorld},${nextLevel},${bpmArr[nextLevel-1]},${soundOnArr[nextWorld-1]},1,${soundOffArr[nextWorld-1]},true)' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>
+            </form>`
+    }
 }
 else if (score > 70) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
     star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
     star3.innerHTML = "<img id='star3img' src='./game/assets/emptyStar.png'/>"
-    // nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
+    if (nextWorld != 10) {
+        nextLevelButton.innerHTML += 
+            `<form action="/user/start.html" class="three columns">
+                <button onclick='setPresetParams(${nextWorld},${nextLevel},${bpmArr[nextLevel-1]},${soundOnArr[nextWorld-1]},1,${soundOffArr[nextWorld-1]},true)' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>
+            </form>`
+    }
 }
 else if (score > 55) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
