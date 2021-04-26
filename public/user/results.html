@@ -19,6 +19,8 @@ This page displays the score and the graph of the gameplay
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./results.css">
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="../skeleton.css">
   <script src="/__/firebase/7.9.2/firebase-app.js"></script>
   <script src="/__/firebase/7.9.2/firebase-auth.js"></script>
   <script defer src="/__/firebase/init.js"></script>
@@ -78,10 +80,16 @@ This page displays the score and the graph of the gameplay
     <canvas id="intervalGraph"></canvas>
     <canvas id="asynchronyGraph" style="display:none"></canvas>
     <br>
-    <button onclick="window.location='/user/start.html';" class="btn btn-small  grey darken-3 waves-effect">Play Again</button>
-    <!-- Button to change parameters -->
-    <button onclick="resetToParamSelect()" class="btn btn-small  grey darken-3 waves-effect">Return to Level Select</button>
-    <!-- <div id="nextLevel"></div> -->
+    <div id="nextLevel" class="row">
+      <div class="two columns">
+        <button onclick="window.location='/user/start.html';" class="btn btn-small  grey darken-3 waves-effect">Play
+          Again</button>
+      </div>
+      <div class="three columns">
+        <button onclick="resetToParamSelect()" class="btn btn-small  grey darken-3 waves-effect">Return to Level
+          Select</button>
+      </div>
+    </div>
   </div>
   <br>
 
@@ -109,6 +117,7 @@ This page displays the score and the graph of the gameplay
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="/user/graph.js"></script>
+  <script src="/user/param.js"></script>
   <script src="/navbar.js" type="module"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
