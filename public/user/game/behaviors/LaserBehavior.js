@@ -53,7 +53,7 @@ export default class LaserBehavior extends Base.Behavior {
         this.img5.src = "./game/assets/Laser/LaserRedResized.png";
 
         this.rectangle.scaleX = 59;
-        this.rectangle.scaleY = 410;
+        this.rectangle.scaleY = 412;
         
     }
 

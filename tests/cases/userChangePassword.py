@@ -21,7 +21,7 @@ class userChangePassword(unittest.TestCase):
 		# get driver 
 		driver = self.driver 
 		# get ractrainer web app using selenium 
-		driver.get("http://localhost:5000/") 
+		driver.get("https://ractrainer.web.app/") 
 
 		# locate element using name 
 		elem = driver.find_element_by_xpath("//a[contains(.,'Login')]") 
@@ -41,6 +41,12 @@ class userChangePassword(unittest.TestCase):
 		# send data 
 		elem.click()
 
+		time.sleep(1)
+		elem = driver.find_element_by_xpath("//a[contains(.,'User Dashboard')]") 
+		# send data 
+		elem.click()
+
+		time.sleep(1)
 		elem = driver.find_element_by_xpath("//button[contains(.,'Change Password')]") 
 		# send data 
 		elem.click()
@@ -116,6 +122,11 @@ class userChangePassword(unittest.TestCase):
 		# send data 
 		elem.click()
 		
+		time.sleep(1)
+		elem = driver.find_element_by_xpath("//a[contains(.,'User Dashboard')]") 
+		# send data 
+		elem.click()
+
         #change the password back to the original
 		elem = driver.find_element_by_xpath("//button[contains(.,'Change Password')]") 
 		# send data 

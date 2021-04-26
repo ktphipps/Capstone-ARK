@@ -12,7 +12,7 @@ export default class PlayScene extends Engine.Base.Scene {
 
         // CREATE BACKGROUND
         let backgroundImage = new Image()
-        backgroundImage.src = "./game/assets/BackgroundResized.jpeg";
+        backgroundImage.src = "./game/assets/background/BackgroundResized.jpeg";
         let background = new Engine.Base.GameObject(0, 0);
         let backgroundBody = new Engine.Components.RectangleComponent(1, 1, backgroundImage, "none", "image");
         backgroundBody.scaleX = 640;
@@ -21,7 +21,7 @@ export default class PlayScene extends Engine.Base.Scene {
         this.children.push(background);
 
         //Create the spaceLaser GameObject
-        let spaceLaser = new Engine.Base.GameObject(292, 3);
+        let spaceLaser = new Engine.Base.GameObject(292, 1);
 
         //Create a renderable component and add it to the spaceLaser GameObject
         let img = new Image()
@@ -66,7 +66,7 @@ export default class PlayScene extends Engine.Base.Scene {
 
         // add laser body
         let laserbodyImage = new Image();
-        laserbodyImage.src = "./game/assets/LaserBodyResized.png";
+        laserbodyImage.src = "./game/assets/laserbody/LaserBodyResized.png";
         let laserbody = new Engine.Base.GameObject(0, 350);
         let laserbodyComponent = new Engine.Components.RectangleComponent(1, 1, laserbodyImage, "none", "image");
         laserbodyComponent.scaleX = 640;
@@ -85,7 +85,7 @@ export default class PlayScene extends Engine.Base.Scene {
 
         // ADD CROSSHAIRS
         let crosshairImage = new Image()
-        crosshairImage.src = "./game/assets/CrosshairResized.png";
+        crosshairImage.src = "./game/assets/crosshair/CrosshairResizedTransparent.png";
         let crosshair = new Engine.Base.GameObject(298, 120);
         //let crosshair = new Engine.Base.GameObject(76, 76);
         let crosshairBody = new Engine.Components.RectangleComponent(1, 1, crosshairImage, "none", "image");

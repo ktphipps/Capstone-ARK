@@ -363,7 +363,7 @@ let scoreString = document.querySelector("#score");
 let star1 = document.querySelector("#star1");
 let star2 = document.querySelector("#star2");
 let star3 = document.querySelector("#star3");
-let nextLevel = document.querySelector("#nextLevel");
+// let nextLevel = document.querySelector("#nextLevel");
 
 score = Math.round(score * 100) / 100;
 
@@ -375,13 +375,13 @@ if (score > 85) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
     star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
     star3.innerHTML = "<img id='star3img' src='./game/assets/star.png'/>"
-    nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
+    // nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
 }
 else if (score > 70) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"
     star2.innerHTML = "<img id='star2img' src='./game/assets/star.png'/>"
     star3.innerHTML = "<img id='star3img' src='./game/assets/emptyStar.png'/>"
-    nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
+    // nextLevel.innerHTML = "<button onclick='window.location='/user/start.html';' class='btn btn-small  grey darken-3 waves-effect'>Next Level</button>"
 }
 else if (score > 55) {
     star1.innerHTML = "<img id='star1img' src='./game/assets/star.png'/>"

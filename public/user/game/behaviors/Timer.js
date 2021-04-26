@@ -51,7 +51,7 @@ export default class Timer extends Base.Behavior {
     */
     start() {
         this.scoreCalculator = this.gameObject.getComponent(ScoreCalculator);
-        this.beatSound = new Audio("./game/assets/sound/scifibeat.mp3");
+        this.beatSound = new Audio("./game/assets/sound/scifibeat1.1.mp3");
         // this.beatSound = new Audio("./game/assets/sound/laser1.mov");
 
         //Algorithm to determine the amount of volume change each beat once 3/4 of the way through soundPhase
