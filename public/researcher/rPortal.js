@@ -271,3 +271,13 @@ $('option').on('click', function () {
   window.location.replace("#" + this.value);
   window.location.reload();
 })
+
+let selector = document.getElementById("display_num")
+selector.addEventListener('change', (event) => {
+    if (event.target.value != "Choose Number of Rows") {
+        if (event.target.value == 'all')
+            event.target.value = currentAssignmentArray.length;
+        window.location.replace("#" + event.target.value);
+        window.location.reload();
+    }
+})

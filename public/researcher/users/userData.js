@@ -37,7 +37,7 @@ async function populateTable(newPage) {
     let newArray = currentAssignmentArray.slice(startPosition, startPosition + entriesPerPage);
 
     // Loop through sessionData
-    for(let i = 0; i < newArray.length; i++){
+    for (let i = 0; i < newArray.length; i++) {
         let obj = newArray[i];
         // Create a row entry for each session
         let tr = document.createElement('tr');
@@ -78,7 +78,7 @@ async function populateTable(newPage) {
         let span = document.createElement('span');
         checkbox.type = "checkbox";
         checkbox.addEventListener('input', checkCheckedArray);
-        if(checkedArray[i + (currentPage - 1) * entriesPerPage]) {
+        if (checkedArray[i + (currentPage - 1) * entriesPerPage]) {
             checkbox.checked = true;
         }
         label.appendChild(checkbox);
@@ -265,7 +265,7 @@ firebase.auth().onAuthStateChanged(user => {
     // If user is logged in
     if (user) {
         // Get admin token result
-        user.getIdTokenResult().then(async function(idTokenResult) {
+        user.getIdTokenResult().then(async function (idTokenResult) {
             user.admin = idTokenResult.claims.admin;
             // If user is an admin
             if (user.admin) {
@@ -309,7 +309,7 @@ $(document).ready(function () {
         $('input:checkbox').prop('checked', checked);
         $(this).val(checked ? 'uncheck all' : 'check all')
         $(this).data('checked', checked);
-        for(let i = 0; i < checkedArray.length; i++) {
+        for (let i = 0; i < checkedArray.length; i++) {
             checkedArray[i] = checked;
         }
     });
@@ -372,37 +372,40 @@ deleteUserForm.addEventListener('submit', (e) => {
 });
 
 //Function to handle pressing any of the pagination buttons
-$("#pagination").on("click", "a", function changePage(){
+$("#pagination").on("click", "a", function changePage() {
     let newPage = $(this).data('page');
-  
+
     //Change to the new page
-    if(newPage != currentPage) {
+    if (newPage != currentPage) {
         //For the right chevron
-        if(newPage == "next") {
-            newPage = currentPage+1;
+        if (newPage == "next") {
+            newPage = currentPage + 1;
         }
         //For the left chevron 
-        else if(newPage == "prev") {
-            newPage = currentPage-1;
+        else if (newPage == "prev") {
+            newPage = currentPage - 1;
         }
-  
+
         //Ensure that the new page can be accessed (in case left or right chevrons move it past the number of pages)
-        if(newPage <= numPages && newPage > 0) {
+        if (newPage <= numPages && newPage > 0) {
             //Change the current page
             currentPage = newPage;
 
             populateTable(newPage);
-    
+
             //Change the active page in the pagination menu
             document.querySelector("#page" + currentPage).className = "waves-effect";
             document.querySelector("#page" + newPage).className = "waves-effect active";
-            }
+        }
     }
-  });
+});
 
-  $('option').on('click', function () {
-    if (this.value == 'all')
-      this.value = currentAssignmentArray.length;
-    window.location.replace("#" + this.value);
-    window.location.reload();
-  })
+let selector = document.getElementById("display_num")
+selector.addEventListener('change', (event) => {
+    if (event.target.value != "Choose Number of Rows") {
+        if (event.target.value == 'all')
+            event.target.value = currentAssignmentArray.length;
+        window.location.replace("#" + event.target.value);
+        window.location.reload();
+    }
+})

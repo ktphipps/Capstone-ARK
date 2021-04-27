@@ -20,18 +20,17 @@ let entriesPerPage = window.location.href.includes('#') ? window.location.href.s
     Event listener on the button delete an assignment from the database
 */
 btnDeleteAssignment.addEventListener("click", e => {
-    if(confirm("Are you sure you want to delete this assignment?"))
-    {
+    if (confirm("Are you sure you want to delete this assignment?")) {
         // Grab doc id of the current assignment
         let params = new URLSearchParams(location.search);
         let assignmentId = params.get('id');
 
         // Grab assignment document and then delete the document
         var assignmentDoc = firestore.collection("assignments").doc(assignmentId);
-        assignmentDoc.delete().then(function(){
+        assignmentDoc.delete().then(function () {
             alert("Successfully deleted assignment");
             window.location = "/researcher/assignments/assignments.html";
-        }).catch(function(error) {
+        }).catch(function (error) {
             alert("Error deleting assignment: " + error);
         });
     }
@@ -47,8 +46,8 @@ let checkedArray;
 btnAssignToUsers.addEventListener("click", e => {
     let assignedUIDs = [];
 
-    for(let i = 0; i < checkedArray.length; i++) {
-        if(checkedArray[i] == true) {
+    for (let i = 0; i < checkedArray.length; i++) {
+        if (checkedArray[i] == true) {
             let assignTo = userData[i].id;
             assignedUIDs.push(assignTo);
         }
@@ -64,9 +63,9 @@ btnAssignToUsers.addEventListener("click", e => {
     // Update the userIDs array field with assignedUIDs array
     assignmentDoc.update({
         userIDs: assignedUIDs
-    }).then(function() {
+    }).then(function () {
         alert("Assigned users successfully updated.");
-    }).catch(function(error) {
+    }).catch(function (error) {
         console.error(error);
     });
 });
@@ -90,16 +89,14 @@ btnSetAssignment.addEventListener("click", e => {
     var defaultAssignment = document.querySelector("#default").checked;
 
     if (assignmentLabel == null || assignmentLabel == "" ||
-         bpm == null || bpm == "" ||
-         timeWSound == null || timeWSound == "" ||
-         cycles == null || cycles == "" ||
-         timeWOSound == null || timeWOSound == "")
-    {
+        bpm == null || bpm == "" ||
+        timeWSound == null || timeWSound == "" ||
+        cycles == null || cycles == "" ||
+        timeWOSound == null || timeWOSound == "") {
         alert("All parameters must be set to edit an assignment");
     }
     //// TODO: Add elseif to check the Parameter values are in range
-    else
-    {
+    else {
         // Get the assignment document id
         let params = new URLSearchParams(location.search);
         let assignmentId = params.get('id');
@@ -117,16 +114,16 @@ btnSetAssignment.addEventListener("click", e => {
         var assignmentDoc = firestore.collection("assignments").doc(assignmentId);
 
 
-    // Update the assignment label and the parameters
-      assignmentDoc.update({
-          assignmentLabel: assignmentLabel,
-          parameters: parameters,
-          default: defaultAssignment,
-      }).then(function() {
-          alert("Assignment successfully updated.");
-      }).catch(function(error) {
-          console.error(error);
-      });
+        // Update the assignment label and the parameters
+        assignmentDoc.update({
+            assignmentLabel: assignmentLabel,
+            parameters: parameters,
+            default: defaultAssignment,
+        }).then(function () {
+            alert("Assignment successfully updated.");
+        }).catch(function (error) {
+            console.error(error);
+        });
 
     }
 
@@ -140,9 +137,8 @@ btnSetAssignment.addEventListener("click", e => {
 async function setHeader(assignmentId) {
     let header = document.querySelector("#assignmentidheader");
     var assignmentDoc = await firestore.collection("assignments").doc(assignmentId);
-    await assignmentDoc.get().then(function(doc) {
-        if(doc.exists)
-        {
+    await assignmentDoc.get().then(function (doc) {
+        if (doc.exists) {
             header.innerHTML = "Assignment: " + doc.data().assignmentLabel;
         }
     });
@@ -160,10 +156,9 @@ async function populateParameters(assignmentId) {
     var assignmentDoc = await firestore.collection("assignments").doc(assignmentId);
 
     // Get the assignment document
-    await assignmentDoc.get().then(function(doc) {
+    await assignmentDoc.get().then(function (doc) {
         // If the document exists
-        if(doc.exists)
-        {
+        if (doc.exists) {
             // Get fields from the database
             var assignmentLabel = doc.data().assignmentLabel;
             assignmentLabel = decode(assignmentLabel);
@@ -177,8 +172,7 @@ async function populateParameters(assignmentId) {
             document.getElementById("timeWOSound").value = parameters.soundOffTime;
             document.getElementById("cycles").value = parameters.cycles;
             document.querySelector("#default").checked = defaultAssignment;
-            if (!parameters.feedback)
-            {
+            if (!parameters.feedback) {
                 document.getElementById("feedback").removeAttribute("checked");
             }
         }
@@ -189,8 +183,7 @@ async function populateParameters(assignmentId) {
     populateUserTable
     Fetch all users and populate the user table
 */
-async function populateUserTable(assignmentId, newPage)
-{
+async function populateUserTable(assignmentId, newPage) {
     table.innerHTML = "";
 
     let startPosition = (newPage - 1) * entriesPerPage;
@@ -198,7 +191,7 @@ async function populateUserTable(assignmentId, newPage)
     let newArray = currentUserArray.slice(startPosition, startPosition + entriesPerPage);
 
     // Loop through usersData
-    for(let i = 0; i < newArray.length; i++){
+    for (let i = 0; i < newArray.length; i++) {
         let obj = newArray[i];
         // Create a row entry for each user
         let tr = document.createElement('tr');
@@ -206,14 +199,12 @@ async function populateUserTable(assignmentId, newPage)
         let td_ses = document.createElement('td');
 
         let latestSessionTime = obj.data.latestSessionTime;
-        if(latestSessionTime)
-        {
+        if (latestSessionTime) {
             latestSessionTime = latestSessionTime.seconds * 1000;
             latestSessionTime = new Date(latestSessionTime);
 
         }
-        else
-        {
+        else {
             latestSessionTime = "N/A";
         }
         td_ses.innerHTML = latestSessionTime.toLocaleString(navigator.language);
@@ -230,8 +221,7 @@ async function populateUserTable(assignmentId, newPage)
         let span = document.createElement('span');
         checkbox.type = "checkbox";
         checkbox.addEventListener('input', checkCheckedArray);
-        if(checkedArray[i + (currentPage - 1) * entriesPerPage])
-        {
+        if (checkedArray[i + (currentPage - 1) * entriesPerPage]) {
             checkbox.checked = true;
         } else {
             checkbox.checked = false;
@@ -326,8 +316,8 @@ function checkCheckedArray(e) {
     Gets all of the assigned usres and changes their corresponding checkedArray values to true
 */
 function getAssignedUsers() {
-    for(let i = 0; i < userData.length; i++) {
-        if(assignedUIDs.includes(userData[i].id)) {
+    for (let i = 0; i < userData.length; i++) {
+        if (assignedUIDs.includes(userData[i].id)) {
             checkedArray[i] = true;
         } else {
             checkedArray[i] = false;
@@ -338,23 +328,21 @@ function getAssignedUsers() {
 let assignmentId;
 let assignedUIDs = [];
 
- /* onAuthStateChanged(user)
-  Observer for Authentication State:
-  If the user is logged in and the user is an admin, then this listener will
-  set the header, parameters, and the user table. Otherwise, go back to the user dashboard
-  or back to the login screen if not authenticated
+/* onAuthStateChanged(user)
+ Observer for Authentication State:
+ If the user is logged in and the user is an admin, then this listener will
+ set the header, parameters, and the user table. Otherwise, go back to the user dashboard
+ or back to the login screen if not authenticated
 */
 
 firebase.auth().onAuthStateChanged((user) => {
     // If user is logged in
-    if(user)
-    {
+    if (user) {
         // Get admin token result
-        user.getIdTokenResult().then(async function(idTokenResult) {
+        user.getIdTokenResult().then(async function (idTokenResult) {
             user.admin = idTokenResult.claims.admin;
             // If user is an admin
-            if(user.admin)
-            {
+            if (user.admin) {
                 // Get assignmentId from url (selected from previous page)
                 let params = new URLSearchParams(location.search);
                 assignmentId = params.get('id');
@@ -367,9 +355,8 @@ firebase.auth().onAuthStateChanged((user) => {
                 assignedUIDs = [];
                 var assignmentDoc = await firestore.collection("assignments").doc(assignmentId)
 
-                await assignmentDoc.get().then(function(doc) {
-                    if(doc.exists)
-                    {
+                await assignmentDoc.get().then(function (doc) {
+                    if (doc.exists) {
                         assignedUIDs = doc.data().userIDs;
                     }
                 });
@@ -380,23 +367,21 @@ firebase.auth().onAuthStateChanged((user) => {
 
                 checkedArray = new Array(userData.length);
 
-                numPages = Math.ceil(currentUserArray.length/entriesPerPage);
+                numPages = Math.ceil(currentUserArray.length / entriesPerPage);
 
                 getAssignedUsers();
 
                 // Populate the userTable
                 populateUserTable(assignmentId, 1);
             }
-            else
-            {
+            else {
                 // Alert that user is not admin and return to user dashboard
                 alert("You are not an admin.");
                 window.location = "/user/userdashboard.html";
             }
         });
     }
-    else
-    {
+    else {
         // Not signed in so redirect to login screen
         console.log("You are not signed in.");
         window.location = "/login.html";
@@ -404,35 +389,35 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 // Function to select/deselct all checkboxes
-$(document).ready(function() {
-    $("#btnSelectAll").click(function() {
+$(document).ready(function () {
+    $("#btnSelectAll").click(function () {
         let checked = !$(this).data('checked');
         $('input:checkbox').not(".rip_kobe").prop('checked', checked);
         $(this).val(checked ? 'uncheck all' : 'check all');
         $(this).data('checked', checked);
-        for(let i = 0; i < checkedArray.length; i++) {
+        for (let i = 0; i < checkedArray.length; i++) {
             checkedArray[i] = checked;
         }
     })
 })
 
 //Function to handle pressing any of the pagination buttons
-$("#pagination").on("click", "a", function changePage(){
+$("#pagination").on("click", "a", function changePage() {
     let newPage = $(this).data('page');
 
     //Change to the new page
-    if(newPage != currentPage) {
+    if (newPage != currentPage) {
         //For the right chevron
-        if(newPage == "next") {
-            newPage = currentPage+1;
+        if (newPage == "next") {
+            newPage = currentPage + 1;
         }
         //For the left chevron
-        else if(newPage == "prev") {
-            newPage = currentPage-1;
+        else if (newPage == "prev") {
+            newPage = currentPage - 1;
         }
 
         //Ensure that the new page can be accessed (in case left or right chevrons move it past the number of pages)
-        if(newPage <= numPages && newPage > 0) {
+        if (newPage <= numPages && newPage > 0) {
             //Change the current page
             currentPage = newPage;
 
@@ -441,16 +426,15 @@ $("#pagination").on("click", "a", function changePage(){
             //Change the active page in the pagination menu
             document.querySelector("#page" + currentPage).className = "waves-effect";
             document.querySelector("#page" + newPage).className = "waves-effect active";
-            }
+        }
     }
-  });
+});
 
 /*
     decode:
     decodes string when reading encoded string from DB
 */
-function decode(str)
-{
+function decode(str) {
     var txt = document.createElement('textarea');
     txt.innerHTML = str;
     return txt.value;
@@ -460,15 +444,25 @@ function decode(str)
     encode:
     Encodes assignment label to prevent XSS
 */
-function encode(str){
-    return String(str).replace(/[^\w. ]/gi, function(c){
-       return '&#'+c.charCodeAt(0)+';';
+function encode(str) {
+    return String(str).replace(/[^\w. ]/gi, function (c) {
+        return '&#' + c.charCodeAt(0) + ';';
     });
 }
 
 $('option').on('click', function () {
     if (this.value == 'all')
-      this.value = userData.length;
+        this.value = userData.length;
     window.location.replace("#" + this.value);
     window.location.reload();
-  })
+})
+
+let selector = document.getElementById("display_num")
+selector.addEventListener('change', (event) => {
+    if (event.target.value != "Choose Number of Rows") {
+        if (event.target.value == 'all')
+            event.target.value = currentAssignmentArray.length;
+        window.location.replace("#" + event.target.value);
+        window.location.reload();
+    }
+})
