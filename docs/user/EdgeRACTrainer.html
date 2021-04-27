@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>EdgeRACTrainer.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="..\Data.html">
+                  .\Data.js
+                </a>
+              
+                
+                <a class="source" href="..\auth.html">
+                  .\auth.js
+                </a>
+              
+                
+                <a class="source" href="..\navbar.html">
+                  .\navbar.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\assignments\assignments.html">
+                  .\researcher\assignments\assignments.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\assignments\createassignment.html">
+                  .\researcher\assignments\createassignment.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\assignments\editAssignment.html">
+                  .\researcher\assignments\editAssignment.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\rPortal.html">
+                  .\researcher\rPortal.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\users\createuser.html">
+                  .\researcher\users\createuser.js
+                </a>
+              
+                
+                <a class="source" href="..\researcher\users\userData.html">
+                  .\researcher\users\userData.js
+                </a>
+              
+                
+                <a class="source" href="EdgeRACTrainer.html">
+                  .\user\EdgeRACTrainer.js
+                </a>
+              
+                
+                <a class="source" href="EdgeRACTrainerOld.html">
+                  .\user\EdgeRACTrainerOld.js
+                </a>
+              
+                
+                <a class="source" href="edituser.html">
+                  .\user\edituser.js
+                </a>
+              
+                
+                <a class="source" href="engine\Base.html">
+                  .\user\engine\Base.js
+                </a>
+              
+                
+                <a class="source" href="engine\Components.html">
+                  .\user\engine\Components.js
+                </a>
+              
+                
+                <a class="source" href="engine\Engine.html">
+                  .\user\engine\Engine.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Behavior.html">
+                  .\user\engine\base\Behavior.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Camera.html">
+                  .\user\engine\base\Camera.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Component.html">
+                  .\user\engine\base\Component.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\GameObject.html">
+                  .\user\engine\base\GameObject.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Input.html">
+                  .\user\engine\base\Input.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\NamableParent.html">
+                  .\user\engine\base\NamableParent.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Scene.html">
+                  .\user\engine\base\Scene.js
+                </a>
+              
+                
+                <a class="source" href="engine\base\Time.html">
+                  .\user\engine\base\Time.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\CircleComponent.html">
+                  .\user\engine\components\CircleComponent.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\Collider.html">
+                  .\user\engine\components\Collider.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\CollisionHelper.html">
+                  .\user\engine\components\CollisionHelper.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\PointCollider.html">
+                  .\user\engine\components\PointCollider.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\RectangleCollider.html">
+                  .\user\engine\components\RectangleCollider.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\RectangleComponent.html">
+                  .\user\engine\components\RectangleComponent.js
+                </a>
+              
+                
+                <a class="source" href="engine\components\TextComponent.html">
+                  .\user\engine\components\TextComponent.js
+                </a>
+              
+                
+                <a class="source" href="game\GameBehaviors.html">
+                  .\user\game\GameBehaviors.js
+                </a>
+              
+                
+                <a class="source" href="game\GameObjects.html">
+                  .\user\game\GameObjects.js
+                </a>
+              
+                
+                <a class="source" href="game\SceneManager.html">
+                  .\user\game\SceneManager.js
+                </a>
+              
+                
+                <a class="source" href="game\Scenes.html">
+                  .\user\game\Scenes.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\CircleBehavior.html">
+                  .\user\game\behaviors\CircleBehavior.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\GoRight.html">
+                  .\user\game\behaviors\GoRight.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\LaserBehavior.html">
+                  .\user\game\behaviors\LaserBehavior.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\ScoreCalculator.html">
+                  .\user\game\behaviors\ScoreCalculator.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\TapHandler.html">
+                  .\user\game\behaviors\TapHandler.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\TextController.html">
+                  .\user\game\behaviors\TextController.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\TextControllerOld.html">
+                  .\user\game\behaviors\TextControllerOld.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\Timer.html">
+                  .\user\game\behaviors\Timer.js
+                </a>
+              
+                
+                <a class="source" href="game\behaviors\TimerOld.html">
+                  .\user\game\behaviors\TimerOld.js
+                </a>
+              
+                
+                <a class="source" href="game\data\TapInfo.html">
+                  .\user\game\data\TapInfo.js
+                </a>
+              
+                
+                <a class="source" href="game\scenes\PlayScene.html">
+                  .\user\game\scenes\PlayScene.js
+                </a>
+              
+                
+                <a class="source" href="game\scenes\PlaySceneOld.html">
+                  .\user\game\scenes\PlaySceneOld.js
+                </a>
+              
+                
+                <a class="source" href="graph.html">
+                  .\user\graph.js
+                </a>
+              
+                
+                <a class="source" href="param.html">
+                  .\user\param.js
+                </a>
+              
+                
+                <a class="source" href="userdashboard.html">
+                  .\user\userdashboard.js
+                </a>
+              
+                
+                <a class="source" href="worlds\levels.html">
+                  .\user\worlds\levels.js
+                </a>
+              
+                
+                <a class="source" href="worlds\worlds.html">
+                  .\user\worlds\worlds.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>EdgeRACTrainer.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-1">&#x00a7;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> Scenes <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./game/Scenes.js&quot;</span>
+<span class="hljs-keyword">import</span> SceneManager <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./game/SceneManager.js&quot;</span>
+<span class="hljs-keyword">import</span> Engine <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./engine/Engine.js&quot;</span>
+
+<span class="hljs-keyword">const</span> FRAMES_PER_SECOND = <span class="hljs-number">30</span>;
+<span class="hljs-keyword">const</span> MILLIS_PER_SECOND = <span class="hljs-number">1000</span>;
+<span class="hljs-keyword">const</span> MILLIS_PER_FRAME = MILLIS_PER_SECOND / FRAMES_PER_SECOND;
+
+<span class="hljs-keyword">let</span> playScene;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-2">&#x00a7;</a>
+              </div>
+              <p>Get the gameplay parameters from the browser’s sessionStorage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">let</span> bpm = sessionStorage.getItem(<span class="hljs-string">&quot;bpm&quot;</span>);
+<span class="hljs-keyword">let</span> timeWSound = sessionStorage.getItem(<span class="hljs-string">&quot;timeWSound&quot;</span>);
+<span class="hljs-keyword">let</span> timeWOSound = sessionStorage.getItem(<span class="hljs-string">&quot;timeWOSound&quot;</span>);
+<span class="hljs-keyword">let</span> cycles = sessionStorage.getItem(<span class="hljs-string">&quot;cycles&quot;</span>);
+<span class="hljs-keyword">let</span> feedback = sessionStorage.getItem(<span class="hljs-string">&quot;feedback&quot;</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-3">&#x00a7;</a>
+              </div>
+              <p>Set the input eventListeners</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">&#x27;keydown&#x27;</span>, keydown);
+<span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">&#x27;keyup&#x27;</span>, keyup);
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;touchstart&#x27;</span>, touchstart);
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;touchend&#x27;</span>, touchend);
+
+<span class="hljs-keyword">let</span> Input = Engine.Base.Input;
+<span class="hljs-keyword">let</span> pressed = <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">/*
+	touchstart
+	params: event - the input event
+	returns: none
+	handles the start of a touchscreen tap
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">touchstart</span>(<span class="hljs-params">event</span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-4">&#x00a7;</a>
+              </div>
+              <p>If a touchscreen tap is not already in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Input.touch != <span class="hljs-literal">true</span>){</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-5">&#x00a7;</a>
+              </div>
+              <p>A tap started this frame</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        Input.touchdown = <span class="hljs-literal">true</span>;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-6">&#x00a7;</a>
+              </div>
+              <p>A tap is now in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Input.touch = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-7">&#x00a7;</a>
+              </div>
+              <p>If a game press is not already in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(!pressed) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-8">&#x00a7;</a>
+              </div>
+              <p>A game press is now in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        pressed = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-9">&#x00a7;</a>
+              </div>
+              <p>Send an input event out through EdGE</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        pulse();
+    }
+}
+
+<span class="hljs-comment">/*
+	touchend
+	params: event - the input event
+	returns: none
+	handles the end of a touchscreen tap
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">touchend</span>(<span class="hljs-params">event</span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-10">&#x00a7;</a>
+              </div>
+              <p>If a touchscreen tap is currently in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Input.touch != <span class="hljs-literal">false</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-11">&#x00a7;</a>
+              </div>
+              <p>the touchscreen released this frame</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        Input.touchup = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-12">&#x00a7;</a>
+              </div>
+              <p>A tap is no longer in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Input.touch = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-13">&#x00a7;</a>
+              </div>
+              <p>A game press is no longer in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    pressed = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-14">&#x00a7;</a>
+              </div>
+              <p>Send an input event out through EdGE</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    pulse();
+}
+
+<span class="hljs-comment">/*
+	keydown
+	params: event - the input event
+	returns: none
+	handles the start of a keypress
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">keydown</span>(<span class="hljs-params">event</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-15">&#x00a7;</a>
+              </div>
+              <p>If a press of this key is not currently in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Input.keys[event.key] != <span class="hljs-literal">true</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-16">&#x00a7;</a>
+              </div>
+              <p>A press started this frame</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        Input.down[event.key] = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-17">&#x00a7;</a>
+              </div>
+              <p>A press is now in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Input.keys[event.key] = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-18">&#x00a7;</a>
+              </div>
+              <p>If a game press is not already in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(!pressed) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-19">&#x00a7;</a>
+              </div>
+              <p>A game press is now in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        pressed = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-20">&#x00a7;</a>
+              </div>
+              <p>Send an input event out through EdGE</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        pulse();
+    }
+}
+
+<span class="hljs-comment">/*
+	keyup
+	params: event - the input event
+	returns: none
+	handles the release of a keypress
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">keyup</span>(<span class="hljs-params">event</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-21">&#x00a7;</a>
+              </div>
+              <p>If a press of this key is currently in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Input.keys[event.key] != <span class="hljs-literal">false</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-22">&#x00a7;</a>
+              </div>
+              <p>A press ended this frame</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        Input.up[event.key] = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-23">&#x00a7;</a>
+              </div>
+              <p>A press of this key is no longer in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Input.keys[event.key] = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-24">&#x00a7;</a>
+              </div>
+              <p>A game press is no longer in progress</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    pressed = <span class="hljs-literal">false</span>;
+    pulse();
+}
+
+<span class="hljs-keyword">let</span> canv, ctx;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">playGame</span>(<span class="hljs-params"></span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-25">&#x00a7;</a>
+              </div>
+              <p>Create a PlayScene</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    playScene = <span class="hljs-keyword">new</span> Scenes.PlayScene(bpm, timeWSound, timeWOSound, cycles, feedback);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-26">&#x00a7;</a>
+              </div>
+              <p>Add the PlayScene to the SceneManager and switch to it    </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    SceneManager.addScene(playScene);
+    SceneManager.currentScene = <span class="hljs-string">&quot;PlayScene&quot;</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-27">&#x00a7;</a>
+              </div>
+              <p>Reveal the game canvas and hide the pregame instructions and start button</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    canv = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#gameCanvas&quot;</span>);
+    ctx = canv.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);
+    <span class="hljs-keyword">let</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#startButton&quot;</span>);
+    <span class="hljs-keyword">let</span> instructions = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#instructions&quot;</span>);
+    canv.classList.remove(<span class="hljs-string">&quot;hidden&quot;</span>);
+    button.style.display = <span class="hljs-string">&quot;none&quot;</span>;
+    instructions.style.display = <span class="hljs-string">&quot;none&quot;</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-28">&#x00a7;</a>
+              </div>
+              <p>start the gameloop</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-built_in">setInterval</span>(gameLoop, MILLIS_PER_FRAME);
+}
+
+<span class="hljs-comment">/*
+	gameLoop
+	params: none
+	returns: none
+	EdGE engine driver. Every frame handles updates for input, updates all game objects, and renders all game objects
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gameLoop</span>(<span class="hljs-params"></span>) </span>{
+    Input.swapUpDownArrays();
+    update();
+    draw(ctx);
+}
+
+<span class="hljs-comment">/*
+	update
+	params: none
+	returns: none
+	calls the update function for the current scene, which calls update for all objects in the current scene
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"></span>) </span>{
+    SceneManager.currentScene.update();
+}
+
+<span class="hljs-comment">/*
+	draw
+	params: ctx - the 2d context of the game canvas
+	returns: none
+	calls the draw function for the current scene, which calls draw for all objects in the current scene
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params">ctx</span>) </span>{
+    SceneManager.currentScene.draw(ctx, canv.width, canv.height);
+}
+
+<span class="hljs-comment">/*
+	pulse
+	params: none
+	returns: none
+	calls the pulse function for the current scene, which calls pulse for all objects in the current scene. Used for event based input
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pulse</span>(<span class="hljs-params"></span>) </span>{
+    SceneManager.currentScene.pulse();
+}
+
+<span class="hljs-comment">/*
+	checkToPlayGame
+	params: none
+	returns: none
+	Verifies that the game can be played
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkToPlayGame</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> readyToPlay = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-keyword">if</span>(!sessionStorage.getItem(<span class="hljs-string">&quot;bpm&quot;</span>)){
+        readyToPlay = <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!sessionStorage.getItem(<span class="hljs-string">&quot;timeWSound&quot;</span>)){
+        readyToPlay = <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!sessionStorage.getItem(<span class="hljs-string">&quot;timeWOSound&quot;</span>)){
+        readyToPlay = <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!sessionStorage.getItem(<span class="hljs-string">&quot;cycles&quot;</span>)){
+        readyToPlay = <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!sessionStorage.getItem(<span class="hljs-string">&quot;feedback&quot;</span>)){
+        readyToPlay = <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">if</span>(readyToPlay) {
+        playGame();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> location = <span class="hljs-string">&quot;/user/parameters.html&quot;</span>;
+        firebase.auth().onAuthStateChanged(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> {
+            <span class="hljs-keyword">if</span>(user){
+                location = <span class="hljs-string">&quot;/user/userdashboard.html&quot;</span>;
+            }
+        });
+
+        <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">&quot;No parameters selected, returning to parameter select&quot;</span>);
+        <span class="hljs-built_in">window</span>.location = location;
+    }
+}
+
+<span class="hljs-keyword">let</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#startButton&quot;</span>);
+button.onclick = checkToPlayGame;</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

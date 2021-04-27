@@ -528,6 +528,48 @@ admin.initializeApp();
               <div class="sswrap ">
                 <a class="ss" href="#section-26">&#x00a7;</a>
               </div>
+              <p>Delete the user’s highscores</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> highscores = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(data.uid).collection(<span class="hljs-string">&quot;highscores&quot;</span>);
+        <span class="hljs-keyword">await</span> highscores.get().then(<span class="hljs-function"><span class="hljs-params">querySnapshot</span> =&gt;</span> {
+            querySnapshot.forEach(<span class="hljs-function"><span class="hljs-params">documentSnapshot</span> =&gt;</span> {
+                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(data.uid).collection(<span class="hljs-string">&quot;highscores&quot;</span>).doc(documentSnapshot.id);
+                documentRef.delete();
+            });
+        });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-27">&#x00a7;</a>
+              </div>
+              <p>Delete the user’s rating totals</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> ratings = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(data.uid).collection(<span class="hljs-string">&quot;ratings&quot;</span>);
+        <span class="hljs-keyword">await</span> ratings.get().then(<span class="hljs-function"><span class="hljs-params">querySnapshot</span> =&gt;</span> {
+            querySnapshot.forEach(<span class="hljs-function"><span class="hljs-params">documentSnapshot</span> =&gt;</span> {
+                <span class="hljs-keyword">let</span> documentRef = admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(data.uid).collection(<span class="hljs-string">&quot;ratings&quot;</span>).doc(documentSnapshot.id);
+                documentRef.delete();
+            });
+        });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="sswrap ">
+                <a class="ss" href="#section-28">&#x00a7;</a>
+              </div>
               <p>Delete the user from users document</p>
 
             </div>
@@ -538,11 +580,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-27">
+        <li id="section-29">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-27">&#x00a7;</a>
+                <a class="ss" href="#section-29">&#x00a7;</a>
               </div>
               <p>Delete the sessions created by the user</p>
 
@@ -559,11 +601,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-28">
+        <li id="section-30">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-28">&#x00a7;</a>
+                <a class="ss" href="#section-30">&#x00a7;</a>
               </div>
               <p>Remove the user from each assignment record that the user was assigned to</p>
 
@@ -601,11 +643,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-29">
+        <li id="section-31">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-29">&#x00a7;</a>
+                <a class="ss" href="#section-31">&#x00a7;</a>
               </div>
               <p>If the user is not authenticated, return an error message</p>
 
@@ -618,11 +660,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-30">
+        <li id="section-32">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-30">&#x00a7;</a>
+                <a class="ss" href="#section-32">&#x00a7;</a>
               </div>
               <p>If the user is not an admin, return an error message</p>
 
@@ -635,11 +677,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-31">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-31">&#x00a7;</a>
+                <a class="ss" href="#section-33">&#x00a7;</a>
               </div>
               <p>Construct a new user object</p>
 
@@ -653,11 +695,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-32">
+        <li id="section-34">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-32">&#x00a7;</a>
+                <a class="ss" href="#section-34">&#x00a7;</a>
               </div>
               <p>Create a new user using the admin API</p>
 
@@ -670,11 +712,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-33">
+        <li id="section-35">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-33">&#x00a7;</a>
+                <a class="ss" href="#section-35">&#x00a7;</a>
               </div>
               <p>Construct a new database record object</p>
 
@@ -688,11 +730,11 @@ admin.initializeApp();
         </li>
         
         
-        <li id="section-34">
+        <li id="section-36">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-34">&#x00a7;</a>
+                <a class="ss" href="#section-36">&#x00a7;</a>
               </div>
               <p>Create a new document in the users collection with the document
 ID as the user uid</p>
@@ -704,36 +746,11 @@ ID as the user uid</p>
         </li>
         
         
-        <li id="section-35">
+        <li id="section-37">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-35">&#x00a7;</a>
-              </div>
-              <p>Create a new subcollection with documents containing the user’s highest score for each level</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">const</span> numWorlds = <span class="hljs-number">3</span>;
-        <span class="hljs-keyword">const</span> numLevels = <span class="hljs-number">11</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> w = <span class="hljs-number">1</span>; w &lt;= numWorlds; w++) {    
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> l = <span class="hljs-number">1</span>; l &lt;= numLevels; l++) {
-                <span class="hljs-keyword">let</span> docData = {
-                    <span class="hljs-attr">highScore</span>: <span class="hljs-number">0</span>
-                };
-                <span class="hljs-keyword">var</span> docName = <span class="hljs-string">&quot;World&quot;</span> + w + <span class="hljs-string">&quot;Level&quot;</span> + l;
-                <span class="hljs-keyword">var</span> res = <span class="hljs-keyword">await</span> admin.firestore().collection(<span class="hljs-string">&quot;users&quot;</span>).doc(userUID).collection(<span class="hljs-string">&quot;highscores&quot;</span>).doc(docName).set(docData);
-            }
-        }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-36">
-            <div class="annotation">
-              
-              <div class="sswrap ">
-                <a class="ss" href="#section-36">&#x00a7;</a>
+                <a class="ss" href="#section-37">&#x00a7;</a>
               </div>
               <p>Return success message</p>
 
@@ -745,11 +762,11 @@ ID as the user uid</p>
         </li>
         
         
-        <li id="section-37">
+        <li id="section-38">
             <div class="annotation">
               
               <div class="sswrap ">
-                <a class="ss" href="#section-37">&#x00a7;</a>
+                <a class="ss" href="#section-38">&#x00a7;</a>
               </div>
               <p>Return error message</p>
 
