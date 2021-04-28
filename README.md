@@ -19,10 +19,10 @@ From the research subject perspective, a user will be able to login to their pro
 
 In this second version of the ractrainer, the user can now play through nine worlds containing 11 levels per world. These worlds have preset parameters, and will allow for a sense of progression with the rating system. In order to unlock the next level, at least 2 stars must be earned on the previous level. For worlds, every stage of the previous world must have been beaten with at least 2 stars. Currently, the ratings are as follows:
 
-3 Stars:      Score >= 85
-2 Stars: 85 > Score >= 70
-1 Star : 70 > Score >= 55
-0 Stars: 55 > Score
+3 Stars:      Score >= 85<br/>
+2 Stars: 85 > Score >= 70<br/>
+1 Star : 70 > Score >= 55<br/>
+0 Stars: 55 > Score<br/>
 
 
 
